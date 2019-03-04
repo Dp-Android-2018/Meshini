@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/white_bg"
+        tools:context=".activity.DestantionActivity">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/bt_write_note"
+            android:layout_marginBottom="10dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp16h"
+                    android:text="@string/app_name"
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/sp15_5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="@dimen/dp23w"
+                    android:layout_height="@dimen/dp23h"
+                    android:layout_marginStart="@dimen/dp25w"
+                    android:src="@drawable/ic_left_arrow"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView9"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textView9" />
+
+                <TextView
+                    android:id="@+id/textView27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp12h"
+                    android:text="@string/make_your_trip_schedule"
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/sp12"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+                <EditText
+                    android:id="@+id/editText3"
+                    style="@style/EditText"
+                    android:layout_width="@dimen/dp232w"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp12h"
+                    android:background="@drawable/edit_text_border"
+                    android:hint="@string/pickup_location"
+                    app:layout_constraintEnd_toStartOf="@+id/iv_pick_date_time"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView27" />
+
+                <ImageView
+                    android:id="@+id/iv_pick_date_time"
+                    android:layout_width="@dimen/dp31w"
+                    android:layout_height="@dimen/dp31h"
+                    android:src="@drawable/ic_calendar"
+                    app:layout_constraintBottom_toBottomOf="@+id/editText3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/editText3"
+                    app:layout_constraintTop_toTopOf="@+id/editText3" />
+
+                <View
+                    android:id="@+id/view6"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginStart="@dimen/dp22w"
+                    android:layout_marginTop="@dimen/dp15h"
+                    android:layout_marginEnd="@dimen/dp22w"
+                    android:background="@color/text_color_black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editText3" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_destination"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="31dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view6"
+                    tools:listitem="@layout/destination_list_item_layout" />
+
+                <View
+                    android:id="@+id/view8"
+                    android:layout_width="@dimen/dp80w"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="@dimen/dp24h"
+                    android:background="@color/text_color_black"
+                    app:layout_constraintEnd_toStartOf="@+id/view7"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rv_destination" />
+
+                <View
+                    android:id="@+id/view7"
+                    android:layout_width="@dimen/dp80w"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="@dimen/dp24h"
+                    android:background="@color/text_color_black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/view8"
+                    app:layout_constraintTop_toBottomOf="@+id/rv_destination" />
+
+                <TextView
+                    android:id="@+id/add_destination"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="10dp"
+                    android:onClick="updateRecyclerViewSize"
+                    android:text="@string/tab_to_add_destination"
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/sp9"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view8"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/bt_write_note"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp55h"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="5dp"
+            android:backgroundTint="@color/text_color_black"
+            android:text="@string/write_additional_notes"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/sp15_5"
+            android:background="@drawable/dialog_top_corner"
+            app:layout_constraintBottom_toTopOf="@id/bt_confirm"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/bt_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp55h"
+            android:background="@color/text_color_black"
+            android:text="@string/confirm_request"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/sp15_5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

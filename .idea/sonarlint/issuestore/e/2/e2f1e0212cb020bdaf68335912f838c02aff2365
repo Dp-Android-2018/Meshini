@@ -1,0 +1,10 @@
+
+squid:S1186#"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¨ªò¹øÿÿÿÿ
+ssquid:S1450"WRemove the "mWebView" field and declare it as a local variable in the relevant methods.(Ğ¬–ùÿÿÿÿ
+˜squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ä³Ó÷
+squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¹Ô‘¸ûÿÿÿÿ
+squid:S1186("€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Éà“¾üÿÿÿÿ
+˜squid:S1186-"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÏßĞ‹
+}squid:UselessImportCheck"TRemove this unnecessary import: same package classes are always implicitly imported.(ÛŞÚïÿÿÿÿÿ
+Usquid:S1905"2Remove this unnecessary cast to "AdvancedWebView".(¾¯­Úÿÿÿÿÿ8´¨‡œ”-
+qsquid:MaximumInheritanceDepth"<This class has 6 parents which is greater than 5 authorized.(êìæ¤ıÿÿÿÿ8´¨‡œ”-

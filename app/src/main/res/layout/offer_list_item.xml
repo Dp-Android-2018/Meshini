@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:backgroundTint="@android:color/white"
+    app:cardCornerRadius="10dp"
+    android:layout_marginTop="10dp">
+
+    <com.ramotion.foldingcell.FoldingCell
+        android:id="@+id/folding_cell"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/base_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp111h">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/roundedImageView"
+                android:layout_width="@dimen/dp77w"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/text_color_black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:riv_corner_radius="10dp" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:text="Name: Ahmed sobhy"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/sp11_5"
+                app:layout_constraintStart_toEndOf="@+id/roundedImageView"
+                app:layout_constraintTop_toTopOf="@+id/roundedImageView" />
+
+            <TextView
+                android:id="@+id/tv_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Rating: 4.87"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/sp11_5"
+                app:layout_constraintStart_toStartOf="@+id/tv_name"
+                app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+            <TextView
+                android:id="@+id/tv_num_trips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="No. of trips: 225"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/sp11_5"
+                app:layout_constraintStart_toStartOf="@+id/tv_rating"
+                app:layout_constraintTop_toBottomOf="@+id/tv_rating" />
+
+            <TextView
+                android:id="@+id/tv_offer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Offer:"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/sp11_5"
+                app:layout_constraintBottom_toTopOf="@+id/tv_offer_cost"
+                app:layout_constraintEnd_toEndOf="@+id/tv_offer_cost" />
+
+            <TextView
+                android:id="@+id/tv_offer_cost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp16w"
+                android:layout_marginBottom="8dp"
+                android:text="1500EGP"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/sp11_5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/extract_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/bt_accept"
+                android:layout_width="@dimen/dp107w"
+                android:layout_height="@dimen/dp23h"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="13dp"
+                android:background="@drawable/edit_text_shape"
+                android:backgroundTint="@color/green_color"
+                android:text="Accept"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/sp11"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_reviews"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:layout_marginBottom="9dp"
+                app:layout_constraintTop_toBottomOf="@id/bt_accept"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:listitem="@layout/guide_review_list_item"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.ramotion.foldingcell.FoldingCell>
+
+
+</androidx.cardview.widget.CardView>
+</layout>
