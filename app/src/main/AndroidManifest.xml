@@ -26,15 +26,14 @@
 
         </activity>
         <activity android:name=".view.activity.DestinationActivity">
-
-        </activity>
-        <activity
-            android:name=".view.activity.ContainerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.activity.ContainerActivity">
 
         </activity>
         <activity android:name=".view.activity.AddCreditCardActivity" />

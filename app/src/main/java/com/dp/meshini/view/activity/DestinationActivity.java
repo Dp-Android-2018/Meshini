@@ -48,7 +48,7 @@ public class DestinationActivity extends AppCompatActivity {
     public void showDialog(View view) {
 
         final AlertDialog.Builder builder = new AlertDialog.Builder(this,R.style.CustomDialog);
-        View v = View.inflate(this, R.layout.request_guide_dialog, null);
+        View v = View.inflate(this, R.layout.write_note_dialog, null);
         builder.setView(v);
         builder.setCancelable(true);
         Dialog dialog = builder.create();
@@ -57,6 +57,20 @@ public class DestinationActivity extends AppCompatActivity {
         WindowManager.LayoutParams layoutParams =  window.getAttributes();
         layoutParams .gravity = Gravity.BOTTOM;
         window.setAttributes(layoutParams);
+        dialog.show();
+    }
+
+    public void showRateDialog(View view){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this,R.style.CustomDialog);
+        View v = View.inflate(this, R.layout.rate_dialog, null);
+        builder.setView(v);
+        builder.setCancelable(true);
+        Dialog dialog = builder.create();
+        Window window = dialog.getWindow();
+        window.setBackgroundDrawableResource(R.color.transparent);
+        //WindowManager.LayoutParams layoutParams =  window.getAttributes();
+        //layoutParams .gravity = Gravity.BOTTOM;
+        //window.setAttributes(layoutParams);
         dialog.show();
     }
 

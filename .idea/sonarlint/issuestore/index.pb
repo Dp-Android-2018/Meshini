@@ -75,3 +75,13 @@ q
 Aapp/src/main/java/com/dp/meshini/view/activity/TripsActivity.java,0\1\010f49750f7469a9998b5540d37590afb95298e5
 y
 Iapp/src/main/java/com/dp/meshini/view/activity/AddCreditCardActivity.java,8\1\81431cc12fc555531776af54bf2e7b71b6037971
+p
+@app/src/main/java/com/dp/meshini/servise/endpoint/EndPoints.java,c\0\c09db6c634f7110d2b2c51c120dfca9c444b9cbb
+i
+9app/src/main/java/com/dp/meshini/utils/ConstantsFile.java,d\e\dea1a53731daf6f3dd685ea7c81a88f302045b74
+]
+-app/src/main/java/com/dp/meshini/koin/Koin.kt,4\d\4de45341431440f0a63dfe065b2dad7304650f88
+k
+;app/src/main/java/com/dp/meshini/modules/NetworkModule.java,b\b\bb71a93c695024262a97e72407bb85dd5daa28af
+o
+?app/src/main/java/com/dp/meshini/servise/model/pojo/Client.java,0\3\0365eecc0773a3a4a3a7ddffd7a7d502ba3c7675

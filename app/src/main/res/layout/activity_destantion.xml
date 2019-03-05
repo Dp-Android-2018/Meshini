@@ -9,39 +9,39 @@
         android:background="@drawable/white_bg"
         tools:context=".activity.DestantionActivity">
 
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp16h"
+            android:text="@string/app_name"
+            android:textColor="@color/text_color_black"
+            android:textSize="@dimen/sp15_5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="@dimen/dp23w"
+            android:layout_height="@dimen/dp23h"
+            android:layout_marginStart="@dimen/dp25w"
+            android:src="@drawable/ic_left_arrow"
+            app:layout_constraintBottom_toBottomOf="@+id/textView9"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView9" />
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintBottom_toTopOf="@id/bt_write_note"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/bt_write_note"
-            android:layout_marginBottom="10dp">
+            app:layout_constraintTop_toBottomOf="@id/textView9">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/textView9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dp16h"
-                    android:text="@string/app_name"
-                    android:textColor="@color/text_color_black"
-                    android:textSize="@dimen/sp15_5"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageView
-                    android:layout_width="@dimen/dp23w"
-                    android:layout_height="@dimen/dp23h"
-                    android:layout_marginStart="@dimen/dp25w"
-                    android:src="@drawable/ic_left_arrow"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView9"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/textView9" />
 
                 <TextView
                     android:id="@+id/textView27"
@@ -53,7 +53,7 @@
                     android:textSize="@dimen/sp12"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView9" />
+                    app:layout_constraintTop_toTopOf="parent"/>
 
                 <EditText
                     android:id="@+id/editText3"
@@ -149,12 +149,13 @@
             android:layout_height="@dimen/dp55h"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="5dp"
+            android:background="@drawable/dialog_top_corner"
             android:backgroundTint="@color/text_color_black"
+            android:onClick="showDialog"
             android:text="@string/write_additional_notes"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
             android:textSize="@dimen/sp15_5"
-            android:background="@drawable/dialog_top_corner"
             app:layout_constraintBottom_toTopOf="@id/bt_confirm"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -170,7 +171,8 @@
             android:textSize="@dimen/sp15_5"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            android:onClick="showRateDialog"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

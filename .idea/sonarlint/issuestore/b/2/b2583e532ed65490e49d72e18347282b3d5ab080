@@ -1,11 +1,13 @@
 
-Isquid:S1199<"-Extract this nested code block into a method.(Û¶¥ùúÿÿÿÿ
-Isquid:S1199F"-Extract this nested code block into a method.(Èî³Ûıÿÿÿÿ
-Isquid:S1199I"-Extract this nested code block into a method.(ì­÷ßÿÿÿÿÿ
-asquid:HiddenFieldCheck'":Rename "drawer" which hides the field declared at line 22.(ĞÍè¨şÿÿÿÿ
-Isquid:S1199A"-Extract this nested code block into a method.(µÆšÀşÿÿÿÿ
-\squid:HiddenFieldCheckS":Rename "drawer" which hides the field declared at line 22.(…üµø
-Isquid:S1199O"-Extract this nested code block into a method.(»Óˆšıÿÿÿÿ
-Isquid:S1199L"-Extract this nested code block into a method.(ˆÒÅÔùÿÿÿÿ
-isquid:CommentedOutCodeLine7"<This block of commented-out lines of code should be removed.(•ÿöÕ8€¢Äö“-
-U"squid:SwitchLastCaseIsDefaultCheck6""Add a default case to this switch.(Ò“ÿšùÿÿÿÿ
+U"squid:SwitchLastCaseIsDefaultCheck9""Add a default case to this switch.(Ò“ÿšùÿÿÿÿ
+Isquid:S1199L"-Extract this nested code block into a method.(ì­÷ßÿÿÿÿÿ
+Isquid:S1199D"-Extract this nested code block into a method.(µÆšÀşÿÿÿÿ
+Isquid:S1199O"-Extract this nested code block into a method.(ˆÒÅÔùÿÿÿÿ
+Isquid:S1199R"-Extract this nested code block into a method.(»Óˆšıÿÿÿÿ
+isquid:CommentedOutCodeLine:"<This block of commented-out lines of code should be removed.(•ÿöÕ8€¢Äö“-
+Isquid:S1199?"-Extract this nested code block into a method.(Û¶¥ùúÿÿÿÿ
+Rsquid:S1905*"/Remove this unnecessary cast to "DrawerLayout".(ĞÍè¨şÿÿÿÿ8¬œçÀ”-
+asquid:HiddenFieldCheck*":Rename "drawer" which hides the field declared at line 25.(ĞÍè¨şÿÿÿÿ
+\squid:HiddenFieldCheckV":Rename "drawer" which hides the field declared at line 25.(…üµø
+Isquid:S1199I"-Extract this nested code block into a method.(Èî³Ûıÿÿÿÿ
+^squid:UselessImportCheck	"3Remove this unused import 'android.view.ViewGroup'.(‹îá8òØ„Å”-
