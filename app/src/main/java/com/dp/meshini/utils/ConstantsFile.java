@@ -13,11 +13,16 @@ public class ConstantsFile {
         public static final String FORGET_PASSWORD_URL="client/forget";
         public static final String RESET_PASSWORD_URL="client/forget/reset/{token}";
         public static final String CHANGE_PASSWORD_URL ="change-password";
+        public static final String COUNTRY_URL="utilities/world-countries";
+        public static final String CITY_URL="utilities/world-cities";
     }
 
     public static class Constants {
         public static final String API_KEY = "27180383-4918-4b94-9e24-27e37ec19c94";
         public static final String CONTENT_TYPE = "application/json";
+        public static final int SUCCESS_CODE = 200;
+        public static final int INVALID_DATA_CODE=422;
+        public static final int UNAUTHENTICATED_CODE=401;
 
     }
 
@@ -25,7 +30,7 @@ public class ConstantsFile {
 
     }
 
-    public static class Intent {
+    public static class IntentConstants {
 
     }
 

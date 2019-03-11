@@ -4,13 +4,19 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 
 import com.dp.meshini.R;
-import com.dp.meshini.view.activity.BaseActivity;
+import com.dp.meshini.servise.endpoint.EndPoints;
+import com.dp.meshini.utils.ConnectionReceiver;
 
 import im.delight.android.webview.AdvancedWebView;
+import kotlin.Lazy;
+
+import static org.koin.java.standalone.KoinJavaComponent.inject;
 
 public class MainActivity extends BaseActivity implements AdvancedWebView.Listener {
 
     private AdvancedWebView mWebView;
+    Lazy<ConnectionReceiver> connectionReceiverLazy = inject(ConnectionReceiver.class);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +24,7 @@ public class MainActivity extends BaseActivity implements AdvancedWebView.Listen
         setContentView(R.layout.activity_main);
         mWebView = (AdvancedWebView) findViewById(R.id.webview);
         mWebView.setListener(this, this);
+        connectionReceiverLazy.getValue().onReceive(getApplicationContext(), null);
         mWebView.loadUrl("https://xd.adobe.com/view/4c7a3744-a13a-4862-597e-596994f82124-3a4b/?fullscreen");
     }
 

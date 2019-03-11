@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/cl_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.LoginActivity">
+    android:background="@drawable/home_bg">
 
     <ImageView
         android:id="@+id/imageView"
@@ -28,7 +32,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
-        android:id="@+id/et_new_password"
+        android:id="@+id/et_mail_phone"
         style="@style/EditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -39,7 +43,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView"/>
 
     <EditText
-        android:id="@+id/et_confirm_password"
+        android:id="@+id/et_password"
         style="@style/EditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -47,7 +51,7 @@
         android:layout_marginTop="@dimen/dp32h"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_new_password"/>
+        app:layout_constraintTop_toBottomOf="@+id/et_mail_phone"/>
 
     <TextView
         android:id="@+id/textView2"
@@ -61,7 +65,8 @@
         android:textSize="@dimen/sp11"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_confirm_password" />
+        app:layout_constraintTop_toBottomOf="@+id/et_password"
+        android:onClick="forgetPassword"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -74,7 +79,8 @@
         android:layout_marginTop="@dimen/dp44h"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        android:onClick="register"/>
 
     <Button
         android:layout_width="match_parent"
@@ -85,5 +91,7 @@
         android:textSize="@dimen/sp15_5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="getDataFromView"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

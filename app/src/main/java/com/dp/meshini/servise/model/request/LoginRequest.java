@@ -1,8 +1,10 @@
 package com.dp.meshini.servise.model.request;
 
+import com.dp.meshini.view.callback.IoCustomRequest;
 import com.google.gson.annotations.SerializedName;
 
-public class LoginRequest {
+public class LoginRequest implements IoCustomRequest {
+
 
     @SerializedName("login")
     private String login;

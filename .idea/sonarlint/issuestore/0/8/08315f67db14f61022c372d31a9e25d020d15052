@@ -1,6 +1,7 @@
 
-T
-squid:S106"9Replace this use of System.out or System.err by a logger.(äÛÙ¸ýÿÿÿÿ
-nsquid:S001174"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ÿ•Ððúÿÿÿÿ
-isquid:S00117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ø™åÕ
-isquid:S00117-"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ø™åÕ
+[
+squid:S1067"9Replace this use of System.out or System.err by a logger.(äÛÙ¸ýÿÿÿÿ8¯ ™•–-
+psquid:S00117F"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ø™åÕ8¯ ™•–-
+psquid:S00117:"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ø™åÕ8¯ ™•–-
+nsquid:S00117M"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÁáG8¯ ™•–-
+hsquid:CommentedOutCodeLine2"<This block of commented-out lines of code should be removed.(ÿÄ¦J8€æ”—–-

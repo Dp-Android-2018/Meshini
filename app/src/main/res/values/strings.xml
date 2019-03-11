@@ -65,4 +65,27 @@
     <string name="cancel_trip">Cancel Trip</string>
     <string name="write_review_optional">Write Review (optional)</string>
     <string name="done">Done</string>
+    <string name="enter_mail_phone_error_message">Please enter email or phone :)</string>
+    <string name="enter_password_error_message">Please enter password :)</string>
+    <string name="enter_e_mail_to_reset_your_account">Enter E-mail to reset your account</string>
+    <string name="countryCityPojo">City</string>
+    <string name="enter_first_name_error_message">please enter first name :)</string>
+    <string name="enter_last_name_error_message">please enter last name :)</string>
+    <string name="enter_mail_error_message">please enter email</string>
+    <string name="enter_phone_error_message">please enter phone</string>
+    <string name="invalid_mail_error_message">Invalid e_mail address</string>
+    <string name="password_length_message_error">Password length must be more than 8 character</string>
+    <string name="my_requests">My requests</string>
+    <string name="select_city_error_message">please select city</string>
+
+    <string-array name="countries_array">
+        <item>Afghanistan</item>
+        <item>Albania</item>
+        <item>Algeria</item>
+        <item>American Samoa</item>
+        <item>Andorra</item>
+        <item>Angola</item>
+        <item>Anguilla</item>
+        <item>Antarctica</item>
+    </string-array>
 </resources>

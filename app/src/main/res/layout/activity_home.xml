@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/home_bg"
     tools:context=".view.activity.HomeActivity">
 
     <ImageView
@@ -12,6 +13,7 @@
         android:layout_height="@dimen/dp113h"
         android:layout_marginTop="@dimen/dp111h"
         android:src="@mipmap/logo"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -47,16 +49,22 @@
         android:text="@string/get_started"
         android:textColor="@android:color/white"
         android:textSize="@dimen/sp23_5"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="getStart"/>
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="@dimen/dp55w"
         android:layout_height="@dimen/dp55h"
         android:background="#349D9D"
+        android:src="@drawable/ic_left_arrow_white"
+        android:rotation="180"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:onClick="getStart"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

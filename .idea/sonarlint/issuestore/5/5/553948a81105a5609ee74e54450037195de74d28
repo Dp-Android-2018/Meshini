@@ -1,0 +1,12 @@
+
+nsquid:CommentedOutCodeLineQ"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8¨Ù™˜–-
+Ksquid:S1199H"-Extract this nested code block into a method.(ã–ÑÕ8¨Ù™˜–-
+lsquid:MaximumInheritanceDepth"<This class has 6 parents which is greater than 5 authorized.(þàÈí8¢Û«––-
+isquid:S1301?"KReplace this "switch" statement by "if" statements to increase readability.(·üÿª8ŸœÜ’–-
+Usquid:S1135A"2Complete the task associated to this TODO comment.(°Ÿ¨³ýÿÿÿÿ8¥Æ™˜–-
+nsquid:CommentedOutCodeLineO"<This block of commented-out lines of code should be removed.(¶Ø£ýÿÿÿÿ8¨Ù™˜–-
+Psquid:S1199@"-Extract this nested code block into a method.(ˆò²³þÿÿÿÿ8­è¼–-
+nsquid:CommentedOutCodeLineJ"<This block of commented-out lines of code should be removed.(Ä¸ÌÊþÿÿÿÿ8ú…—´–-
+W"squid:SwitchLastCaseIsDefaultCheck?""Add a default case to this switch.(·üÿª8­è¼–-
+psquid:UselessImportCheck"ERemove this unused import 'androidx.appcompat.app.AppCompatActivity'.(€¶£î8¢Û«––-
+Osquid:S1135:"2Complete the task associated to this TODO comment.(ù¹©=8ãÈ¿•-

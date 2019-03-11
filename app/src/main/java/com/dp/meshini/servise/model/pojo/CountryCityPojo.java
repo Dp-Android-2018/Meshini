@@ -3,7 +3,7 @@ package com.dp.meshini.servise.model.pojo;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class City {
+public class CountryCityPojo {
     @Expose
     @SerializedName("name")
     private String name;

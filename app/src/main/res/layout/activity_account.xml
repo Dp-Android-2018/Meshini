@@ -118,7 +118,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/et_last_name" />
 
             <EditText
-                android:id="@+id/et_country"
+                android:id="@+id/sp_country"
                 style="@style/EditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -132,7 +132,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/et_email" />
 
             <EditText
-                android:id="@+id/et_city"
+                android:id="@+id/sp_city"
                 style="@style/EditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -140,10 +140,10 @@
                 android:background="@drawable/edit_text_border"
                 android:drawableEnd="@drawable/drop_down_arrow"
                 android:paddingEnd="20dp"
-                android:text="city"
+                android:text="countryCityPojo"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/et_country" />
+                app:layout_constraintTop_toBottomOf="@+id/sp_country" />
 
             <EditText
                 android:id="@+id/et_phone"
@@ -156,7 +156,7 @@
                 android:text="@string/phone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/et_city" />
+                app:layout_constraintTop_toBottomOf="@+id/sp_city" />
 
             <EditText
                 android:id="@+id/et_password"

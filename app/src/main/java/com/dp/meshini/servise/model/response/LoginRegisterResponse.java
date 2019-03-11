@@ -3,7 +3,9 @@ package com.dp.meshini.servise.model.response;
 import com.dp.meshini.servise.model.pojo.ClientData;
 import com.google.gson.annotations.SerializedName;
 
-public class LoginRegisterResponse {
+import java.util.List;
+
+public class LoginRegisterResponse extends DefaultResponse {
     @SerializedName("data")
     private ClientData clientData;
 
