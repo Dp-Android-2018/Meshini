@@ -7,6 +7,8 @@ public class StringMessageResponse {
     @SerializedName("message")
     private String message;
 
+
+
     public String getMessage() {
         return message;
     }

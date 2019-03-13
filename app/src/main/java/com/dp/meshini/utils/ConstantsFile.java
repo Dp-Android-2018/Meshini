@@ -15,23 +15,33 @@ public class ConstantsFile {
         public static final String CHANGE_PASSWORD_URL ="change-password";
         public static final String COUNTRY_URL="utilities/world-countries";
         public static final String CITY_URL="utilities/world-cities";
+        public static final String EDIT_PROFILE_URL="client/profile";
     }
 
     public static class Constants {
         public static final String API_KEY = "27180383-4918-4b94-9e24-27e37ec19c94";
         public static final String CONTENT_TYPE = "application/json";
+        public static final String FORGET_PASSWORD_ACTIVITY="fpa";
+        public static final String MAIL_ACTIVATION_ACTIVITY="maa";
         public static final int SUCCESS_CODE = 200;
         public static final int INVALID_DATA_CODE=422;
         public static final int UNAUTHENTICATED_CODE=401;
+        public static final int TRY_LATER=429;
+        public static final int UNAUTH0RIZED_CODE=403;
 
     }
 
     public static class SharedPref {
+        public static final String SHARED_PREF_NAME="MESHINI_SHARED_PREF_NAME";
+        public static final String APP_LANGUAGE = "APP_LANGUAGE";
+
 
     }
 
     public static class IntentConstants {
-
+        public static final String CLIENT_PHONE="clientphone";
+        public static final String SOURCE_ACTIVITY="source_activity";
+        public static final String TOKEN="token";
     }
 
 }

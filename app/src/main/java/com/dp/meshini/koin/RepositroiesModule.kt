@@ -1,11 +1,7 @@
 package com.dp.meshini.koin
 
-import com.dp.meshini.repositories.CitiesRepository
-import com.dp.meshini.repositories.CountriesRepository
-import com.dp.meshini.repositories.LoginRepository
-import com.dp.meshini.repositories.RegisterRepository
-import com.dp.meshini.servise.model.request.LoginRequest
-import com.dp.meshini.servise.model.request.RegisterRequest
+import com.dp.meshini.repositories.*
+import com.dp.meshini.servise.model.request.*
 import org.koin.dsl.module.module
 
 @JvmField
@@ -15,7 +11,20 @@ val DependencyModule = module {
     single { RegisterRepository() }
     single { CountriesRepository() }
     single { CitiesRepository() }
+    single { SendActivationCodeRepository() }
+    single { ActivatePhoneRepository() }
+    single { ResetPasswordRepository() }
+    single { ForgetPasswordRepository() }
+    single { UpdateProfileRepository() }
+    single { ChangePasswordRepository() }
+
     factory { LoginRequest() }
     factory { RegisterRequest() }
+    factory { SendActivationCodeRequest() }
+    factory { ActivatePhoneRequest() }
+    factory { ResetPasswordRequest() }
+    factory { ForgetPasswordRequest() }
+    factory { UpdateProfileRequest() }
+    factory { ChangePasswordRequest() }
 
 }

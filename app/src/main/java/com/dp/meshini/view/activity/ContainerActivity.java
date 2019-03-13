@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -56,7 +55,7 @@ public class ContainerActivity extends AppCompatActivity
         int id = item.getItemId();
         switch (id) {
 //            case R.id.account: {
-//                intent = new Intent(ContainerActivity.this, AccountActivity.class);
+//                intent = new Intent(ContainerActivity.this, ProfileActivity.class);
 //                startActivity(intent);
 //                break;
 //            }
@@ -121,7 +120,7 @@ public class ContainerActivity extends AppCompatActivity
         View itemView = navigationView.getHeaderView(0);
         View account=itemView.findViewById(R.id.v_account);
         account.setOnClickListener(v -> {
-            Intent intent = new Intent(ContainerActivity.this, AccountActivity.class);
+            Intent intent = new Intent(ContainerActivity.this, ProfileActivity.class);
             startActivity(intent);
         });
     }

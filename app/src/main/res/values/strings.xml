@@ -77,15 +77,11 @@
     <string name="password_length_message_error">Password length must be more than 8 character</string>
     <string name="my_requests">My requests</string>
     <string name="select_city_error_message">please select city</string>
+    <string name="activated_code_sent_successfully_message">Activation code was sent successfully</string>
+    <string name="account_activated_successfully_message">Account has been activated successfully :)</string>
+    <string name="invalid_code_message">Invalid activated code :(</string>
+    <string name="password_confirmation_error_message">password confirmation must be exact like password</string>
+    <string name="old_password">Old Password</string>
+    <string name="no_data_error_message">No Data Entered</string>
 
-    <string-array name="countries_array">
-        <item>Afghanistan</item>
-        <item>Albania</item>
-        <item>Algeria</item>
-        <item>American Samoa</item>
-        <item>Andorra</item>
-        <item>Angola</item>
-        <item>Anguilla</item>
-        <item>Antarctica</item>
-    </string-array>
 </resources>

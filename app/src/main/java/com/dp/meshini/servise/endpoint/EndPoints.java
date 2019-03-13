@@ -7,6 +7,7 @@ import com.dp.meshini.servise.model.request.ForgetPasswordRequest;
 import com.dp.meshini.servise.model.request.LoginRequest;
 import com.dp.meshini.servise.model.request.ResetPasswordRequest;
 import com.dp.meshini.servise.model.request.SendActivationCodeRequest;
+import com.dp.meshini.servise.model.request.UpdateProfileRequest;
 import com.dp.meshini.servise.model.response.CountryCityResponse;
 import com.dp.meshini.servise.model.response.ForgetPasswordResponse;
 import com.dp.meshini.servise.model.response.LoginRegisterResponse;
@@ -18,6 +19,7 @@ import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
@@ -47,6 +49,7 @@ public interface EndPoints {
     @POST(ConstantsFile.Urls.CHANGE_PASSWORD_URL)
     Observable<Response<StringMessageResponse>> changePassword(@Body ChangePasswordRequest request);
 
+
     @GET(ConstantsFile.Urls.COUNTRY_URL)
     Observable<Response<CountryCityResponse>>getCountries();
 
@@ -54,9 +57,7 @@ public interface EndPoints {
     Observable<Response<CountryCityResponse>>getCities(@Query("world_country_id")int id);
 
 
-
-
-
-
+    @PUT(ConstantsFile.Urls.EDIT_PROFILE_URL)
+    Observable<Response<StringMessageResponse>>editProfile(@Body UpdateProfileRequest request);
 
 }

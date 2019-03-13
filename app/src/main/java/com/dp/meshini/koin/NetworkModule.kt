@@ -5,12 +5,15 @@ import com.dp.meshini.servise.endpoint.EndPoints
 import com.dp.meshini.servise.model.response.DefaultResponse
 import com.dp.meshini.servise.model.response.LoginRegisterResponse
 import com.dp.meshini.utils.ConstantsFile
+import com.dp.meshini.utils.SharedPreferenceHelpers
 import com.google.gson.JsonObject
 import okhttp3.OkHttpClient
 import okhttp3.ResponseBody
 import org.greenrobot.eventbus.EventBus
 import org.koin.android.ext.koin.androidApplication
 import org.koin.dsl.module.module
+import org.koin.java.standalone.KoinJavaComponent.get
+import org.koin.java.standalone.KoinJavaComponent.inject
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
@@ -31,14 +34,14 @@ internal fun provideOkHttpClient(context: Context): OkHttpClient {
             .readTimeout(60, TimeUnit.SECONDS)
     okHttpClient.addInterceptor { chain ->
         val original = chain.request()
-
+        val sharedPreferenceHelpers:SharedPreferenceHelpers= get(SharedPreferenceHelpers::class.java)
         // Request customization: add request headers
         val requestBuilder = original.newBuilder()
         //requestBuilder.header("Accept-Language", CustomUtils.getInstance().getAppLanguage(MyApp.getInstance()));
         requestBuilder.header("x-api-key", ConstantsFile.Constants.API_KEY)
         requestBuilder.header("Content-Type", ConstantsFile.Constants.CONTENT_TYPE)
         requestBuilder.header("Accept", ConstantsFile.Constants.CONTENT_TYPE)
-        //requestBuilder.head("Authorization", );
+        requestBuilder.header("Authorization","Bearer "+sharedPreferenceHelpers.saveUserObject.apiToken)
         // <-- this is the important line
 
         val request = requestBuilder.build()

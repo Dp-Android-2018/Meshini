@@ -1,6 +1,4 @@
 
-[squid:UselessImportCheck"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ÃØÛ¿–-
-Qsquid:S1135Š"2Complete the task associated to this TODO comment.(ÓìŞ³8Ô¤Î·–-
-Psquid:S1135|"2Complete the task associated to this TODO comment.(ÅáîÚ8“ëâ˜•-
-¤squid:S1186R"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¹Æº×şÿÿÿÿ8±âµÀ–-
-Lsquid:S1604†"(Make this anonymous inner class a lambda(Î‘ÄŠüÿÿÿÿ8î™Æ·–-
+¤squid:S1186N"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¹Æº×şÿÿÿÿ8±âµÀ–-
+Qsquid:S1135„"2Complete the task associated to this TODO comment.(ÓìŞ³8µ˜ùŞ–-
+Psquid:S1135x"2Complete the task associated to this TODO comment.(ÅáîÚ8“ëâ˜•-

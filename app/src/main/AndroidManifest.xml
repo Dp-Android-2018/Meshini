@@ -16,34 +16,34 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:replace="android:appComponentFactory">
-        <activity android:name=".view.activity.ForgetPasswordActivity"></activity>
-        <activity android:name=".view.activity.UpcomingTripItemDetail"></activity>
-        <activity android:name=".view.activity.ChatActivity"></activity>
-        <activity android:name=".view.activity.DestinationActivity">
-        </activity>
-        <activity android:name=".view.activity.ContainerActivity"></activity>
-        <activity android:name=".view.activity.AddCreditCardActivity" />
-        <activity android:name=".view.activity.RequestSubmittedActivity" />
-        <activity android:name=".view.activity.OffersActivity" />
-        <activity android:name=".view.activity.PastTripItemDetail" />
-        <activity android:name=".view.activity.TripsActivity" />
-        <activity android:name=".view.activity.PaymentActivity" />
-        <activity android:name=".view.activity.MainActivity"></activity>
-        <activity android:name=".view.activity.ChangePasswordActivity" />
-        <activity android:name=".view.activity.ResetPasswordActivity" />
-        <activity android:name=".view.activity.ActivatedSuccessfullyActivity" />
-        <activity android:name=".view.activity.PhoneActivationActivity" />
-        <activity android:name=".view.activity.MailActivationActivity" />
-        <activity android:name=".view.activity.RegisterActivity" />
-        <activity android:name=".view.activity.LoginActivity" />
-        <activity android:name=".view.activity.HomeActivity">
+        <activity android:name=".view.activity.ChangePasswordActivity"></activity>
+        <activity android:name=".view.activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.activity.AccountActivity" />
+        <activity android:name=".view.activity.ForgetPasswordActivity" />
+        <activity android:name=".view.activity.UpcomingTripItemDetail" />
+        <activity android:name=".view.activity.ChatActivity" />
+        <activity android:name=".view.activity.DestinationActivity" />
+        <activity android:name=".view.activity.ContainerActivity" />
+        <activity android:name=".view.activity.AddCreditCardActivity" />
+        <activity android:name=".view.activity.RequestSubmittedActivity" />
+        <activity android:name=".view.activity.OffersActivity" />
+        <activity android:name=".view.activity.PastTripItemDetail" />
+        <activity android:name=".view.activity.TripsActivity" />
+        <activity android:name=".view.activity.PaymentActivity" />
+        <activity android:name=".view.activity.MainActivity" />
+        <activity android:name=".view.activity.ResetPasswordActivity" />
+        <activity android:name=".view.activity.ActivatedSuccessfullyActivity" />
+        <activity android:name=".view.activity.PhoneActivationActivity" />
+        <activity android:name=".view.activity.MailActivationActivity" />
+        <activity android:name=".view.activity.RegisterActivity" />
+        <activity android:name=".view.activity.LoginActivity" />
+        <activity android:name=".view.activity.HomeActivity"></activity>
+        <activity android:name=".view.activity.ProfileActivity" />
         <activity android:name=".view.activity.NoInternetConnectionActivity" />
 
         <receiver
