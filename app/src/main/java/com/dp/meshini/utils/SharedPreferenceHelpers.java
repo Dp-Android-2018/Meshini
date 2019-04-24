@@ -4,6 +4,8 @@ import com.dp.meshini.servise.model.pojo.ClientData;
 
 import kotlin.Lazy;
 
+import static com.dp.meshini.utils.ConstantsFile.SharedPref.GUIDE_IMAGE_URL;
+import static com.dp.meshini.utils.ConstantsFile.SharedPref.REQUEST_ID;
 import static org.koin.java.standalone.KoinJavaComponent.inject;
 
 public class SharedPreferenceHelpers {
@@ -37,6 +39,21 @@ public class SharedPreferenceHelpers {
         sharedPrefrenceLazy.getValue().saveObjectToSharedPreferences(ConstantsFile.SharedPref.SHARED_PREF_NAME, data);
     }
 
+    public void saveRequestId(int requestId){
+        sharedPrefrenceLazy.getValue().addIntegerToSharedPrederances(REQUEST_ID,requestId);
+    }
+
+    public int getRequestId(){
+        return sharedPrefrenceLazy.getValue().getIntegerFromSharedPrederances(REQUEST_ID);
+    }
+
+    public void saveGuidImageUrl(String url){
+        sharedPrefrenceLazy.getValue().addStringToSharedPrederances(GUIDE_IMAGE_URL,url);
+    }
+
+    public String getGuideImage(){
+        return sharedPrefrenceLazy.getValue().getStringFromSharedPrederances(GUIDE_IMAGE_URL);
+    }
 
 
 

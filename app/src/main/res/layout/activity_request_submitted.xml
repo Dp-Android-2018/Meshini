@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/white_bg"
-    tools:context=".activity.RequestSubmittedActivity">
+    tools:context=".view.activity.RequestSubmittedActivity">
 
     <TextView
         android:id="@+id/textView6"
@@ -37,7 +37,7 @@
         android:layout_width="@dimen/dp78w"
         android:layout_height="@dimen/dp79h"
         android:layout_marginTop="@dimen/dp66h"
-        android:src="@drawable/checked"
+        app:srcCompat="@drawable/checked"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />

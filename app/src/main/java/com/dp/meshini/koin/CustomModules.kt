@@ -1,6 +1,7 @@
 package com.dp.meshini.koin
 
 import com.dp.meshini.utils.ConnectionReceiver
+import com.dp.meshini.utils.FirebaseDataBase
 import com.dp.meshini.utils.SharedPrefrence
 import com.dp.meshini.utils.SharedPreferenceHelpers
 import org.koin.android.ext.koin.androidContext
@@ -12,4 +13,5 @@ val CustomModules= module {
     single {ConnectionReceiver()}
     single { SharedPrefrence(androidContext()) }
     single { SharedPreferenceHelpers() }
+    single { FirebaseDataBase() }
 }

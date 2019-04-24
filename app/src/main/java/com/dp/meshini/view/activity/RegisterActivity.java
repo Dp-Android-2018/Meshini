@@ -8,17 +8,26 @@ import android.widget.AdapterView;
 
 import com.dp.meshini.R;
 import com.dp.meshini.databinding.ActivityRegisterBinding;
+import com.dp.meshini.notification.FirebaseToken;
 import com.dp.meshini.servise.model.pojo.CountryCityPojo;
 import com.dp.meshini.servise.model.request.RegisterRequest;
+import com.dp.meshini.servise.model.response.ErrorResponse;
 import com.dp.meshini.utils.ConstantsFile;
+import com.dp.meshini.utils.ProgressDialogUtils;
 import com.dp.meshini.utils.SharedPreferenceHelpers;
 import com.dp.meshini.utils.ValidationUtils;
 import com.dp.meshini.view.adapter.SpinnerAdapter;
 import com.dp.meshini.viewmodel.RegisterViewModel;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.Observer;
+
+import java.io.IOException;
+
 import kotlin.Lazy;
 
 import static org.koin.java.standalone.KoinJavaComponent.inject;
@@ -126,16 +135,38 @@ public class RegisterActivity extends AppCompatActivity {
         registerRequest.setEmail(email);
         registerRequest.setPassword(password);
         registerRequest.setPhone(phone);
+        ProgressDialogUtils.getInstance().showProgressDialog(this);
+        FirebaseToken.getInstance().getFirebaseToken().observe(this, s -> {
+            registerRequest.setDeviceToken(s);
+            callRequest();
+        });
+    }
 
+    public void callRequest(){
         registerViewModelLazy.getValue().register(registerRequest).observe(this, loginRegisterResponseResponse -> {
-            if (loginRegisterResponseResponse.code() == ConstantsFile.Constants.SUCCESS_CODE) {
+            ProgressDialogUtils.getInstance().cancelDialog();
+            if (loginRegisterResponseResponse.isSuccessful()) {
                 // TODO: 3/10/2019 save data to sharedpref
                 sharedPreferenceHelpersLazy.getValue().saveDataToPrefs(loginRegisterResponseResponse.body().getClientData());
+                sharedPreferenceHelpersLazy.getValue().saveAppLanguage("en");
                 Intent intent = new Intent(RegisterActivity.this, MailActivationActivity.class);
                 startActivity(intent);
+            }else {
+                Gson gson = new GsonBuilder().create();
+                ErrorResponse errorResponse = new ErrorResponse();
+                try {
+                    errorResponse = gson.fromJson(loginRegisterResponseResponse.errorBody().string(), ErrorResponse.class);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                String error = "";
+                for (String string : errorResponse.getErrors()) {
+                    error += string;
+                    error += "\n";
+                }
+                showSnackbar(error);
             }
         });
-
     }
 
     public void back(View view) {

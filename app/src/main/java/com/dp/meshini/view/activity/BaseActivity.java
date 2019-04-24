@@ -40,7 +40,7 @@ public class BaseActivity extends AppCompatActivity implements ConnectionReceive
 
     public void displayMessage(String message) {
         Toast.makeText(getApplicationContext(),message,Toast.LENGTH_LONG).show();
-        Snackbar.make(baseBinding.parent, message, Snackbar.LENGTH_LONG).show();
+        //Snackbar.make(baseBinding.parent, message, Snackbar.LENGTH_LONG).show();
     }
 
     @Override

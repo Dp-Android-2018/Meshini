@@ -1,0 +1,7 @@
+
+[
+squid:S106*"9Replace this use of System.out or System.err by a logger.(ό¶°λώÿÿÿÿ8ζ‘—-
+Fsquid:S1148N"#Use a logger to log this exception.(€ΙΤ…ύÿÿÿÿ8‹‘ÿ—-
+€squid:UselessImportCheck"URemove this unused import 'com.dp.meshini.databinding.ActivityChangePasswordBinding'.(Α§ÿ8ΐÿωΉ—-
+bsquid:S2147M"DCombine this catch with the one at line 75, which has the same body.(ο­£Δ8‹‘ÿ—-
+lsquid:MaximumInheritanceDepth"<This class has 6 parents which is greater than 5 authorized.(ΧΜ8φÿ—-

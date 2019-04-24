@@ -1,12 +1,16 @@
 
-lsquid:MaximumInheritanceDepth"<This class has 6 parents which is greater than 5 authorized.(þàÈí8¢Û«––-
-Usquid:S1135C"2Complete the task associated to this TODO comment.(°Ÿ¨³ýÿÿÿÿ8¥Æ™˜–-
-Psquid:S1199B"-Extract this nested code block into a method.(ˆò²³þÿÿÿÿ8­è¼–-
-nsquid:CommentedOutCodeLineL"<This block of commented-out lines of code should be removed.(Ä¸ÌÊþÿÿÿÿ8ú…—´–-
-isquid:S1301A"KReplace this "switch" statement by "if" statements to increase readability.(·üÿª8ŸœÜ’–-
-nsquid:CommentedOutCodeLineQ"<This block of commented-out lines of code should be removed.(¶Ø£ýÿÿÿÿ8¨Ù™˜–-
-nsquid:CommentedOutCodeLineS"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8¨Ù™˜–-
-Osquid:S1135<"2Complete the task associated to this TODO comment.(ù¹©=8ãÈ¿•-
-W"squid:SwitchLastCaseIsDefaultCheckA""Add a default case to this switch.(·üÿª8­è¼–-
-psquid:UselessImportCheck"ERemove this unused import 'androidx.appcompat.app.AppCompatActivity'.(€¶£î8¢Û«––-
-Ksquid:S1199J"-Extract this nested code block into a method.(ã–ÑÕ8¨Ù™˜–-
+Psquid:S1199J"-Extract this nested code block into a method.(ˆò²³þÿÿÿÿ8­è¼–-
+Osquid:S1135="2Complete the task associated to this TODO comment.(ù¹©=8ãÈ¿•-
+lsquid:MaximumInheritanceDepth"<This class has 7 parents which is greater than 5 authorized.(þàÈí8¢Û«––-
+Usquid:S1135K"2Complete the task associated to this TODO comment.(°Ÿ¨³ýÿÿÿÿ8¥Æ™˜–-
+gsquid:UselessImportCheck"<Remove this unused import 'androidx.annotation.RequiresApi'.(å„» 8ïËý§™-
+[
+squid:S106-"9Replace this use of System.out or System.err by a logger.(¹øøÿÿÿÿ8¢Ÿ¨™-
+Esquid:S1604A"(Make this anonymous inner class a lambda(Ô¬ï}8ø –ýš-
+psquid:UselessImportCheck"ERemove this unused import 'androidx.appcompat.app.AppCompatActivity'.(€¶£î8¢Û«––-
+W"squid:SwitchLastCaseIsDefaultCheckI""Add a default case to this switch.(·üÿª8­è¼–-
+V
+squid:S106."9Replace this use of System.out or System.err by a logger.(‹£¸’8ë¶ž¨™-
+Ksquid:S1199X"-Extract this nested code block into a method.(ã–ÑÕ8¨Ù™˜–-
+isquid:S1301I"KReplace this "switch" statement by "if" statements to increase readability.(·üÿª8ŸœÜ’–-
+]squid:UselessImportCheck"-Remove this unused import 'android.os.Build'.(ãÇ¤Úýÿÿÿÿ8ðËý§™-

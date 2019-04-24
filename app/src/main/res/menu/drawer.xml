@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
 
     <group
         android:id="@+id/g1"
@@ -7,33 +8,31 @@
         <item
             android:id="@+id/your_trip"
             android:checked="true"
-            android:title="@string/your_trips" />
+            android:title="@string/your_trips"/>
         <item
             android:id="@+id/my_requests"
-            android:checked="true"
             android:title="@string/my_requests" />
         <item
-            android:id="@+id/payment"
-            android:checked="true"
-            android:title="Payment" />
+            android:id="@+id/active_trip"
+            android:title="@string/active_trip" />
+
+        <!--<item-->
+            <!--android:id="@+id/payment"-->
+            <!--android:title="@string/payment" />-->
 
         <item
             android:id="@+id/help"
-            android:checked="true"
             android:title="@string/help" />
         <item
             android:id="@+id/language"
-            android:checked="true"
-            android:title="Arabic" />
+            android:title="@string/select_language" />
 
         <item
             android:id="@+id/rate"
-            android:checked="true"
-            android:title="Rate us" />
+            android:title="@string/rate_us" />
 
         <item
             android:id="@+id/logout"
-            android:checked="true"
             android:title="@string/log_out" />
     </group>
 </menu>

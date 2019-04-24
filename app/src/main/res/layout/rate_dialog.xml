@@ -11,11 +11,10 @@
     android:layout_height="wrap_content">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/circleImageView5"
+        android:id="@+id/civ_guide_image"
         android:layout_width="@dimen/dp109w"
         android:layout_height="@dimen/dp110h"
         android:layout_marginTop="10dp"
-        android:src="@color/text_color_black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -30,12 +29,17 @@
         android:rating="3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/circleImageView5"
+        app:layout_constraintTop_toBottomOf="@+id/civ_guide_image"
         android:theme="@style/RatingBar"/>
 
     <EditText
-        android:id="@+id/editText4"
-        style="@style/EditText"
+        android:id="@+id/et_comment"
+        android:textColor="@color/text_color_black"
+        android:textSize="@dimen/sp12"
+        android:textColorHint="@color/text_color_black"
+        android:maxLines="1"
+        android:paddingEnd="@dimen/dp18w"
+        android:paddingStart="20dp"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/dp69h"
         android:layout_marginTop="@dimen/dp14h"
@@ -48,6 +52,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ratingBar2" />
 
     <Button
+        android:id="@+id/bt_done"
         android:layout_width="@dimen/dp187w"
         android:layout_height="wrap_content"
         android:layout_marginTop="14dp"
@@ -61,7 +66,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText4" />
+        app:layout_constraintTop_toBottomOf="@+id/et_comment" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

@@ -8,8 +8,10 @@ import android.view.WindowManager;
 
 import com.dp.meshini.R;
 import com.dp.meshini.databinding.ActivityPhoneActivationBinding;
+import com.dp.meshini.servise.model.pojo.ClientData;
 import com.dp.meshini.servise.model.response.ForgetPasswordResponse;
 import com.dp.meshini.utils.ConstantsFile;
+import com.dp.meshini.utils.SharedPreferenceHelpers;
 import com.dp.meshini.viewmodel.PhoneActivationViewModel;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -34,6 +36,7 @@ public class PhoneActivationActivity extends AppCompatActivity {
     String phone;
     String source;
     Lazy<PhoneActivationViewModel>phoneActivationViewModelLazy=inject(PhoneActivationViewModel.class);
+    Lazy<SharedPreferenceHelpers>sharedPreferenceHelpersLazy=inject(SharedPreferenceHelpers.class);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -53,13 +56,16 @@ public class PhoneActivationActivity extends AppCompatActivity {
         if(source.equals(ConstantsFile.Constants.MAIL_ACTIVATION_ACTIVITY)) {
             phoneActivationViewModelLazy.getValue().checkCode(code, phone).observe(PhoneActivationActivity.this, stringMessageResponseResponse -> {
                 switch (stringMessageResponseResponse.code()) {
-                    case ConstantsFile.Constants.SUCCESS_CODE: {
+                    case ConstantsFile.Constants.SUCCESS_CODE:{
+                        ClientData clientData=sharedPreferenceHelpersLazy.getValue().getSaveUserObject();
+                        clientData.setActivated(true);
+                        sharedPreferenceHelpersLazy.getValue().saveDataToPrefs(clientData);
                         showSnackbar(getString(R.string.account_activated_successfully_message));
-                        new Handler().postDelayed(() -> {
+                        new Handler().postDelayed(() ->{
                             Intent intent = new Intent(PhoneActivationActivity.this, ActivatedSuccessfullyActivity.class);
                             startActivity(intent);
                             finishAffinity();
-                        }, Snackbar.LENGTH_LONG);
+                        },Snackbar.LENGTH_LONG);
                         break;
                     }
                     case ConstantsFile.Constants.UNAUTH0RIZED_CODE: {
@@ -119,5 +125,9 @@ public class PhoneActivationActivity extends AppCompatActivity {
 
     public void showSnackbar(String message){
         Snackbar.make(binding.clRoot,message,Snackbar.LENGTH_LONG).show();
+    }
+
+    public void back(View view){
+        finish();
     }
 }

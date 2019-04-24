@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.AddCreditCardActivity"
+    tools:context="view.activity.AddCreditCardActivity"
     android:background="@drawable/white_bg">
     <TextView
         android:id="@+id/textView9"
@@ -22,7 +22,7 @@
         android:layout_width="@dimen/dp23w"
         android:layout_height="@dimen/dp23h"
         android:layout_marginStart="@dimen/dp25w"
-        android:src="@drawable/ic_left_arrow"
+        app:srcCompat="@drawable/ic_left_arrow"
         app:layout_constraintBottom_toBottomOf="@+id/textView9"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView9" />
@@ -42,7 +42,13 @@
 
     <EditText
         android:id="@+id/et_credit"
-        style="@style/EditText"
+        android:textColor="@color/text_color_black"
+        android:textSize="@dimen/sp12"
+        android:textColorHint="@color/text_color_black"
+        android:maxLines="1"
+        android:paddingEnd="@dimen/dp18w"
+        android:gravity="center_vertical"
+        android:paddingStart="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp23h"
@@ -56,7 +62,13 @@
         app:layout_constraintTop_toBottomOf="@+id/textView19" />
     <EditText
         android:id="@+id/et_debit"
-        style="@style/EditText"
+        android:textColor="@color/text_color_black"
+        android:textSize="@dimen/sp12"
+        android:textColorHint="@color/text_color_black"
+        android:maxLines="1"
+        android:paddingEnd="@dimen/dp18w"
+        android:gravity="center_vertical"
+        android:paddingStart="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp23h"
@@ -69,7 +81,13 @@
         app:layout_constraintTop_toBottomOf="@+id/et_credit" />
     <EditText
         android:id="@+id/et_date"
-        style="@style/EditText"
+        android:textColor="@color/text_color_black"
+        android:textSize="@dimen/sp12"
+        android:textColorHint="@color/text_color_black"
+        android:maxLines="1"
+        android:paddingEnd="@dimen/dp18w"
+        android:gravity="center_vertical"
+        android:paddingStart="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp23h"
@@ -81,7 +99,13 @@
         app:layout_constraintTop_toBottomOf="@+id/et_debit" />
     <EditText
         android:id="@+id/et_name"
-        style="@style/EditText"
+        android:textColor="@color/text_color_black"
+        android:textSize="@dimen/sp12"
+        android:textColorHint="@color/text_color_black"
+        android:maxLines="1"
+        android:paddingEnd="@dimen/dp18w"
+        android:gravity="center_vertical"
+        android:paddingStart="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp23h"

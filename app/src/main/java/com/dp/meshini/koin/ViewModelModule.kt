@@ -16,5 +16,11 @@ val ViewModelModule = module {
     viewModel { ResetPasswordViewModel(androidApplication()) }
     viewModel { ProfileViewModel(androidApplication()) }
     viewModel { ChangePasswordViewModel(androidApplication()) }
-
+    viewModel { RequestTripViewModel(androidApplication()) }
+    viewModel { DestinationViewModel(androidApplication()) }
+    viewModel { OffersViewModel(androidApplication()) }
+    viewModel { PendingRequestsViewModel(androidApplication()) }
+    viewModel { UpcomingTripDetailViewModel(androidApplication()) }
+    viewModel { TripsViewModel(androidApplication()) }
+    viewModel { ContainerViewModel(androidApplication()) }
 }

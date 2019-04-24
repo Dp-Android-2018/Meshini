@@ -31,7 +31,7 @@
         android:layout_width="@dimen/dp78w"
         android:layout_height="@dimen/dp62h"
         android:layout_marginTop="@dimen/dp53h"
-        android:src="@mipmap/logo"
+        app:srcCompat="@mipmap/logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

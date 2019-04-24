@@ -22,15 +22,17 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
+                android:id="@+id/iv_back"
                 android:layout_width="@dimen/dp23w"
                 android:layout_height="@dimen/dp23h"
                 android:layout_marginStart="@dimen/dp25w"
-                android:src="@drawable/ic_left_arrow"
+                app:srcCompat="@drawable/ic_left_arrow"
                 app:layout_constraintBottom_toBottomOf="@+id/textView9"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textView9" />
+                app:layout_constraintTop_toTopOf="@+id/textView9"
+                android:onClick="back"/>
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/circleImageView"
+                android:id="@+id/iv_personal_image"
                 android:layout_width="@dimen/dp93w"
                 android:layout_height="@dimen/dp94h"
                 android:layout_marginTop="@dimen/dp19h"
@@ -46,17 +48,19 @@
                 android:layout_marginStart="@dimen/dp63w"
                 android:layout_marginTop="@dimen/dp63h"
                 android:background="@drawable/bg_image_circular"
-                app:layout_constraintStart_toStartOf="@+id/circleImageView"
-                app:layout_constraintTop_toTopOf="@+id/circleImageView" />
+                app:layout_constraintStart_toStartOf="@+id/iv_personal_image"
+                app:layout_constraintTop_toTopOf="@+id/iv_personal_image" />
 
             <ImageView
+                android:id="@+id/iv_upload_image"
                 android:layout_width="@dimen/dp23w"
                 android:layout_height="@dimen/dp23w"
-                android:src="@drawable/ic_photo"
+                app:srcCompat="@drawable/ic_photo"
                 app:layout_constraintBottom_toBottomOf="@+id/view2"
                 app:layout_constraintEnd_toEndOf="@+id/view2"
                 app:layout_constraintStart_toStartOf="@+id/view2"
-                app:layout_constraintTop_toTopOf="@id/view2" />
+                app:layout_constraintTop_toTopOf="@id/view2"
+                android:onClick="uploadImage"/>
 
 
             <View
@@ -67,11 +71,17 @@
                 android:background="@color/text_color_black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/circleImageView" />
+                app:layout_constraintTop_toBottomOf="@+id/iv_personal_image" />
 
             <EditText
                 android:id="@+id/et_first_name"
-                style="@style/EditText"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/sp12"
+                android:textColorHint="@color/text_color_black"
+                android:maxLines="1"
+                android:paddingEnd="@dimen/dp18w"
+                android:gravity="center_vertical"
+                android:paddingStart="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp23h"
@@ -83,7 +93,13 @@
 
             <EditText
                 android:id="@+id/et_last_name"
-                style="@style/EditText"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/sp12"
+                android:textColorHint="@color/text_color_black"
+                android:maxLines="1"
+                android:paddingEnd="@dimen/dp18w"
+                android:gravity="center_vertical"
+                android:paddingStart="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp16h"
@@ -95,7 +111,13 @@
 
             <EditText
                 android:id="@+id/et_email"
-                style="@style/EditText"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/sp12"
+                android:textColorHint="@color/text_color_black"
+                android:maxLines="1"
+                android:paddingEnd="@dimen/dp18w"
+                android:gravity="center_vertical"
+                android:paddingStart="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp16h"
@@ -108,7 +130,13 @@
 
             <EditText
                 android:id="@+id/et_phone"
-                style="@style/EditText"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/sp12"
+                android:textColorHint="@color/text_color_black"
+                android:maxLines="1"
+                android:paddingEnd="@dimen/dp18w"
+                android:gravity="center_vertical"
+                android:paddingStart="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp23h"

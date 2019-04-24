@@ -5,7 +5,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/cl_root">
+        android:id="@+id/cl_root"
+        android:background="@drawable/home_bg">
 
         <ImageView
             android:id="@+id/iv_logo"
@@ -13,7 +14,7 @@
             android:layout_height="@dimen/dp71h"
             android:layout_marginTop="@dimen/dp90h"
             android:scaleType="centerCrop"
-            android:src="@mipmap/logo"
+            app:srcCompat="@mipmap/logo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -54,12 +55,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="@dimen/dp107w"
-            android:layout_height="@dimen/dp108h"
-            android:layout_marginTop="@dimen/dp17h"
-            android:src="@drawable/email"
+        <com.goodiebag.pinview.Pinview
+            android:id="@+id/pin_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp56h"
+            android:textSize="@dimen/sp16"
+            app:cursorVisible="true"
+            app:forceKeyboard="false"
+            app:inputType="number"
+            app:pinBackground="@color/text_color_black"
+            app:pinHeight="@dimen/dp51h"
+            app:pinLength="4"
+            app:pinWidth="@dimen/dp38w"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_mail" />
@@ -77,7 +85,7 @@
             app:layout_constraintBottom_toTopOf="@+id/button6"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+            app:layout_constraintTop_toBottomOf="@+id/pin_view" />
 
         <Button
             android:id="@+id/button6"

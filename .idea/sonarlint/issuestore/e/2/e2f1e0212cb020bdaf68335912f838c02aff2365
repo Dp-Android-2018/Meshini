@@ -1,10 +1,20 @@
 
-squid:S1186/"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Éà“¾üÿÿÿÿ
-squid:S1186*"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¨ªò¹øÿÿÿÿ
-vsquid:UselessImportCheck"FRemove this unused import 'com.dp.meshini.servise.endpoint.EndPoints'.(®Ï·‹üÿÿÿÿ8õ°ö–-
-˜squid:S11864"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÏßĞ‹
-ssquid:S1450"WRemove the "mWebView" field and declare it as a local variable in the relevant methods.(Ğ¬–ùÿÿÿÿ
-Usquid:S1905"2Remove this unnecessary cast to "AdvancedWebView".(¾¯­Úÿÿÿÿÿ8´¨‡œ”-
-˜squid:S1186%"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ä³Ó÷
-qsquid:MaximumInheritanceDepth"<This class has 6 parents which is greater than 5 authorized.(êìæ¤ıÿÿÿÿ8´¨‡œ”-
-squid:S1186 "€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¹Ô‘¸ûÿÿÿÿ
+isquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ö¡«8Ô¦í¬¤-
+isquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¯¡¿×8Ô¦í¬¤-
+nsquid:CommentedOutCodeLine
+"<This block of commented-out lines of code should be removed.(ŸÁ™¦úÿÿÿÿ8Ô¦í¬¤-
+isquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ƒ¾åà8Ô¦í¬¤-
+hsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(“½şS8Ô¦í¬¤-
+nsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(áÑÊ‹ùÿÿÿÿ8Ô¦í¬¤-
+nsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(€Ù’øÿÿÿÿ8Ô¦í¬¤-
+isquid:CommentedOutCodeLine "<This block of commented-out lines of code should be removed.( óøü8Ô¦í¬¤-
+nsquid:CommentedOutCodeLine""<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8Ô¦í¬¤-
+isquid:CommentedOutCodeLine%"<This block of commented-out lines of code should be removed.(ö›ú¼8Ô¦í¬¤-
+nsquid:CommentedOutCodeLine'"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8Ô¦í¬¤-
+isquid:CommentedOutCodeLine*"<This block of commented-out lines of code should be removed.(ÁÙÀ»8Ô¦í¬¤-
+nsquid:CommentedOutCodeLine,"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8Ô¦í¬¤-
+isquid:CommentedOutCodeLine/"<This block of commented-out lines of code should be removed.(ú–¥ª8Ô¦í¬¤-
+nsquid:CommentedOutCodeLine1"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8Ô¦í¬¤-
+isquid:CommentedOutCodeLine4"<This block of commented-out lines of code should be removed.(½…¹»8Ô¦í¬¤-
+nsquid:CommentedOutCodeLine6"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8Ô¦í¬¤-
+8squid:S1220""Move this file to a named package.8Ô¦í¬¤-

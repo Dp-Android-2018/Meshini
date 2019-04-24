@@ -7,6 +7,9 @@ import java.io.Serializable;
 
 public class ClientData implements Serializable {
 
+    @SerializedName("id")
+    private int userId;
+
     @SerializedName("countryCityPojo")
     private CountryCityPojo countryCityPojo;
 
@@ -33,6 +36,15 @@ public class ClientData implements Serializable {
 
     @SerializedName("activated")
     private boolean activated;
+
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
 
     public boolean isActivated() {
         return activated;

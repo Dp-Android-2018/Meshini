@@ -15,7 +15,7 @@
         android:layout_width="@dimen/dp143w"
         android:layout_height="@dimen/dp113h"
         android:layout_marginTop="@dimen/dp69h"
-        android:src="@mipmap/logo"
+        app:srcCompat="@mipmap/logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -33,7 +33,15 @@
 
     <EditText
         android:id="@+id/et_mail_phone"
-        style="@style/EditText"
+        android:textColor="@color/text_color_black"
+        android:textSize="@dimen/sp12"
+        android:textColorHint="@color/text_color_black"
+        android:maxLines="1"
+        android:paddingEnd="@dimen/dp18w"
+        android:gravity="center_vertical"
+        android:paddingStart="20dp"
+        android:inputType="textEmailAddress"
+        android:background="@drawable/edit_text_shape"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp24h"
@@ -44,7 +52,14 @@
 
     <EditText
         android:id="@+id/et_password"
-        style="@style/EditText"
+        android:textColor="@color/text_color_black"
+        android:textSize="@dimen/sp12"
+        android:textColorHint="@color/text_color_black"
+        android:maxLines="1"
+        android:paddingEnd="@dimen/dp18w"
+        android:gravity="center_vertical"
+        android:paddingStart="20dp"
+        android:background="@drawable/edit_text_shape"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/password"
@@ -93,6 +108,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:onClick="getDataFromView"/>
+        android:onClick="getLoginDataFromView"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

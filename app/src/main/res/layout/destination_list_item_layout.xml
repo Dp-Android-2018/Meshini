@@ -5,29 +5,19 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="@dimen/dp16h"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <EditText
-        android:id="@+id/editText3"
-        style="@style/EditText"
-        android:layout_width="@dimen/dp232w"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp12h"
-        android:background="@drawable/edit_text_border"
-        android:hint="@string/pickup_location"
-        app:layout_constraintEnd_toStartOf="@+id/iv_pick_date_time"
+
+    <Spinner
+        android:id="@+id/sp_Places"
+        android:layout_width="@dimen/dp271w"
+        android:layout_height="@dimen/dp40h"
+        android:layout_marginTop="@dimen/dp16h"
+        android:background="@drawable/spinner_bg"
+        android:popupBackground="@drawable/edit_text_shape"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView27" />
-
-    <ImageView
-        android:id="@+id/iv_pick_date_time"
-        android:layout_width="@dimen/dp31w"
-        android:layout_height="@dimen/dp31h"
-        android:src="@drawable/ic_calendar"
-        app:layout_constraintBottom_toBottomOf="@+id/editText3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/editText3"
-        app:layout_constraintTop_toTopOf="@+id/editText3" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

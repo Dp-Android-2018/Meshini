@@ -1,4 +1,6 @@
 
-¤squid:S1186N"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¹Æº×şÿÿÿÿ8±âµÀ–-
-Qsquid:S1135„"2Complete the task associated to this TODO comment.(ÓìŞ³8µ˜ùŞ–-
-Psquid:S1135x"2Complete the task associated to this TODO comment.(ÅáîÚ8“ëâ˜•-
+Fsquid:S1604ƒ"(Make this anonymous inner class a lambda(Ô¬ï}8›¾›ıš-
+Psquid:S1135z"2Complete the task associated to this TODO comment.(ÅáîÚ8“ëâ˜•-
+Qsquid:S1135Œ"2Complete the task associated to this TODO comment.(ÓìŞ³8µ˜ùŞ–-
+¤squid:S1186P"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¹Æº×şÿÿÿÿ8±âµÀ–-
+lsquid:MaximumInheritanceDepth"<This class has 6 parents which is greater than 5 authorized.(Ê¨¹8šÆåº—-

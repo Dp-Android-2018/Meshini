@@ -31,7 +31,7 @@
                     android:layout_marginTop="@dimen/dp18h"
                     android:onClick="back"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/ic_left_arrow_white"
+                    app:srcCompat="@drawable/ic_left_arrow_white"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -41,7 +41,7 @@
                     android:layout_height="@dimen/dp71h"
                     android:layout_marginTop="@dimen/dp27h"
                     android:scaleType="centerCrop"
-                    android:src="@mipmap/logo"
+                    app:srcCompat="@mipmap/logo"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -60,7 +60,13 @@
 
                 <EditText
                     android:id="@+id/et_first_name"
-                    style="@style/EditText"
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/sp12"
+                    android:textColorHint="@color/text_color_black"
+                    android:maxLines="1"
+                    android:paddingEnd="@dimen/dp18w"
+                    android:background="@drawable/edit_text_shape"
+                    android:paddingStart="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dp9h"
@@ -72,7 +78,13 @@
 
                 <EditText
                     android:id="@+id/et_last_name"
-                    style="@style/EditText"
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/sp12"
+                    android:textColorHint="@color/text_color_black"
+                    android:maxLines="1"
+                    android:paddingEnd="@dimen/dp18w"
+                    android:background="@drawable/edit_text_shape"
+                    android:paddingStart="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dp16h"
@@ -84,7 +96,13 @@
 
                 <EditText
                     android:id="@+id/et_email"
-                    style="@style/EditText"
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/sp12"
+                    android:textColorHint="@color/text_color_black"
+                    android:maxLines="1"
+                    android:paddingEnd="@dimen/dp18w"
+                    android:background="@drawable/edit_text_shape"
+                    android:paddingStart="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dp16h"
@@ -97,7 +115,12 @@
 
                 <EditText
                     android:id="@+id/et_password"
-                    style="@style/EditText"
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/sp12"
+                    android:textColorHint="@color/text_color_black"
+                    android:maxLines="1"
+                    android:background="@drawable/edit_text_shape"
+                    android:paddingStart="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dp16h"
@@ -136,7 +159,13 @@
 
                 <EditText
                     android:id="@+id/et_phone"
-                    style="@style/EditText"
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/sp12"
+                    android:textColorHint="@color/text_color_black"
+                    android:maxLines="1"
+                    android:paddingEnd="@dimen/dp18w"
+                    android:background="@drawable/edit_text_shape"
+                    android:paddingStart="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dp16h"

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_root"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/white_bg"
@@ -22,13 +23,15 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
+            android:id="@+id/iv_back"
             android:layout_width="@dimen/dp23w"
             android:layout_height="@dimen/dp23h"
             android:layout_marginStart="@dimen/dp25w"
-            android:src="@drawable/ic_left_arrow"
+            app:srcCompat="@drawable/ic_left_arrow"
             app:layout_constraintBottom_toBottomOf="@+id/textView9"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textView9" />
+            app:layout_constraintTop_toTopOf="@+id/textView9"
+            android:onClick="back"/>
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -54,30 +57,38 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"/>
-
-                <EditText
-                    android:id="@+id/editText3"
-                    style="@style/EditText"
+                <TextView
+                    android:id="@+id/et_pick_up_location"
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/sp12"
+                    android:textColorHint="@color/text_color_black"
+                    android:maxLines="1"
+                    android:paddingEnd="@dimen/dp5w"
+                    android:gravity="center_vertical"
                     android:layout_width="@dimen/dp232w"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dp12h"
+                    android:focusable="false"
                     android:background="@drawable/edit_text_border"
                     android:hint="@string/pickup_location"
+                    android:paddingStart="5dp"
                     app:layout_constraintEnd_toStartOf="@+id/iv_pick_date_time"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView27" />
+                    app:layout_constraintTop_toBottomOf="@+id/textView27"
+                    android:onClick="search"/>
 
                 <ImageView
                     android:id="@+id/iv_pick_date_time"
                     android:layout_width="@dimen/dp31w"
                     android:layout_height="@dimen/dp31h"
-                    android:src="@drawable/ic_calendar"
-                    app:layout_constraintBottom_toBottomOf="@+id/editText3"
+                    app:srcCompat="@drawable/ic_calendar"
+                    app:layout_constraintBottom_toBottomOf="@+id/et_pick_up_location"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/editText3"
-                    app:layout_constraintTop_toTopOf="@+id/editText3" />
+                    app:layout_constraintStart_toEndOf="@+id/et_pick_up_location"
+                    app:layout_constraintTop_toTopOf="@+id/et_pick_up_location"
+                    android:onClick="pickupTime"/>
 
                 <View
                     android:id="@+id/view6"
@@ -89,12 +100,14 @@
                     android:background="@color/text_color_black"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editText3" />
+                    app:layout_constraintTop_toBottomOf="@+id/et_pick_up_location" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_destination"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="31dp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -151,7 +164,7 @@
             android:layout_marginBottom="5dp"
             android:background="@drawable/dialog_top_corner"
             android:backgroundTint="@color/text_color_black"
-            android:onClick="showDialog"
+            android:onClick="showNoteDialog"
             android:text="@string/write_additional_notes"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
@@ -172,7 +185,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:onClick="showRateDialog"/>
+            android:onClick="createRequest"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

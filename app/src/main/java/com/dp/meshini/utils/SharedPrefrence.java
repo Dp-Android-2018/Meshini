@@ -33,7 +33,6 @@ public class SharedPrefrence {
     }
 
     public void addIntegerToSharedPrederances(String title, int value) {
-
         editor.putInt(title, value);
         editor.commit();
     }

@@ -8,16 +8,25 @@ import android.view.WindowManager;
 
 import com.dp.meshini.R;
 import com.dp.meshini.databinding.ActivityLoginBinding;
+import com.dp.meshini.notification.FirebaseToken;
 import com.dp.meshini.servise.model.request.LoginRequest;
+import com.dp.meshini.servise.model.response.ErrorResponse;
 import com.dp.meshini.utils.ConstantsFile;
+import com.dp.meshini.utils.ProgressDialogUtils;
 import com.dp.meshini.utils.SharedPreferenceHelpers;
 import com.dp.meshini.utils.ValidationUtils;
 import com.dp.meshini.viewmodel.LoginViewModel;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.Observer;
+
+import java.io.IOException;
+
 import kotlin.Lazy;
 
 import static org.koin.java.standalone.KoinJavaComponent.inject;
@@ -37,16 +46,15 @@ public class LoginActivity extends BaseActivity {
 
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    public void getDataFromView(View view) {
+    public void getLoginDataFromView(View view) {
         String phoneOrMail = binding.etMailPhone.getText().toString();
         String password = binding.etPassword.getText().toString();
-
+        System.out.println("login : "+phoneOrMail);
+        System.out.println("password : "+password);
         validateData(phoneOrMail, password);
 
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     public void validateData(String maile, String password) {
         if (ValidationUtils.isEmpty(maile)) {
             showSnackbar(getString(R.string.enter_mail_phone_error_message));
@@ -61,36 +69,49 @@ public class LoginActivity extends BaseActivity {
         LoginRequest loginRequest = loginRequestLazy.getValue();
         loginRequest.setLogin(maile);
         loginRequest.setPassword(password);
-        loginViewModelLazy.getValue().loginResponse(loginRequest).observe(this, loginRegisterResponseResponse -> {
-            switch (loginRegisterResponseResponse.code()) {
-                case ConstantsFile.Constants.SUCCESS_CODE: {
-                    // TODO: 3/9/2019 save response to sharedpref
-                    sharedPreferenceHelpersLazy.getValue().saveDataToPrefs(loginRegisterResponseResponse.body().getClientData());
-                    if(loginRegisterResponseResponse.body().getClientData().isActivated()) {
-                        Intent intent = new Intent(this, ContainerActivity.class);
-                        startActivity(intent);
-                        finishAffinity();
-                    }else {
-                        Intent intent = new Intent(this, MailActivationActivity.class);
-                        startActivity(intent);
-                        finishAffinity();
-                    }
-                    break;
-                }
-                case ConstantsFile.Constants.INVALID_DATA_CODE: {
-                    String errorMessage = "";
-                   // errorMessage.join("\n", loginRegisterResponseResponse.body().getErrors());
-                    //loginRegisterResponseResponse.body().getErrors();
-                    showSnackbar(errorMessage);
-                    break;
-                }
-//                case ConstantsFile.Constants.UNAUTHENTICATED_CODE:{
-//
-//                }
+        ProgressDialogUtils.getInstance().showProgressDialog(this);
+        FirebaseToken.getInstance().getFirebaseToken().observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                loginRequest.setDeviceToken(s);
+                System.out.println("device token : "+s);
+                callRequest(loginRequest);
             }
         });
+    }
 
-
+    public void callRequest(LoginRequest request){
+        //ProgressDialogUtils.getInstance().showProgressDialog(this);
+        loginViewModelLazy.getValue().loginResponse(request).observe(this, loginRegisterResponseResponse -> {
+            ProgressDialogUtils.getInstance().cancelDialog();
+            if(loginRegisterResponseResponse.isSuccessful()) {
+                sharedPreferenceHelpersLazy.getValue().saveDataToPrefs(loginRegisterResponseResponse.body().getClientData());
+                //sharedPreferenceHelpersLazy.getValue().saveAppLanguage("en");
+                if (loginRegisterResponseResponse.body().getClientData().isActivated()) {
+                    Intent intent = new Intent(this, ContainerActivity.class);
+                    startActivity(intent);
+                    finishAffinity();
+                } else {
+                    Intent intent = new Intent(this, MailActivationActivity.class);
+                    startActivity(intent);
+                    finishAffinity();
+                }
+            }else {
+                Gson gson = new GsonBuilder().create();
+                ErrorResponse errorResponse = new ErrorResponse();
+                try {
+                    errorResponse = gson.fromJson(loginRegisterResponseResponse.errorBody().string(), ErrorResponse.class);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                String error = "";
+                for (String string : errorResponse.getErrors()) {
+                    error += string;
+                    error += "\n";
+                }
+                showSnackbar(error);
+            }
+        });
     }
 
     public void showSnackbar(String message) {

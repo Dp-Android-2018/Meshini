@@ -12,10 +12,13 @@ import android.view.View;
 import com.dp.meshini.R;
 import com.dp.meshini.databinding.ActivityChangePasswordBinding;
 import com.dp.meshini.servise.model.request.ChangePasswordRequest;
+import com.dp.meshini.servise.model.response.ErrorResponse;
 import com.dp.meshini.servise.model.response.StringMessageResponse;
 import com.dp.meshini.utils.ValidationUtils;
 import com.dp.meshini.viewmodel.ChangePasswordViewModel;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -64,21 +67,17 @@ public class ChangePasswordActivity extends AppCompatActivity {
                 if (stringMessageResponseResponse.isSuccessful()){
                     showSnackbar(stringMessageResponseResponse.body().getMessage());
                 }else {
-                    JSONObject jObjError = null;
+                    //ErrorResponse errorResponse=(ErrorResponse) stringMessageResponseResponse.errorBody();
+                    Gson gson = new GsonBuilder().create();
+                    ErrorResponse errorResponse=new ErrorResponse();
                     try {
-                        jObjError = new JSONObject(stringMessageResponseResponse.errorBody().string());
-                    } catch (JSONException e) {
-                        e.printStackTrace();
+                        errorResponse=gson.fromJson(stringMessageResponseResponse.errorBody().string(),ErrorResponse.class);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                    String error = null;
-                    try {
-                        error = String.valueOf(jObjError.getString("error"));
-                    } catch (JSONException e) {
-                        e.printStackTrace();
+                    for (String string:errorResponse.getErrors()){
+                        showSnackbar(string);
                     }
-                    showSnackbar(error);
                 }
             }
         });
@@ -86,5 +85,9 @@ public class ChangePasswordActivity extends AppCompatActivity {
 
     public void showSnackbar(String message){
         Snackbar.make(binding.clRoot,message,Snackbar.LENGTH_LONG).show();
+    }
+
+    public void back(View view){
+        finish();
     }
 }

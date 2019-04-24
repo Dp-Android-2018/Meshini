@@ -1,52 +1,88 @@
 {
   "project_info": {
-    "project_number": "265765830873",
-    "firebase_url": "https://meshini.firebaseio.com",
-    "project_id": "meshini",
-    "storage_bucket": "meshini.appspot.com"
+    "project_number": "343747316013",
+    "firebase_url": "https://meshini-project-1550483518935.firebaseio.com",
+    "project_id": "meshini-project-1550483518935",
+    "storage_bucket": "meshini-project-1550483518935.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:265765830873:android:dc392c5080660eb1",
+        "mobilesdk_app_id": "1:343747316013:android:dc392c5080660eb1",
         "android_client_info": {
           "package_name": "com.dp.meshini"
         }
       },
       "oauth_client": [
         {
-          "client_id": "265765830873-rdet98pedkdtcvaqhfgh6vseor6t2uam.apps.googleusercontent.com",
+          "client_id": "343747316013-b69f7phou04rk0h3hrldi9guej9j85gp.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.dp.meshini",
             "certificate_hash": "07096b2ff29e75ba5ecceacb8d4b7b363b24ce16"
           }
-        },
-        {
-          "client_id": "265765830873-9jbr5lfim9flp6000h78avmk6qmufm5l.apps.googleusercontent.com",
-          "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDxwa4bICUyUocFURXhEcWcoKjsIKrMcOc"
+          "current_key": "AIzaSyAwNQwSgC08nnT2MFtfHVbDE9kVU5QLiPo"
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "265765830873-9jbr5lfim9flp6000h78avmk6qmufm5l.apps.googleusercontent.com",
+              "client_id": "343747316013-cm2olp45uru7a7q8s9kj9q3kb5tfmebs.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "343747316013-ovjl9a7arl7sj7jkbpc9735ibcvodm9p.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.dp-itc.Meshini"
+              }
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:343747316013:android:b969306e3586ee64",
+        "android_client_info": {
+          "package_name": "com.dp.meshinisp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "343747316013-787ej5lussjv3tlt0g541d80ctja5v2i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dp.meshinisp",
+            "certificate_hash": "1a1bddef5238c0500a8bb0e772ea6939047b6d49"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwNQwSgC08nnT2MFtfHVbDE9kVU5QLiPo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "343747316013-cm2olp45uru7a7q8s9kj9q3kb5tfmebs.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "343747316013-ovjl9a7arl7sj7jkbpc9735ibcvodm9p.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.dp-itc.Meshini"
+              }
+            }
+          ]
         }
       }
     }

@@ -1,0 +1,15 @@
+
+nsquid:S1301d"KReplace this "switch" statement by "if" statements to increase readability.(é¤Ÿ’þÿÿÿÿ8å¦—è–-
+csquid:S2147o"ECombine this catch with the one at line 109, which has the same body.(ï­£Ä8Àã¦è–-
+Psquid:S1199;"-Extract this nested code block into a method.(ˆò²³þÿÿÿÿ8Ù‘°‘—-
+Jsquid:S1199G"-Extract this nested code block into a method.(È×Ï8çàæ‡—-
+lsquid:MaximumInheritanceDepth!"<This class has 6 parents which is greater than 5 authorized.(ªÖ½Õ8ß‡ŸŠ—-
+Ksquid:S1604N"(Make this anonymous inner class a lambda(ÖÅÝàþÿÿÿÿ8”â´‘—-
+Fsquid:S1148p"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8Àã¦è–-
+Psquid:S1199e"-Extract this nested code block into a method.(ˆò²³þÿÿÿÿ8å¦—è–-
+\"squid:SwitchLastCaseIsDefaultCheckd""Add a default case to this switch.(é¤Ÿ’þÿÿÿÿ8Ù‘°‘—-
+Ksquid:S1199i"-Extract this nested code block into a method.(š—éº8™€›è–-
+\"squid:SwitchLastCaseIsDefaultCheck:""Add a default case to this switch.(é¤Ÿ’þÿÿÿÿ8å¦—è–-
+nsquid:S1301:"KReplace this "switch" statement by "if" statements to increase readability.(é¤Ÿ’þÿÿÿÿ8Ù‘°‘—-
+V
+squid:S106V"9Replace this use of System.out or System.err by a logger.(ÌÅÛ‚8²í¸‘—-

@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class LoginRegisterResponse extends DefaultResponse {
+public class LoginRegisterResponse {
     @SerializedName("data")
     private ClientData clientData;
 

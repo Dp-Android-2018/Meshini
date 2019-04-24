@@ -1,37 +1,12 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-    </style>
-
-    <style name="EditText" parent="Widget.AppCompat.EditText">
-        <item name="android:textColor">@color/text_color_black</item>
-        <item name="android:textSize">@dimen/sp12</item>
-        <item name="android:textColorHint">@color/text_color_black</item>
-        <item name="android:maxLines">1</item>
-        <item name="android:paddingEnd">@dimen/dp18w</item>
-        <item name="android:background">@drawable/edit_text_shape</item>
-        <item name="android:gravity">center_vertical</item>
-        <item name="android:paddingStart">20dp</item>
-    </style>
-
-    <style name="NoActionBar" parent="Theme.AppCompat.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-
-    <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 
-    <style name="CustomDialog" parent="Theme.AppCompat.Light.Dialog">
+    <style name="CustomDialog" parent="android:Theme.Holo.Dialog">
         <item name="android:windowMinWidthMajor">100%</item>
         <item name="android:windowMinWidthMinor">100%</item>
+        <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowAnimationStyle">@style/DialogAnimation</item>
     </style>
 
@@ -42,8 +17,17 @@
 
 
     <style name="RatingBar" parent="Theme.AppCompat">
-        <item name="android:colorControlNormal">@color/text_color_black</item>
-        <item name="android:colorControlActivated">@color/yellow_color</item>
+        <item name="colorControlNormal">@color/text_color_black</item>
+        <item name="colorControlActivated">@color/yellow_color</item>
+    </style>
+    
+    <style name="bottom_nav" parent="Widget.Design.BottomNavigationView">
+        <item name="enforceTextAppearance">false</item>
+    </style>
+
+    <style name="NavigationTheme" parent="Theme.AppCompat">
+        <item name="android:textSize">15sp</item>
+        <item name="android:gravity">center</item>
     </style>
 
 </resources>

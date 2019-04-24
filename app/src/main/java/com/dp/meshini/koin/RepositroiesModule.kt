@@ -17,6 +17,21 @@ val DependencyModule = module {
     single { ForgetPasswordRepository() }
     single { UpdateProfileRepository() }
     single { ChangePasswordRepository() }
+    single { TCountriesRepository() }
+    single { LanguagesRepository() }
+    single { PlacesRepository() }
+    single { CreateTripRepository() }
+    single { OffersRepository() }
+    single { PendingRequestsRepository() }
+    single { AcceptOfferRepository() }
+    single { TripDetailRepository() }
+    single { DeleteRequestRepository() }
+    single { PastUpcomingRequestsRepository() }
+    single { ActiveTripRepository() }
+    single { ActiveTripDetailRepository() }
+    single { CreateCommentRepository() }
+    single { ChangeLanguageRepository() }
+
 
     factory { LoginRequest() }
     factory { RegisterRequest() }
@@ -26,5 +41,9 @@ val DependencyModule = module {
     factory { ForgetPasswordRequest() }
     factory { UpdateProfileRequest() }
     factory { ChangePasswordRequest() }
+    factory { CreateTripRequest() }
+    factory { AcceptOfferRequest()}
+    factory { CreateCommentRequest() }
+    factory { ChangeLanguageRequest() }
 
 }
