@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.dp.meshini.R;
+import com.dp.meshini.utils.ProgressDialogUtils;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -62,6 +63,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        ProgressDialogUtils.getInstance().showProgressDialog(this);
         ImageView currentLocation = findViewById(R.id.iv_get_current_location);
         Button selectThisLocation = findViewById(R.id.bt_select_this_location);
         currentLocation.setOnClickListener(v -> getLastKnownLocation());
@@ -83,6 +85,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
         mFusedLocationClient.getLastLocation().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
+                ProgressDialogUtils.getInstance().cancelDialog();
                 Location location = task.getResult();
                 GeoPoint geoPoint = new GeoPoint(location.getLatitude(), location.getLongitude());
                 //Log.d(TAG, "onComplete: latitude: " + geoPoint.getLatitude());

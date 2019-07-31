@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.dp.meshini">
-
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -29,9 +28,11 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar"
-        tools:ignore="GoogleAppIndexingWarning"
         android:usesCleartextTraffic="true"
+        tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="m">
+        <activity android:name=".view.activity.AvailableTripsActivity"></activity>
+        <activity android:name=".view.activity.PymentActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -48,6 +49,8 @@
         <activity android:name=".view.activity.PendingRequestsActivity" />
         <activity android:name=".view.activity.ChangePasswordActivity" />
         <activity android:name=".view.activity.SplashActivity">
+
+            <!-- this is the origin start activity -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -63,8 +66,7 @@
         <activity android:name=".view.activity.RequestSubmittedActivity" />
         <activity android:name=".view.activity.OffersActivity" />
         <activity android:name=".view.activity.TripsActivity" />
-        <activity android:name=".view.activity.PaymentActivity" />
-        <!--<activity android:name=".view.activity.MainActivity" />-->
+        <activity android:name=".view.activity.PaymentActivity" /> <!-- <activity android:name=".view.activity.MainActivity" /> -->
         <activity android:name=".view.activity.ResetPasswordActivity" />
         <activity android:name=".view.activity.ActivatedSuccessfullyActivity" />
         <activity android:name=".view.activity.PhoneActivationActivity" />
@@ -79,7 +81,8 @@
             android:name=".utils.ConnectionReceiver"
             android:enabled="true">
             <intent-filter>
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"
+                <action
+                    android:name="android.net.conn.CONNECTIVITY_CHANGE"
                     tools:ignore="BatteryLife" />
             </intent-filter>
         </receiver>
@@ -88,14 +91,15 @@
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
-        </service>
-        <!--<service-->
-            <!--android:name=".utils.LocationService"-->
-            <!--android:stopWithTask="true" />-->
+        </service> <!-- <service -->
+        <!-- android:name=".utils.LocationService" -->
+        <!-- android:stopWithTask="true" /> -->
+        <!-- <uses-library -->
+        <!-- android:name="org.apache.http.legacy" -->
+        <!-- android:required="false" /> -->
+        <activity android:name=".view.activity.DetailedSharedTripActivity">
 
-        <!--<uses-library-->
-            <!--android:name="org.apache.http.legacy"-->
-            <!--android:required="false" />-->
+        </activity>
     </application>
 
 </manifest>

@@ -7,6 +7,7 @@ import com.dp.meshini.repositories.CountriesRepository;
 import com.dp.meshini.repositories.RegisterRepository;
 import com.dp.meshini.servise.model.pojo.CountryCityPojo;
 import com.dp.meshini.servise.model.request.RegisterRequest;
+import com.dp.meshini.servise.model.response.CountryCityResponse;
 import com.dp.meshini.servise.model.response.LoginRegisterResponse;
 
 import java.util.List;
@@ -36,7 +37,7 @@ public class RegisterViewModel extends AndroidViewModel {
         return countriesRepositoryLazy.getValue().getCountries();
     }
 
-    public LiveData<List<CountryCityPojo>>getCities(int countryId){
+    public LiveData<Response<CountryCityResponse>>getCities(int countryId){
         return citiesRepositoryLazy.getValue().getCities(countryId);
     }
 

@@ -1,17 +1,19 @@
 
-Gsquid:S1125z")Remove the literal "false" boolean value.(üš¸À8Ö¸õ”-
-usquid:S3776r"RRefactor this method to reduce its Cognitive Complexity from 30 to the 15 allowed.(©ßä²şÿÿÿÿ8Ö¸õ”-
-psquid:UselessImportCheck"ERemove this unused import 'androidx.appcompat.app.AppCompatActivity'.(€¶£î8ÍÆ”-
-csquid:UselessImportCheck"3Remove this unused import 'android.text.TextUtils'.(û˜½Õøÿÿÿÿ8Ö¸õ”-
-Zsquid:UselessImportCheck"/Remove this unused import 'retrofit2.Response'.(¾éçï8ÛÈú”-
-squid:UselessImportCheck
-"_Remove this unused import 'com.dp.meshini.servise.model.response.PastUpcomingRequestsResponse'.(ÄÄ÷ÿÿÿÿÿ8ÛÈú”-
-hsquid:UselessImportCheck"8Remove this unused import 'androidx.lifecycle.Observer'.(ÒÁˆÉşÿÿÿÿ8ÛÈú”-
-\squid:S1155_">Use isEmpty() to check whether the collection is empty or not.(÷ƒ‰Ú8šïøŸ¤-
-lsquid:MaximumInheritanceDepth"<This class has 7 parents which is greater than 5 authorized.(°‹è”8¹ÖØŸ-
-\squid:S1155C">Use isEmpty() to check whether the collection is empty or not.(÷ƒ‰Ú8¹ŞçŸ¤-
-Msquid:S1066z"/Merge this if statement with the enclosing one.(üš¸À8İó¯‘Ÿ-
-V
-squid:S106|"9Replace this use of System.out or System.err by a logger.(ƒ”àò8Ö¸õ”-
+Nsquid:S1066–"/Merge this if statement with the enclosing one.(üš¸À8İó¯‘Ÿ-
+hsquid:UselessImportCheck"8Remove this unused import 'androidx.lifecycle.Observer'.(ÒÁˆÉşÿÿÿÿ8ÛÈú”-
+@squid:S1643„"Use a StringBuilder instead.(Íòàğüÿÿÿÿ8üÂ²ô¤-
+\squid:S1155m">Use isEmpty() to check whether the collection is empty or not.(÷ƒ‰Ú8šïøŸ¤-
+@squid:S1643…"Use a StringBuilder instead.(äìüÆùÿÿÿÿ8üÂ²ô¤-
+vsquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 30 to the 15 allowed.(©ßä²şÿÿÿÿ8Ö¸õ”-
+Zsquid:UselessImportCheck"/Remove this unused import 'retrofit2.Response'.(¾éçï8ÛÈú”-
+W
+squid:S106˜"9Replace this use of System.out or System.err by a logger.(ƒ”àò8Ö¸õ”-
+lsquid:MaximumInheritanceDepth#"<This class has 7 parents which is greater than 5 authorized.(°‹è”8¹ÖØŸ-
+Hsquid:S1125–")Remove the literal "false" boolean value.(üš¸À8Ö¸õ”-
+\squid:S1155Q">Use isEmpty() to check whether the collection is empty or not.(÷ƒ‰Ú8¹ŞçŸ¤-
+Gsquid:S1148€"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8üÂ²ô¤-
 \
-squid:S106™"9Replace this use of System.out or System.err by a logger.(½·Ãùÿÿÿÿ8Ó¤¹Ÿ-
+squid:S106µ"9Replace this use of System.out or System.err by a logger.(½·Ãùÿÿÿÿ8Ó¤¹Ÿ-
+squid:UselessImportCheck"_Remove this unused import 'com.dp.meshini.servise.model.response.PastUpcomingRequestsResponse'.(ÄÄ÷ÿÿÿÿÿ8ÛÈú”-
+psquid:UselessImportCheck"ERemove this unused import 'androidx.appcompat.app.AppCompatActivity'.(€¶£î8ÍÆ”-
+csquid:UselessImportCheck"3Remove this unused import 'android.text.TextUtils'.(û˜½Õøÿÿÿÿ8Ö¸õ”-

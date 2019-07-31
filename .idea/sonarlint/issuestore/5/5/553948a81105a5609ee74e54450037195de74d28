@@ -1,16 +1,19 @@
 
-Psquid:S1199J"-Extract this nested code block into a method.(ˆò²³şÿÿÿÿ8­è¼–-
-Osquid:S1135="2Complete the task associated to this TODO comment.(ù¹©=8ãÈ¿•-
-lsquid:MaximumInheritanceDepth"<This class has 7 parents which is greater than 5 authorized.(şàÈí8¢Û«––-
-Usquid:S1135K"2Complete the task associated to this TODO comment.(°Ÿ¨³ıÿÿÿÿ8¥Æ™˜–-
-gsquid:UselessImportCheck"<Remove this unused import 'androidx.annotation.RequiresApi'.(å„» 8ïËı§™-
 [
-squid:S106-"9Replace this use of System.out or System.err by a logger.(¹øøÿÿÿÿ8¢Ÿ¨™-
-Esquid:S1604A"(Make this anonymous inner class a lambda(Ô¬ï}8ø –ıš-
-psquid:UselessImportCheck"ERemove this unused import 'androidx.appcompat.app.AppCompatActivity'.(€¶£î8¢Û«––-
-W"squid:SwitchLastCaseIsDefaultCheckI""Add a default case to this switch.(·üÿª8­è¼–-
+squid:S106M"9Replace this use of System.out or System.err by a logger.(»ˆÚ”üÿÿÿÿ8æğÄø¤-
+?squid:S1643m"Use a StringBuilder instead.(Íòàğüÿÿÿÿ8é¸Ëø¤-
+[
+squid:S1064"9Replace this use of System.out or System.err by a logger.(¹øøÿÿÿÿ8¢Ÿ¨™-
+isquid:CommentedOutCodeLineT"<This block of commented-out lines of code should be removed.(î­ø¤8ÍùÍø¤-
+lsquid:MaximumInheritanceDepth""<This class has 7 parents which is greater than 5 authorized.(şàÈí8¢Û«––-
+psquid:UselessImportCheck"ERemove this unused import 'androidx.appcompat.app.AppCompatActivity'.(€¶£î8¢Û«––-
+?squid:S1643n"Use a StringBuilder instead.(äìüÆùÿÿÿÿ8é¸Ëø¤-
 V
-squid:S106."9Replace this use of System.out or System.err by a logger.(‹£¸’8ë¶¨™-
-Ksquid:S1199X"-Extract this nested code block into a method.(ã–ÑÕ8¨Ù™˜–-
-isquid:S1301I"KReplace this "switch" statement by "if" statements to increase readability.(·üÿª8ŸœÜ’–-
+squid:S1065"9Replace this use of System.out or System.err by a logger.(‹£¸’8ë¶¨™-
+jsquid:UselessImportCheck"?Remove this unused import 'com.dp.meshini.utils.ConstantsFile'.(êèÏı8…Äˆö¤-
+nsquid:CommentedOutCodeLineY"<This block of commented-out lines of code should be removed.(ñ®€âşÿÿÿÿ8Ï®µú¤-
 ]squid:UselessImportCheck"-Remove this unused import 'android.os.Build'.(ãÇ¤Úıÿÿÿÿ8ğËı§™-
+Fsquid:S1148i"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8é¸Ëø¤-
+gsquid:UselessImportCheck"<Remove this unused import 'androidx.annotation.RequiresApi'.(å„» 8ïËı§™-
+Osquid:S1135D"2Complete the task associated to this TODO comment.(ù¹©=8ò°Äø¤-
+Esquid:S1604I"(Make this anonymous inner class a lambda(Ô¬ï}8æğÄø¤-

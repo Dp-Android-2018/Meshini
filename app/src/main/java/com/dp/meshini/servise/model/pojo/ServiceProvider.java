@@ -2,7 +2,15 @@ package com.dp.meshini.servise.model.pojo;
 
 import com.google.gson.annotations.SerializedName;
 
-public class ServiceProvider {
+import java.io.Serializable;
+
+public class ServiceProvider implements Serializable {
+
+    @SerializedName("id")
+    private int id;
+
+    @SerializedName("name")
+    private String name;
 
     @SerializedName("trips_count")
     private int tripsCount;
@@ -18,6 +26,22 @@ public class ServiceProvider {
 
     @SerializedName("phone")
     private String phone;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public int getTripsCount() {
         return tripsCount;

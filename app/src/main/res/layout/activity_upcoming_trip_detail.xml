@@ -169,6 +169,7 @@
                 android:background="@drawable/edit_text_shape"
                 android:backgroundTint="@color/sky_color"
                 android:text="@string/start_chat"
+                android:onClick="startChat"
                 android:textAllCaps="false"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/sp12"

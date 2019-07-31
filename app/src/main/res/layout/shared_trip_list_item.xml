@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+    <data>
+
+        <variable
+            name="ViewModel"
+            type="com.dp.meshini.viewmodel.PackageListItemViewModel" />
+    </data>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp126h"
+        android:layout_marginBottom="18dp"
+        android:backgroundTint="@android:color/white"
+        android:elevation="5dp"
+        app:cardCornerRadius="10dp"
+        android:onClick="@{ViewModel::onItemClick}">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:id="@+id/view11"
+                android:layout_width="8dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/shared_trip_list_item_border"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/roundedImageView"
+                android:layout_width="@dimen/dp85w"
+                android:layout_height="@dimen/dp86h"
+                android:layout_marginStart="8dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/logo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_company_name"
+                app:riv_corner_radius="10dp"
+                bind:imageUrl="@{ViewModel.image}" />
+
+            <TextView
+                android:id="@+id/tv_trip_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="14dp"
+                android:text="@{ViewModel.date}"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/sp12"
+                app:layout_constraintStart_toEndOf="@+id/roundedImageView"
+                app:layout_constraintTop_toBottomOf="@+id/tv_company_name" />
+
+            <TextView
+                android:id="@+id/tv_company_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@{ViewModel.companyName}"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/sp12"
+                app:layout_constraintStart_toEndOf="@+id/roundedImageView"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_cities"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="8dp"
+                android:maxLines="2"
+                android:text="@{ViewModel.cities}"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/sp12"
+                app:layout_constraintEnd_toStartOf="@+id/view11"
+                app:layout_constraintStart_toEndOf="@+id/roundedImageView"
+                app:layout_constraintTop_toBottomOf="@+id/tv_trip_date" />
+
+            <TextView
+                android:id="@+id/tv_cost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="@{ViewModel.price}"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/sp12"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/view11"
+                app:layout_constraintStart_toEndOf="@+id/roundedImageView"
+                app:layout_constraintTop_toBottomOf="@+id/tv_cities" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

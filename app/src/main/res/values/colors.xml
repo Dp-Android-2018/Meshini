@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="colorPrimary">#125688</color>
+    <color name="colorPrimaryDark">#125688</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="navigationBarColor">#000000</color>
+    <color name="colorAccent">#c8e8ff</color>
+
     <color name="sky_color">#3FB9B9</color>
     <color name="white_90">#E6ffffff</color>
     <color name="text_color_black">#4D4D4D</color>
@@ -10,4 +17,8 @@
     <color name="green_color">#24AB24</color>
     <color name="off_white_color">#ECECEC</color>
     <color name="border_color">#3FB9B9</color>
+    <color name="tab_selected_text_color">#3FB9B9</color>
+    <color name="tab_text_color">#803FB9B9</color>
+    <color name="guide_border_guide">#707070</color>
+
 </resources>

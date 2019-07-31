@@ -8,31 +8,50 @@
     android:background="@drawable/dialog_top_corner"
     android:backgroundTint="@android:color/white">
 
-    <TextView
-        android:id="@+id/textView25"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/bt_guide"
+        android:layout_width="@dimen/dp103w"
         android:layout_height="wrap_content"
-        android:layout_marginTop="13dp"
-        android:text="@string/request_a_guide"
-        android:gravity="center"
-        android:textColor="@color/text_color_black"
-        android:textSize="@dimen/sp19"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:text="@string/guide"
+        android:textSize="@dimen/sp12"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toStartOf="@+id/bt_shared_trip"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView26"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/bt_shared_trip"
+        android:layout_width="@dimen/dp103w"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:gravity="center"
-        android:text="@string/choose_country_amp_language"
-        android:textColor="@color/text_color_black"
-        android:textSize="@dimen/sp15_5"
+        android:layout_marginTop="16dp"
+        android:text="@string/shared_trip"
+        android:textSize="@dimen/sp12"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/bt_guide"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/guide_border_guide"
+        app:layout_constraintBottom_toBottomOf="@+id/bt_guide"
+        app:layout_constraintEnd_toStartOf="@+id/bt_guide"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView25" />
+        app:layout_constraintTop_toTopOf="@+id/bt_guide" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/guide_border_guide"
+        app:layout_constraintBottom_toBottomOf="@+id/bt_shared_trip"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/bt_shared_trip"
+        app:layout_constraintTop_toTopOf="@+id/bt_shared_trip" />
 
     <Spinner
         android:id="@+id/sp_country"
@@ -44,7 +63,7 @@
         android:textSize="@dimen/sp12"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView26" />
+        app:layout_constraintTop_toBottomOf="@+id/bt_shared_trip" />
 
     <Spinner
         android:id="@+id/sp_language"
@@ -57,36 +76,41 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sp_country" />
+    <Spinner
+        android:id="@+id/sp_cities"
+        android:layout_width="@dimen/dp271w"
+        android:layout_height="@dimen/dp40h"
+        android:layout_marginTop="@dimen/dp16h"
+        android:background="@drawable/spinner_with_border_bg"
+        android:popupBackground="@drawable/edit_text_shape"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sp_country"/>
 
     <EditText
         android:id="@+id/et_from_date"
-        android:textColor="@color/text_color_black"
-        android:textSize="@dimen/sp12"
-        android:textColorHint="@color/text_color_black"
-        android:maxLines="1"
-        android:paddingEnd="@dimen/dp18w"
-        android:gravity="center_vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp17h"
         android:background="@drawable/edit_text_border"
         android:drawableStart="@drawable/calendar_fixd_size"
         android:drawablePadding="20dp"
         android:focusable="false"
+        android:layout_marginTop="@dimen/dp79h"
+        android:gravity="center_vertical"
         android:hint="@string/from"
+        android:maxLines="1"
         android:paddingStart="11dp"
+        android:paddingEnd="@dimen/dp18w"
+        android:textColor="@color/text_color_black"
+        android:textColorHint="@color/text_color_black"
+        android:textSize="@dimen/sp12"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sp_language" />
+        app:layout_constraintTop_toBottomOf="@id/sp_country"/>
 
     <EditText
         android:id="@+id/et_to_date"
-        android:textColor="@color/text_color_black"
-        android:textSize="@dimen/sp12"
-        android:textColorHint="@color/text_color_black"
-        android:maxLines="1"
-        android:paddingEnd="@dimen/dp18w"
-        android:gravity="center_vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp17h"
@@ -94,11 +118,40 @@
         android:drawableStart="@drawable/calendar_fixd_size"
         android:drawablePadding="11dp"
         android:focusable="false"
+        android:gravity="center_vertical"
         android:hint="@string/to"
+        android:maxLines="1"
         android:paddingStart="11dp"
+        android:paddingEnd="@dimen/dp18w"
+        android:textColor="@color/text_color_black"
+        android:textColorHint="@color/text_color_black"
+        android:textSize="@dimen/sp12"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_from_date" />
+
+    <EditText
+        android:id="@+id/et_no_seats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp17h"
+        android:layout_marginBottom="22dp"
+        android:background="@drawable/edit_text_border"
+        android:drawableStart="@drawable/ic_car_seat"
+        android:drawablePadding="11dp"
+        android:gravity="center_vertical"
+        android:hint="@string/no_of_seats"
+        android:maxLines="1"
+        android:paddingStart="11dp"
+        android:paddingEnd="@dimen/dp18w"
+        android:textColor="@color/text_color_black"
+        android:textColorHint="@color/text_color_black"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintBottom_toTopOf="@id/bt_schedule_trip"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_to_date"
+        app:layout_constraintVertical_bias="0.0" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
@@ -132,7 +185,108 @@
             android:textColor="@color/text_color_black" />
     </RadioGroup>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
+    <ImageView
+        android:id="@+id/iv_car"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="6dp"
+        android:adjustViewBounds="true"
+        android:onClick="setVehicleType"
+        android:src="@drawable/car_white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <ImageView
+        android:id="@+id/iv_motorbike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:onClick="setVehicleType"
+        android:src="@drawable/motorcycle_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <ImageView
+        android:id="@+id/iv_van"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="45dp"
+        android:onClick="setVehicleType"
+        android:src="@drawable/van_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <ImageView
+        android:id="@+id/iv_tuktuk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:onClick="setVehicleType"
+        android:src="@drawable/tuktuk_white"
+        app:layout_constraintEnd_toEndOf="@+id/iv_car"
+        app:layout_constraintStart_toStartOf="@+id/iv_car"
+        app:layout_constraintTop_toBottomOf="@+id/iv_car" />
+
+    <ImageView
+        android:id="@+id/iv_stagecoach"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:onClick="setVehicleType"
+        android:src="@drawable/stagecoach_white"
+        app:layout_constraintEnd_toEndOf="@+id/iv_motorbike"
+        app:layout_constraintStart_toStartOf="@+id/iv_motorbike"
+        app:layout_constraintTop_toBottomOf="@+id/iv_motorbike" />
+
+    <ImageView
+        android:id="@+id/iv_golf_car"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:onClick="setVehicleType"
+        android:src="@drawable/golf_car_white"
+        app:layout_constraintEnd_toEndOf="@+id/iv_van"
+        app:layout_constraintStart_toStartOf="@+id/iv_van"
+        app:layout_constraintTop_toBottomOf="@+id/iv_van" />
+
+    <ImageView
+        android:id="@+id/iv_onfoot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:onClick="setVehicleType"
+        android:src="@drawable/onfoot_white"
+        app:layout_constraintEnd_toEndOf="@+id/iv_tuktuk"
+        app:layout_constraintStart_toStartOf="@+id/iv_tuktuk"
+        app:layout_constraintTop_toBottomOf="@+id/iv_tuktuk" />
+
+    <ImageView
+        android:id="@+id/iv_yacht"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="setVehicleType"
+        android:src="@drawable/boat_white"
+        app:layout_constraintEnd_toEndOf="@+id/iv_stagecoach"
+        app:layout_constraintStart_toStartOf="@+id/iv_stagecoach"
+        app:layout_constraintTop_toBottomOf="@+id/iv_stagecoach" />
+
+    <ImageView
+        android:id="@+id/iv_jet_ski"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="setVehicleType"
+        android:src="@drawable/jet_ski_white"
+        app:layout_constraintEnd_toEndOf="@+id/iv_golf_car"
+        app:layout_constraintStart_toStartOf="@+id/iv_golf_car"
+        app:layout_constraintTop_toBottomOf="@+id/iv_golf_car" />
+
+
+    <!--<com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomBar"
         style="@style/bottom_nav"
         android:layout_width="match_parent"
@@ -144,16 +298,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup"
         app:menu="@menu/vehicles" />
-<Button
-    android:id="@+id/bt_schedule_trip"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="16dp"
-    android:text="@string/put_your_trip_schedule"
-    android:textAllCaps="false"
-    android:textColor="@android:color/white"
-    android:textSize="@dimen/sp18"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/bottomBar" />
+-->
+    <Button
+        android:id="@+id/bt_schedule_trip"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp40h"
+        android:layout_marginTop="16dp"
+        android:text="@string/put_your_trip_schedule"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp18"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_jet_ski"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

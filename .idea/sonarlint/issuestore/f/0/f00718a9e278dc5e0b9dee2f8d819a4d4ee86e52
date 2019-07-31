@@ -1,11 +1,17 @@
 
-hsquid:UselessImportCheck"8Remove this unused import 'androidx.lifecycle.Observer'.(ÒÁˆÉşÿÿÿÿ8˜Ê€¤-
-gsquid:HiddenFieldCheck6">Rename "clientData" which hides the field declared at line 33.(…Çİô8¯Û»€¤-
-Zsquid:UselessImportCheck"/Remove this unused import 'retrofit2.Response'.(¾éçï8˜Ê€¤-
+Psquid:S1199;"-Extract this nested code block into a method.(äİÔóşÿÿÿÿ8¯Û»€¤-
+Ksquid:S1199a"-Extract this nested code block into a method.(š—éº8±“ú¶©-
+Zsquid:UselessImportCheck"/Remove this unused import 'retrofit2.Response'.(¾éçï8˜Ê€¤-
 ˆsquid:UselessImportCheck"XRemove this unused import 'com.dp.meshini.servise.model.response.StringMessageResponse'.(‰Í«ˆıÿÿÿÿ8¸‰Úæ–-
+hsquid:UselessImportCheck"8Remove this unused import 'androidx.lifecycle.Observer'.(ÒÁˆÉşÿÿÿÿ8˜Ê€¤-
+Fsquid:S1148h"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8±“ú¶©-
+Jsquid:S1199G"-Extract this nested code block into a method.(È×Ï8¯Û»€¤-
+\"squid:SwitchLastCaseIsDefaultCheck:""Add a default case to this switch.(é¤Ÿ’şÿÿÿÿ8¯Û»€¤-
+Psquid:S1199]"-Extract this nested code block into a method.(ˆò²³şÿÿÿÿ8±“ú¶©-
+gsquid:HiddenFieldCheck<">Rename "clientData" which hides the field declared at line 39.(…Çİô8¯Û»€¤-
 ƒsquid:UselessImportCheck"YRemove this unused import 'com.dp.meshini.servise.model.response.ForgetPasswordResponse'.(¾¹¨38˜Ê€¤-
-lsquid:MaximumInheritanceDepth"<This class has 6 parents which is greater than 5 authorized.(èŸŸŸ8ê€ïŠ—-
-\"squid:SwitchLastCaseIsDefaultCheck4""Add a default case to this switch.(é¤Ÿ’şÿÿÿÿ8¯Û»€¤-
-Psquid:S11995"-Extract this nested code block into a method.(äİÔóşÿÿÿÿ8¯Û»€¤-
-Jsquid:S1199A"-Extract this nested code block into a method.(È×Ï8¯Û»€¤-
-nsquid:S13014"KReplace this "switch" statement by "if" statements to increase readability.(é¤Ÿ’şÿÿÿÿ8¯Û»€¤-
+lsquid:MaximumInheritanceDepth$"<This class has 6 parents which is greater than 5 authorized.(èŸŸŸ8ê€ïŠ—-
+nsquid:S1301:"KReplace this "switch" statement by "if" statements to increase readability.(é¤Ÿ’şÿÿÿÿ8¯Û»€¤-
+nsquid:S1301\"KReplace this "switch" statement by "if" statements to increase readability.(é¤Ÿ’şÿÿÿÿ8±“ú¶©-
+\"squid:SwitchLastCaseIsDefaultCheck\""Add a default case to this switch.(é¤Ÿ’şÿÿÿÿ8±“ú¶©-
+csquid:S2147g"ECombine this catch with the one at line 101, which has the same body.(ï­£Ä8±“ú¶©-

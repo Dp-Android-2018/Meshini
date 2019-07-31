@@ -1,49 +1,63 @@
 
-vsquid:S3776ª"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(÷‚ØÜùÿÿÿÿ8®üÑ¤-
+jsquid:CommentedOutCodeLineÙ"<This block of commented-out lines of code should be removed.(Ç±ŠÆ8ğóè­«-
+vsquid:S3776Á"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(÷‚ØÜùÿÿÿÿ8œ¸õ­«-
+nsquid:CommentedOutCodeLineg"<This block of commented-out lines of code should be removed.(œˆúşÿÿÿÿ8¾Èü¤-
+Gsquid:S1604ˆ"(Make this anonymous inner class a lambda(ÿ¾ÖÛ8œ¸õ­«-
+Qsquid:S1199×"-Extract this nested code block into a method.(»Óˆšıÿÿÿÿ8¾Èü¤-
+osquid:S1301Ö"KReplace this "switch" statement by "if" statements to increase readability.(×ö³–úÿÿÿÿ8¾Èü¤-
 U
-squid:S106n"9Replace this use of System.out or System.err by a logger.(â™âE8×§ìÏ¤-
-Wsquid:S1854œ"8Remove this useless assignment to local variable "rate".(Ú³ğ8×§ìÏ¤-
-Qsquid:S1199á"-Extract this nested code block into a method.(àš°œøÿÿÿÿ8®üÑ¤-
-Msquid:S1066s"/Merge this if statement with the enclosing one.(ÁùÈç8×§ìÏ¤-
-Qsquid:S1199¯"-Extract this nested code block into a method.(Û¶¥ùúÿÿÿÿ8×§ìÏ¤-
-dsquid:S2147¿"ECombine this catch with the one at line 445, which has the same body.(ï­£Ä8®üÑ¤-
-Lsquid:S1199´"-Extract this nested code block into a method.(À™¡ñ8×§ìÏ¤-
-]"squid:SwitchLastCaseIsDefaultCheckç""Add a default case to this switch.(×ö³–úÿÿÿÿ8®üÑ¤-
-Ssquid:S1066€"/Merge this if statement with the enclosing one.(½ÿÂ„üÿÿÿÿ8®üÑ¤-
-Qsquid:S1199Æ"-Extract this nested code block into a method.(ì­÷ßÿÿÿÿÿ8×§ìÏ¤-
+squid:S106r"9Replace this use of System.out or System.err by a logger.(â™âE8¾Èü¤-
+jsquid:CommentedOutCodeLine¬"<This block of commented-out lines of code should be removed.(ê¸Ç¸8œ¸õ­«-
+Qsquid:S1199ú"-Extract this nested code block into a method.(àš°œøÿÿÿÿ8œ¸õ­«-
+[
+squid:S106v"9Replace this use of System.out or System.err by a logger.(×Ã¸¥ûÿÿÿÿ8ß’á¸©-
+Qsquid:S1199¸"-Extract this nested code block into a method.(Û¶¥ùúÿÿÿÿ8¾Èü¤-
+Hsquid:S1481¥")Remove this unused "rate" local variable.(Ú³ğ8¾Èü¤-
+Lsquid:S1199½"-Extract this nested code block into a method.(À™¡ñ8¾Èü¤-
+jsquid:CommentedOutCodeLine©"<This block of commented-out lines of code should be removed.(¼«˜8¾Èü¤-
 \
-squid:S106"9Replace this use of System.out or System.err by a logger.(èêªìøÿÿÿÿ8×§ìÏ¤-
-csquid:UselessImportCheck	"3Remove this unused import 'android.graphics.Color'.(øãíòşÿÿÿÿ8Ü¶ÆÌ¤-
-Wsquid:S1197ä"8Move the array designator from the variable to the type.(³Ûü¢8®üÑ¤-
-Qsquid:S1199Î"-Extract this nested code block into a method.(»Óˆšıÿÿÿÿ8×§ìÏ¤-
-osquid:S1301Ä"KReplace this "switch" statement by "if" statements to increase readability.(×ö³–úÿÿÿÿ8®üÑ¤-
-isquid:CommentedOutCodeLinej"<This block of commented-out lines of code should be removed.(î­ø¤8×§ìÏ¤-
-Qsquid:S1199Â"-Extract this nested code block into a method.(Èî³Ûıÿÿÿÿ8×§ìÏ¤-
-Lsquid:S1199İ"-Extract this nested code block into a method.(ÕÒõ8®üÑ¤-
-]"squid:SwitchLastCaseIsDefaultCheckÄ""Add a default case to this switch.(×ö³–úÿÿÿÿ8®üÑ¤-
-]"squid:SwitchLastCaseIsDefaultCheckÜ""Add a default case to this switch.(×“¾ñùÿÿÿÿ8®üÑ¤-
-Ksquid:S1199¹"-Extract this nested code block into a method.(™òH8×§ìÏ¤-
-osquid:S1301ç"KReplace this "switch" statement by "if" statements to increase readability.(×ö³–úÿÿÿÿ8®üÑ¤-
-`squid:UselessImportCheck"0Remove this unused import 'android.view.Window'.(¿è™÷úÿÿÿÿ8Úë¤Ì¤-
-tsquid:UselessImportCheck
-"DRemove this unused import 'android.graphics.drawable.ColorDrawable'.(ÖŸÂ«øÿÿÿÿ8Ü¶ÆÌ¤-
-jsquid:CommentedOutCodeLine½"<This block of commented-out lines of code should be removed.(û…üÙ8×§ìÏ¤-
-jsquid:CommentedOutCodeLine "<This block of commented-out lines of code should be removed.(¼«˜8×§ìÏ¤-
+squid:S106¶"9Replace this use of System.out or System.err by a logger.(Ñ´±İüÿÿÿÿ8¾Èü¤-
+Lsquid:S1199õ"-Extract this nested code block into a method.(ÕÒõ8œ¸õ­«-
+Wsquid:S1854¥"8Remove this useless assignment to local variable "rate".(Ú³ğ8¾Èü¤-
+Ksquid:S1199Â"-Extract this nested code block into a method.(™òH8¾Èü¤-
+Lsquid:S1199×"-Extract this nested code block into a method.(ñÙ¾Ú8¾Èü¤-
 \
-squid:S106“"9Replace this use of System.out or System.err by a logger.(›ö€†ûÿÿÿÿ8®üÑ¤-
-Hsquid:S1481œ")Remove this unused "rate" local variable.(Ú³ğ8×§ìÏ¤-
-wsquid:S00116R"SRename this field "nav_item" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.( ê€“şÿÿÿÿ8×§ìÏ¤-
-Lsquid:S1199å"-Extract this nested code block into a method.(ŠÊ¡î8®üÑ¤-
-nsquid:CommentedOutCodeLinec"<This block of commented-out lines of code should be removed.(œˆúşÿÿÿÿ8×§ìÏ¤-
+squid:S106 "9Replace this use of System.out or System.err by a logger.(Î´‹îûÿÿÿÿ8ˆ Ä¬«-
+jsquid:CommentedOutCodeLineÆ"<This block of commented-out lines of code should be removed.(û…üÙ8¾Èü¤-
+Qsquid:S1199ú"-Extract this nested code block into a method.(¶»Ó«ÿÿÿÿÿ8¾Èü¤-
 \
-squid:S106­"9Replace this use of System.out or System.err by a logger.(Ñ´±İüÿÿÿÿ8×§ìÏ¤-
+squid:S106í"9Replace this use of System.out or System.err by a logger.(„Å¸«úÿÿÿÿ8¾Èü¤-
+Gsquid:S1148×"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8œ¸õ­«-
+V
+squid:S106~"9Replace this use of System.out or System.err by a logger.(ìşâ8¦‚å­«-
+lsquid:MaximumInheritanceDepthL"<This class has 7 parents which is greater than 5 authorized.(ú‰®8¾Èü¤-
+wsquid:S00116T"SRename this field "nav_item" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.( ê€“şÿÿÿÿ8¾Èü¤-
+jsquid:CommentedOutCodeLineì"<This block of commented-out lines of code should be removed.(Ç±ŠÆ8õêò­«-
+dsquid:S2147Ö"ECombine this catch with the one at line 468, which has the same body.(ï­£Ä8œ¸õ­«-
+Qsquid:S1199Ó"-Extract this nested code block into a method.(ˆÒÅÔùÿÿÿÿ8¾Èü¤-
+Lsquid:S1199ÿ"-Extract this nested code block into a method.(ŠÊ¡î8œ¸õ­«-
+Ssquid:S1066–"/Merge this if statement with the enclosing one.(½ÿÂ„üÿÿÿÿ8œ¸õ­«-
+W
+squid:S106é"9Replace this use of System.out or System.err by a logger.(àùÚÂ8¾Èü¤-
 \
-squid:S106Š"9Replace this use of System.out or System.err by a logger.(ïÊœğúÿÿÿÿ8®üÑ¤-
-Ysquid:UselessImportCheck1".Remove this unused import 'java.util.Objects'.(¼¸õ›8Ü¶ÆÌ¤-
-lsquid:MaximumInheritanceDepthJ"<This class has 7 parents which is greater than 5 authorized.(ú‰®8Úë¤Ì¤-
-Qsquid:S1199è"-Extract this nested code block into a method.(¶»Ó«ÿÿÿÿÿ8®üÑ¤-
-Qsquid:S1199Ê"-Extract this nested code block into a method.(ˆÒÅÔùÿÿÿÿ8×§ìÏ¤-
-]"squid:SwitchLastCaseIsDefaultCheck®""Add a default case to this switch.(øå´¡ÿÿÿÿÿ8×§ìÏ¤-
-Lsquid:S1199Å"-Extract this nested code block into a method.(ñÙ¾Ú8®üÑ¤-
-jsquid:CommentedOutCodeLine•"<This block of commented-out lines of code should be removed.(ê¸Ç¸8®üÑ¤-
-Gsquid:S1148À"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8®üÑ¤-
+squid:S106 "9Replace this use of System.out or System.err by a logger.(ïÊœğúÿÿÿÿ8œ¸õ­«-
+\
+squid:S106ñ"9Replace this use of System.out or System.err by a logger.(æ«ºíùÿÿÿÿ8¾Èü¤-
+\
+squid:S106¦"9Replace this use of System.out or System.err by a logger.(èêªìøÿÿÿÿ8¾Èü¤-
+W
+squid:S106™"9Replace this use of System.out or System.err by a logger.(ˆà¼•8ŠÊ¥¹©-
+V
+squid:S106z"9Replace this use of System.out or System.err by a logger.(Õäç¶8ª¿£¹©-
+Qsquid:S1199Ë"-Extract this nested code block into a method.(Èî³Ûıÿÿÿÿ8¾Èü¤-
+Wsquid:S1197ö"8Move the array designator from the variable to the type.(³Ûü¢8¾Èü¤-
+]"squid:SwitchLastCaseIsDefaultCheckÖ""Add a default case to this switch.(×ö³–úÿÿÿÿ8¾Èü¤-
+Qsquid:S1199Ï"-Extract this nested code block into a method.(ì­÷ßÿÿÿÿÿ8¾Èü¤-
+]"squid:SwitchLastCaseIsDefaultCheck·""Add a default case to this switch.(øå´¡ÿÿÿÿÿ8¾Èü¤-
+]"squid:SwitchLastCaseIsDefaultCheckù""Add a default case to this switch.(×ö³–úÿÿÿÿ8¾Èü¤-
+osquid:S1301ù"KReplace this "switch" statement by "if" statements to increase readability.(×ö³–úÿÿÿÿ8¾Èü¤-
+isquid:CommentedOutCodeLinen"<This block of commented-out lines of code should be removed.(î­ø¤8¾Èü¤-
+\
+squid:S106ª"9Replace this use of System.out or System.err by a logger.(›ö€†ûÿÿÿÿ8œ¸õ­«-
+gsquid:S1192é"HDefine a constant instead of duplicating this literal "lang = " 3 times.(àùÚÂ8¾Èü¤-
+]"squid:SwitchLastCaseIsDefaultCheckô""Add a default case to this switch.(×“¾ñùÿÿÿÿ8œ¸õ­«-

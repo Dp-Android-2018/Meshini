@@ -1,5 +1,6 @@
 package com.dp.meshini.view.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -158,6 +159,13 @@ public class PendingRequestsActivity extends BaseActivity implements DeletePendi
     }
 
     public void back(View view){
-        finish();
+        if(getSupportFragmentManager().getBackStackEntryCount()>0)
+        {
+            finish();
+        }else {
+            Intent intent=new Intent(this,ContainerActivity.class);
+            startActivity(intent);
+        }
+
     }
 }

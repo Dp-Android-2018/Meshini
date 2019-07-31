@@ -1,11 +1,14 @@
 
-nsquid:CommentedOutCodeLineF"<This block of commented-out lines of code should be removed.(¨›Æúúÿÿÿÿ8æ·Ä‚¤-
-\squid:S1155?">Use isEmpty() to check whether the collection is empty or not.(ÝÞèú8ò³¼‚¤-
-Rsquid:S1066\"/Merge this if statement with the enclosing one.(ÕÑ—Ýÿÿÿÿÿ8Ñ¦À’Ÿ-
-Ksquid:S1604a"(Make this anonymous inner class a lambda(Ž¡½Ãûÿÿÿÿ8µŠç’Ÿ-
-Gsquid:S1125]")Remove the literal "false" boolean value.(üš¸À8üÌÛ’Ÿ-
-Msquid:S1066]"/Merge this if statement with the enclosing one.(üš¸À8üÌÛ’Ÿ-
-nsquid:CommentedOutCodeLinee"<This block of commented-out lines of code should be removed.(¨›Æúúÿÿÿÿ8•÷Ñ•Ÿ-
-nsquid:CommentedOutCodeLine9"<This block of commented-out lines of code should be removed.(ÓÙ–ýúÿÿÿÿ8´ÇÝ”Ÿ-
-nsquid:CommentedOutCodeLinev"<This block of commented-out lines of code should be removed.(–“Åýÿÿÿÿ8ìþ¸‚¤-
-lsquid:MaximumInheritanceDepth"<This class has 7 parents which is greater than 5 authorized.(ÛââÛ8ªÜ‡’Ÿ-
+Rsquid:S1066x"/Merge this if statement with the enclosing one.(ÕÑ—Ýÿÿÿÿÿ8Ñ¦À’Ÿ-
+Msquid:S1066y"/Merge this if statement with the enclosing one.(üš¸À8üÌÛ’Ÿ-
+nsquid:CommentedOutCodeLineT"<This block of commented-out lines of code should be removed.(¨›Æúúÿÿÿÿ8æ·Ä‚¤-
+nsquid:CommentedOutCodeLineG"<This block of commented-out lines of code should be removed.(ÓÙ–ýúÿÿÿÿ8´ÇÝ”Ÿ-
+osquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¨›Æúúÿÿÿÿ8•÷Ñ•Ÿ-
+\squid:S1155M">Use isEmpty() to check whether the collection is empty or not.(ÝÞèú8ò³¼‚¤-
+?squid:S1643d"Use a StringBuilder instead.(äìüÆùÿÿÿÿ8§ç¬ô¤-
+Fsquid:S1148_"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8§ç¬ô¤-
+?squid:S1643c"Use a StringBuilder instead.(Íòàðüÿÿÿÿ8§ç¬ô¤-
+osquid:CommentedOutCodeLine’"<This block of commented-out lines of code should be removed.(–“Åýÿÿÿÿ8ìþ¸‚¤-
+Gsquid:S1125y")Remove the literal "false" boolean value.(üš¸À8üÌÛ’Ÿ-
+Ksquid:S1604}"(Make this anonymous inner class a lambda(Ž¡½Ãûÿÿÿÿ8µŠç’Ÿ-
+lsquid:MaximumInheritanceDepth%"<This class has 7 parents which is greater than 5 authorized.(ÛââÛ8ªÜ‡’Ÿ-

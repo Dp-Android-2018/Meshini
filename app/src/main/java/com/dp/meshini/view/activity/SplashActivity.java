@@ -40,9 +40,9 @@ public class SplashActivity extends BaseActivity {
                 } else if (getIntent().getStringExtra("title").equals("trip_finished")) {
                     i = new Intent(getApplicationContext(), SplashActivity.class);
                     //Notify(i, remoteMessage.getNotification().getTitle(), remoteMessage.getNotification().getBody());
-                } else if (getIntent().getStringExtra("title").equals("trip_started") ||
-                        getIntent().getStringExtra("title").equals("destination_finished") ||
-                        getIntent().getStringExtra("title").equals("destination_started")) {
+                } else if (getIntent().getStringExtra("title").equals("trip-started") ||
+                        getIntent().getStringExtra("title").equals("destination-finished") ||
+                        getIntent().getStringExtra("title").equals("destination-started")) {
                     i = new Intent(getApplicationContext(), ContainerActivity.class);
                     i.putExtra(OPEN_ACTIVE_TRIP, true);
                 }

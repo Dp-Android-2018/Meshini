@@ -85,7 +85,8 @@
             app:layout_constraintBottom_toTopOf="@+id/button6"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/pin_view" />
+            app:layout_constraintTop_toBottomOf="@+id/pin_view"
+            android:onClick="resendActivationCode"/>
 
         <Button
             android:id="@+id/button6"

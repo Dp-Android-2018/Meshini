@@ -93,6 +93,7 @@ public class MapsFragment extends Fragment implements
     private double lat;
     private double lang;
     String nextDestinationName;
+    private Context mContext;
     private double nextDestinationLang;
     private double nextDestinationLat;
     LocationListener locationListener;
@@ -103,10 +104,12 @@ public class MapsFragment extends Fragment implements
     Lazy<ContainerViewModel> containerViewModelLazy = inject(ContainerViewModel.class);
     Lazy<SharedPreferenceHelpers>sharedPreferenceHelpersLazy=inject(SharedPreferenceHelpers.class);
     Bundle bundle;
+    public static boolean active;
+
     public static MapsFragment newInstance() {
-        if(mapsFragment==null) {
+        //if(mapsFragment==null) {
             mapsFragment = new MapsFragment();
-        }
+        //}
         return mapsFragment;
     }
 
@@ -122,12 +125,13 @@ public class MapsFragment extends Fragment implements
         return mapsBinding.getRoot();
     }
 
+
     public void initVariables() {
         bundle=getArguments();
         activeTripFirebase= (ActiveTripFirebase) bundle.getSerializable(ACTIVE_TRIP_FIREBASE);
         tripScheduleAdapter = new TripScheduleAdapter();
         firebaseDataBaseLazy.getValue().setActiveTripDataCallback(this);
-        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(getContext());
+        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(mContext);
         locationListener = new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {
@@ -165,8 +169,9 @@ public class MapsFragment extends Fragment implements
         }else {
             marker.position(new LatLng(nextDestinationLat,nextDestinationLang));
         }
-        currentMarker=mGoogleMap.addMarker(marker);
-            GoogleDirection.withServerKey(getString(R.string.google_maps_key))
+
+                currentMarker=mGoogleMap.addMarker(marker);
+            GoogleDirection.withServerKey(getResources().getString(R.string.google_maps_key))
                     .from(new LatLng(lat,lang))
                     .to(new LatLng(nextDestinationLat,nextDestinationLang))
                     .avoid(AvoidType.FERRIES)
@@ -179,7 +184,7 @@ public class MapsFragment extends Fragment implements
                                 Route route = direction.getRouteList().get(0);
                                 Leg leg = route.getLegList().get(0);
                                 ArrayList<LatLng> directionPositionList = leg.getDirectionPoint();
-                                PolylineOptions polylineOptions = DirectionConverter.createPolyline(getContext(), directionPositionList, 5, Color.BLUE);
+                                PolylineOptions polylineOptions = DirectionConverter.createPolyline(mContext, directionPositionList, 5, Color.BLUE);
                                 mGoogleMap.addPolyline(polylineOptions);
                                 mapsBinding.tvTime.setText(leg.getDuration().getText());
                                 mapsBinding.tvDistance.setText(leg.getDistance().getText());
@@ -193,6 +198,13 @@ public class MapsFragment extends Fragment implements
                             showSnackbar("Error onDirectionFailure :" + t.getMessage());
                         }
                     });
+        LatLngBounds.Builder builder = new LatLngBounds.Builder();
+        builder.include(new LatLng(lat,lang));
+        builder.include(new LatLng(nextDestinationLat,nextDestinationLang));
+        LatLngBounds bounds = builder.build();
+        int padding = 200; // offset from edges of the map in pixels
+        CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, padding);
+        mGoogleMap.animateCamera(cu);
     }
 
     @SuppressLint("MissingPermission")
@@ -201,19 +213,20 @@ public class MapsFragment extends Fragment implements
         mGoogleMap = googleMap;
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
-                    ContextCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            if (ContextCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
+                    ContextCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                 return;
             }
         }
         googleMap.setMyLocationEnabled(true);
         mGoogleMap.setMaxZoomPreference(20);
         getLastKnownLocation();
+        //updateData();
     }
 
     private void getLastKnownLocation() {
         Log.d(TAG, "getLastKnownLocation: called.");
-        if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             return;
         }
         mFusedLocationClient.getLastLocation().addOnCompleteListener(task -> {
@@ -275,15 +288,15 @@ public class MapsFragment extends Fragment implements
 
 
     public void showDestinationListDialog() {
-        final AlertDialog.Builder builder = new AlertDialog.Builder(getContext(), R.style.CustomDialog);
-        View v = View.inflate(getContext(), R.layout.destination_list_dialog, null);
+        final AlertDialog.Builder builder = new AlertDialog.Builder(mContext, R.style.CustomDialog);
+        View v = View.inflate(mContext, R.layout.destination_list_dialog, null);
         builder.setView(v);
         ImageView close = v.findViewById(R.id.iv_close);
         RecyclerView rVDestination = v.findViewById(R.id.rv_destinations);
         Dialog dialog = builder.create();
         close.setOnClickListener(v1 -> dialog.dismiss());
         rVDestination.setAdapter(tripScheduleAdapter);
-        rVDestination.setLayoutManager(new LinearLayoutManager(getContext()));
+        rVDestination.setLayoutManager(new LinearLayoutManager(mContext));
         Window window = dialog.getWindow();
         window.setBackgroundDrawableResource(R.color.transparent);
         WindowManager.LayoutParams layoutParams = window.getAttributes();
@@ -293,7 +306,7 @@ public class MapsFragment extends Fragment implements
     }
 
     public void getActiveTripDetail() {
-        ProgressDialogUtils.getInstance().showProgressDialog(getContext());
+        ProgressDialogUtils.getInstance().showProgressDialog(mContext);
 
         containerViewModelLazy.getValue().getTripDetail().observe(this, tripDetailResponseResponse -> {
             ProgressDialogUtils.getInstance().cancelDialog();
@@ -330,12 +343,14 @@ public class MapsFragment extends Fragment implements
     @Override
     public void onStart() {
         super.onStart();
+        active=true;
         mapsBinding.map.onStart();
     }
 
     @Override
     public void onStop() {
         super.onStop();
+        active=false;
         mapsBinding.map.onStop();
     }
 
@@ -370,11 +385,17 @@ public class MapsFragment extends Fragment implements
         }
     }
 
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        this.mContext=context;
+    }
+
     @SuppressLint("ResourceType")
     @RequiresApi(api = Build.VERSION_CODES.M)
     public void showRateDialog() {
-        final AlertDialog.Builder builder = new AlertDialog.Builder(getContext(), R.style.CustomDialog);
-        View v = View.inflate(getContext(), R.layout.rate_dialog, null);
+        final AlertDialog.Builder builder = new AlertDialog.Builder(mContext, R.style.CustomDialog);
+        View v = View.inflate(mContext, R.layout.rate_dialog, null);
         builder.setView(v);
         builder.setCancelable(false);
         Dialog dialog = builder.create();
@@ -404,10 +425,11 @@ public class MapsFragment extends Fragment implements
             }
         }
         resetRecyclerView(places);
+        drawPath();
         if(activeTripDetail!=null)
         activeTripDetail.setPlaces(places);
         mapsBinding.tvDestinationTitle.setText(nextDestinationName);
-        mapsBinding.tvNextDestination.setText("Next destination: "+nextDestinationName);
+        mapsBinding.tvNextDestination.setText(getString(R.string.next_destination)+nextDestinationName);
     }
     public void showSnackbar(String message) {
         Snackbar.make(mapsBinding.clRoot, message, Snackbar.LENGTH_LONG).show();
@@ -421,6 +443,5 @@ public class MapsFragment extends Fragment implements
     public void setNextDestinationLatLang(double lat,double lang){
         this.nextDestinationLat=lat;
         this.nextDestinationLang=lang;
-        drawPath();
     }
 }

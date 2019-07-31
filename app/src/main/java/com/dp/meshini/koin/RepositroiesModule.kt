@@ -31,6 +31,9 @@ val DependencyModule = module {
     single { ActiveTripDetailRepository() }
     single { CreateCommentRepository() }
     single { ChangeLanguageRepository() }
+    single { ChatRepository() }
+    single { PackagesRepository() }
+    single { PackageDetailRepository() }
 
 
     factory { LoginRequest() }
@@ -45,5 +48,6 @@ val DependencyModule = module {
     factory { AcceptOfferRequest()}
     factory { CreateCommentRequest() }
     factory { ChangeLanguageRequest() }
+    factory { GetPackagesRequest() }
 
 }

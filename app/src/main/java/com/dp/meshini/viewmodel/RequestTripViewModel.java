@@ -2,6 +2,7 @@ package com.dp.meshini.viewmodel;
 
 import android.app.Application;
 
+import com.dp.meshini.repositories.CitiesRepository;
 import com.dp.meshini.repositories.LanguagesRepository;
 import com.dp.meshini.repositories.TCountriesRepository;
 import com.dp.meshini.servise.model.pojo.CountryCityPojo;
@@ -21,6 +22,7 @@ public class RequestTripViewModel extends AndroidViewModel {
 
     Lazy<TCountriesRepository> tCountriesRepositoryLazy = inject(TCountriesRepository.class);
     Lazy<LanguagesRepository> languagesRepositoryLazy = inject(LanguagesRepository.class);
+    Lazy<CitiesRepository>citiesRepositoryLazy=inject(CitiesRepository.class);
 
     public RequestTripViewModel(@NonNull Application application) {
         super(application);
@@ -33,6 +35,12 @@ public class RequestTripViewModel extends AndroidViewModel {
     public LiveData<Response<CountryCityResponse>> getLanguages() {
         return languagesRepositoryLazy.getValue().getLanguages();
     }
+
+    public LiveData<Response<CountryCityResponse>> getCities(int countryId) {
+        return citiesRepositoryLazy.getValue().getCities(countryId);
+    }
+
+
 
 
 }

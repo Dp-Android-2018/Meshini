@@ -1,18 +1,18 @@
 
-@squid:S1643"Use a StringBuilder instead.(äìüÆùÿÿÿÿ8ì¹íÿ£-
-@squid:S1643œ"Use a StringBuilder instead.(Íòàğüÿÿÿÿ8ÓÑÃÓ™-
-Rsquid:S1066z"/Merge this if statement with the enclosing one.(±„‘‰ıÿÿÿÿ8ì¹íÿ£-
+W
+squid:S106Š"9Replace this use of System.out or System.err by a logger.(Œ²ö8ì¹íÿ£-
+@squid:S1643¥"Use a StringBuilder instead.(Íòàğüÿÿÿÿ8ÓÑÃÓ™-
+W
+squid:S106‰"9Replace this use of System.out or System.err by a logger.(ˆ—Ã8øÔÔ£-
+isquid:CommentedOutCodeLinee"<This block of commented-out lines of code should be removed.(’Ğ¿Ğ8ì¹íÿ£-
+¤squid:S1186q"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(íÎı‰øÿÿÿÿ8ì¹íÿ£-
+W
+squid:S106ˆ"9Replace this use of System.out or System.err by a logger.(ŸÜÑ„8øÔÔ£-
 \
-squid:S106‡"9Replace this use of System.out or System.err by a logger.(†“èòÿÿÿÿÿ8ì¹íÿ£-
-¤squid:S1186h"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(íÎı‰øÿÿÿÿ8ì¹íÿ£-
-Gsquid:S1148˜"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ì¹íÿ£-
-W
-squid:S106€"9Replace this use of System.out or System.err by a logger.(ˆ—Ã8øÔÔ£-
+squid:S106"9Replace this use of System.out or System.err by a logger.(†“èòÿÿÿÿÿ8ì¹íÿ£-
+@squid:S1643¦"Use a StringBuilder instead.(äìüÆùÿÿÿÿ8ì¹íÿ£-
+lsquid:MaximumInheritanceDepth,"<This class has 7 parents which is greater than 5 authorized.(­ÊíÙ8¢¹Ó™-
 V
-squid:S1066"9Replace this use of System.out or System.err by a logger.(äŠ8¢¹Ó™-
-W
-squid:S106"9Replace this use of System.out or System.err by a logger.(Œ²ö8ì¹íÿ£-
-V
-squid:S106"9Replace this use of System.out or System.err by a logger.(ŸÜÑ„8øÔÔ£-
-lsquid:MaximumInheritanceDepth+"<This class has 7 parents which is greater than 5 authorized.(­ÊíÙ8¢¹Ó™-
-isquid:CommentedOutCodeLine\"<This block of commented-out lines of code should be removed.(’Ğ¿Ğ8ì¹íÿ£-
+squid:S1069"9Replace this use of System.out or System.err by a logger.(äŠ8¢¹Ó™-
+Gsquid:S1148¡"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ì¹íÿ£-
+Ssquid:S1066ƒ"/Merge this if statement with the enclosing one.(±„‘‰ıÿÿÿÿ8ì¹íÿ£-

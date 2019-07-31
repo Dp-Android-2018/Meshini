@@ -1,18 +1,12 @@
 
-W
-squid:S106"9Replace this use of System.out or System.err by a logger.(Ä€¶Ş8º–À¨¤-
-hsquid:UselessImportCheck"8Remove this unused import 'androidx.lifecycle.LiveData'.(ß„İŞşÿÿÿÿ8ÚÉ¦¤-
-Ÿsquid:S1186="€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÆÁ¡ì8ª¸Á¨¤-
-\
-squid:S106"9Replace this use of System.out or System.err by a logger.(¬ãöùÿÿÿÿ8ëı§¤-
-nsquid:CommentedOutCodeLineO"<This block of commented-out lines of code should be removed.(´€ªÀøÿÿÿÿ8œ«ù¨¤-
-psquid:UselessImportCheck"@Remove this unused import 'com.dp.meshini.utils.DateTimePicker'.(÷ˆ¸Şøÿÿÿÿ8–Ï¸Ñ™-
-wsquid:UselessImportCheck"LRemove this unused import 'com.dp.meshini.view.callback.OnDateTimeSelected'.(Ü¥ÃÃ8§›´Ñ™-
-¤squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¹Æº×şÿÿÿÿ8’èœ©¤-
-asquid:S1155P">Use isEmpty() to check whether the collection is empty or not.(áÌÊšøÿÿÿÿ8„ş‹©¤-
-\
-squid:S106"9Replace this use of System.out or System.err by a logger.(òğÕØøÿÿÿÿ8’èœ©¤-
-Xsquid:UselessImportCheck".Remove this unused import 'java.util.HashSet'.(Ê‚êX8¾Ã¯©¤-
-esquid:UselessImportCheck	"5Remove this unused import 'android.widget.ImageView'.(ú¯ëàüÿÿÿÿ8¥ĞÉÑ™-
-nsquid:CommentedOutCodeLine_"<This block of commented-out lines of code should be removed.(Û³†ùÿÿÿÿ8ñõà¨¤-
-hsquid:UselessImportCheck"8Remove this unused import 'androidx.lifecycle.Observer'.(ÒÁˆÉşÿÿÿÿ8ÊÇ›¦¤-
+Ÿsquid:S1186@"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÆÁ¡ì8ª¸Á¨¤-
+¥squid:S1186‚"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¹Æº×şÿÿÿÿ8’èœ©¤-
+|squid:UselessImportCheck"QRemove this unused import 'com.dp.meshini.servise.model.response.PlacesResponse'.(ü‹ú8ïãúô¤-
+nsquid:CommentedOutCodeLineb"<This block of commented-out lines of code should be removed.(Û³†ùÿÿÿÿ8ñõà¨¤-
+nsquid:CommentedOutCodeLineR"<This block of commented-out lines of code should be removed.(´€ªÀøÿÿÿÿ8œ«ù¨¤-
+asquid:S1155S">Use isEmpty() to check whether the collection is empty or not.(áÌÊšøÿÿÿÿ8„ş‹©¤-
+@squid:S1643š"Use a StringBuilder instead.(Íòàğüÿÿÿÿ8ç‰ıô¤-
+Zsquid:UselessImportCheck""/Remove this unused import 'retrofit2.Response'.(¾éçï8ïãúô¤-
+hsquid:UselessImportCheck"8Remove this unused import 'androidx.lifecycle.Observer'.(ÒÁˆÉşÿÿÿÿ8ïãúô¤-
+@squid:S1643›"Use a StringBuilder instead.(äìüÆùÿÿÿÿ8ç‰ıô¤-
+Gsquid:S1148–"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ç‰ıô¤-

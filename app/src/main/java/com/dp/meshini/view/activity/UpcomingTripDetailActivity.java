@@ -31,6 +31,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import kotlin.Lazy;
 
 import static com.dp.meshini.utils.ConstantsFile.Constants.OFFER;
+import static com.dp.meshini.utils.ConstantsFile.IntentConstants.TRIP_DETAIL;
 import static org.koin.java.standalone.KoinJavaComponent.inject;
 
 public class UpcomingTripDetailActivity extends AppCompatActivity {
@@ -144,5 +145,11 @@ public class UpcomingTripDetailActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         back();
+    }
+
+    public void startChat(View view){
+        Intent intent=new Intent(this,ChatActivity.class);
+        intent.putExtra(TRIP_DETAIL,tripDetail);
+        startActivity(intent);
     }
 }

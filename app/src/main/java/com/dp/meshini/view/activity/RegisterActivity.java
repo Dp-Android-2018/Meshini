@@ -74,7 +74,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     public void setCitySpinner(int countryId) {
         registerViewModelLazy.getValue().getCities(countryId).observe(this, countryCityPojos -> {
-            citySpinnerAdapter = new SpinnerAdapter(RegisterActivity.this, countryCityPojos);
+            citySpinnerAdapter = new SpinnerAdapter(this, countryCityPojos.body().getCountryCityList());
             binding.spCity.setAdapter(citySpinnerAdapter);
             binding.spCity.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override

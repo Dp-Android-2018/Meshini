@@ -1,11 +1,11 @@
 
+xsquid:S1450"ZRemove the "baseBinding" field and declare it as a local variable in the relevant methods.(¿Ç¿8òãÆ³¤-
 [
 squid:S1067"9Replace this use of System.out or System.err by a logger.(äÛÙ¸ıÿÿÿÿ8¯ ™•–-
+psquid:S00117F"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ø™åÕ8¯ ™•–-
+isquid:CommentedOutCodeLine+"<This block of commented-out lines of code should be removed.(ĞñÅ8òãÆ³¤-
+nsquid:S00117M"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÁáG8¯ ™•–-
+psquid:S00117:"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ø™åÕ8¯ ™•–-
 qsquid:MaximumInheritanceDepth"<This class has 6 parents which is greater than 5 authorized.(Ä©½ôûÿÿÿÿ8…şÍ£¤-
 hsquid:CommentedOutCodeLine2"<This block of commented-out lines of code should be removed.(ÿÄ¦J8€æ”—–-
-psquid:S00117F"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ø™åÕ8¯ ™•–-
-psquid:S00117:"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ø™åÕ8¯ ™•–-
-nsquid:S00117M"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÁáG8¯ ™•–-
 Msquid:S1068"/Remove this unused "baseBinding" private field.(¿Ç¿8òãÆ³¤-
-xsquid:S1450"ZRemove the "baseBinding" field and declare it as a local variable in the relevant methods.(¿Ç¿8òãÆ³¤-
-isquid:CommentedOutCodeLine+"<This block of commented-out lines of code should be removed.(ĞñÅ8òãÆ³¤-

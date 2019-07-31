@@ -26,7 +26,7 @@
         android:layout_marginTop="8dp"
         android:numStars="5"
         android:stepSize=".5"
-        android:rating="3"
+        android:rating="5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/civ_guide_image"

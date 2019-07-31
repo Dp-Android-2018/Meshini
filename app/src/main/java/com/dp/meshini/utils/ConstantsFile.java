@@ -31,6 +31,8 @@ public class ConstantsFile {
         public static final String ACTIVE_TRIP_DETAIL="client/request/active-request/details";
         public static final String CREATE_COMMENT_URL="client/request/{request}/review";
         public static final String CHANGE_LANGUAGE_URL="client/change-language";
+        public static final String GET_ALL_PACKAGES_URL="client/packages";
+        public static final String PACKAGE_DETAIL_URL="client/packages/{package}";
     }
 
     public static class Constants {
@@ -43,7 +45,7 @@ public class ConstantsFile {
         public static final String PENDING_TRIP="pending";
         public static final String OFFER="offer";
         public static final String CAR="car";
-        public static final String MOTORCYCLE="motorcycle";
+        public static final String MOTORCYCLE="motorcycle_white";
         public static final String ONFOOT="onfoot";
         public static final String CASH="COD";
         public static final String VISA="VISA";
@@ -57,6 +59,30 @@ public class ConstantsFile {
         public static final int PERMISSIONS_REQUEST_ENABLE_GPS = 9003;
         public static final int ERROR_DIALOG_REQUEST = 9001;
         public static final int START_PLACE_PICKER=9004;
+        public static final int VIEW_TYPE_MESSAGE_SENT=1;
+        public static final int VIEW_TYPE_MESSAGE_RECEIVED=2;
+
+        public static final String CAR_TYPE = "car";
+        public static final String ON_FOOT_TYPE = "onfoot";
+        public static final String MOTORBIKE_TYPE = "motorcycle";
+        public static final String VAN_TYPE = "van";
+        public static final String TUKTUK_TYPE= "tuk_tuk";
+        public static final String STEAGECOACH_TYPE = "stage_coach";
+        public static final String YACHAT_TYPE = "yacht";
+        public static final String GOLFCAR_TYPE = "golf_car";
+        public static final String JETSKI_TYPE = "jet_ski";
+
+        public static final int CAR_ID = 1111;
+        public static final int BIKE_ID = 2222;
+        public static final int VAN_ID = 3333;
+        public static final int TUKTUK_ID = 4444;
+        public static final int STEAGECOACH_ID = 5555;
+        public static final int ONFOOT_ID = 6666;
+        public static final int YACHAT_ID = 7777;
+        public static final int JETSKI_ID = 8888;
+        public static final int GOLFCAR_ID = 9999;
+
+
 
     }
 
@@ -73,6 +99,8 @@ public class ConstantsFile {
         public static final String CLIENT_PHONE="clientphone";
         public static final String SOURCE_ACTIVITY="source_activity";
         public static final String CREATE_TRIP_REQUEST="trip_request";
+        public static final String SHARED_TRIP="shared_trip";
+        public static final String SHARED_TRIP_ID="shared_trip_id";
         public static final String TOKEN="token";
         public static final int AUTO_COMP_REQ_CODE=111;
         public static final String OPEN_ACTIVE_TRIP="open_active_trip";
@@ -82,6 +110,7 @@ public class ConstantsFile {
         public static final String SELECTED_ADDRESS="address";
         public static final String SELECTED_LAT="lat";
         public static final String SELECTED_LANG="lang";
+        public static final String TRIP_DETAIL="trip_detail";
         public static final String ACTIVE_TRIP_FIREBASE="active_trip_firebase";
 
 

@@ -1,13 +1,10 @@
 package com.dp.meshini.view.activity;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Build;
@@ -17,14 +14,28 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.crashlytics.android.Crashlytics;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.core.view.GravityCompat;
+import androidx.databinding.DataBindingUtil;
+import androidx.databinding.ObservableBoolean;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.Observer;
+
 import com.dp.meshini.R;
 import com.dp.meshini.databinding.ActivityContainerBinding;
 import com.dp.meshini.repositories.ChangeLanguageRepository;
@@ -50,24 +61,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.Objects;
-import java.util.Observable;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-import androidx.core.view.GravityCompat;
-import androidx.databinding.DataBindingUtil;
-import androidx.databinding.ObservableBoolean;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.Observer;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import kotlin.Lazy;
@@ -91,7 +84,7 @@ public class ContainerActivity extends BaseActivity
     MenuItem nav_item;
     ObservableBoolean hasActiveTrip;
     ActivityContainerBinding binding;
-    Lazy<ChangeLanguageRepository>changeLanguageRepositoryLazy=inject(ChangeLanguageRepository.class);
+    Lazy<ChangeLanguageRepository> changeLanguageRepositoryLazy = inject(ChangeLanguageRepository.class);
     Lazy<FirebaseDataBase> firebaseDataBaseLazy = inject(FirebaseDataBase.class);
     Lazy<SharedPreferenceHelpers> sharedPreferenceHelpersLazy = inject(SharedPreferenceHelpers.class);
     Lazy<ContainerViewModel> viewModelLazy = inject(ContainerViewModel.class);
@@ -108,12 +101,11 @@ public class ContainerActivity extends BaseActivity
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_container);
         //Toolbar toolbar = binding.toolbar;
-        mapsFragment = MapsFragment.newInstance();
-        hasActiveTrip=new ObservableBoolean(false);
+
+        hasActiveTrip = new ObservableBoolean(false);
         callGuideFragment = new CallGuideFragment();
         callGuideFragment.loadData(ContainerActivity.this);
         bundle = new Bundle();
-        showCallGuide();
         setSupportActionBar((Toolbar) binding.toolbar);
         //ProgressDialogUtils.getInstance().showProgressDialog(this);
         Menu menuNav = binding.navView.getMenu();
@@ -123,6 +115,17 @@ public class ContainerActivity extends BaseActivity
         firebaseDataBase.setUserId(data.getUserId(), this);
         firebaseDataBase.setActiveTripDataCallback(this);
         setNavigationDrawer();
+        System.out.println("show map is : "+getIntent().getBooleanExtra(OPEN_ACTIVE_TRIP,false));
+        boolean isMap=getIntent().getBooleanExtra(OPEN_ACTIVE_TRIP,false);
+        if (isMap) {
+            ProgressDialogUtils.getInstance().cancelDialog();
+            System.out.println("show map from notification ");
+            showMap();
+        }else {
+            showCallGuide();
+            System.out.println("show map from callGuide ");
+        }
+
     }
 
     public void showCallGuide() {
@@ -219,23 +222,23 @@ public class ContainerActivity extends BaseActivity
     }
 
     private void showLanguageDialog() {
-        final AlertDialog.Builder builder = new AlertDialog.Builder(this,R.style.CustomDialog);
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.CustomDialog);
         View v = View.inflate(this, R.layout.language_dialog, null);
         builder.setView(v);
         builder.setCancelable(true);
-        Button arabic=v.findViewById(R.id.tv_arabic);
-        Button english=v.findViewById(R.id.tv_english);
-        Button french=v.findViewById(R.id.tv_french);
-        if(sharedPreferenceHelpersLazy.getValue().getAppLanguage().equals("ar")){
-            System.out.println("lang = " +"ar");
+        Button arabic = v.findViewById(R.id.tv_arabic);
+        Button english = v.findViewById(R.id.tv_english);
+        Button french = v.findViewById(R.id.tv_french);
+        if (sharedPreferenceHelpersLazy.getValue().getAppLanguage().equals("ar")) {
+            System.out.println("lang = " + "ar");
             arabic.setEnabled(false);
             arabic.setClickable(false);
-        }else if(sharedPreferenceHelpersLazy.getValue().getAppLanguage().equals("en")){
-            System.out.println("lang = " +"en");
+        } else if (sharedPreferenceHelpersLazy.getValue().getAppLanguage().equals("en")) {
+            System.out.println("lang = " + "en");
             english.setEnabled(false);
             english.setClickable(false);
-        }else if(sharedPreferenceHelpersLazy.getValue().getAppLanguage().equals("fr")) {
-            System.out.println("lang = " +"fr");
+        } else if (sharedPreferenceHelpersLazy.getValue().getAppLanguage().equals("fr")) {
+            System.out.println("lang = " + "fr");
             french.setEnabled(false);
             french.setClickable(false);
         }
@@ -275,11 +278,14 @@ public class ContainerActivity extends BaseActivity
     }
 
     public void showMap() {
+        System.out.println("show map from notification : true" );
+        mapsFragment = MapsFragment.newInstance();
         mapsFragment.setArguments(bundle);
         navigationFragments(mapsFragment);
     }
 
     public void navigationFragments(Fragment fragment) {
+        System.out.println("show map : fragment");
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.popBackStack();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -336,7 +342,7 @@ public class ContainerActivity extends BaseActivity
         switch (requestCode) {
             case PERMISSIONS_REQUEST_ENABLE_GPS: {
                 if (mLocationPermissionGranted) {
-                    showCallGuide();
+                  //  showCallGuide();
                 } else {
                     getLocationPermission();
                 }
@@ -355,7 +361,7 @@ public class ContainerActivity extends BaseActivity
                 android.Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
             mLocationPermissionGranted = true;
-            showCallGuide();
+            //showCallGuide();
         } else {
             ActivityCompat.requestPermissions(this,
                     new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION},
@@ -384,11 +390,9 @@ public class ContainerActivity extends BaseActivity
         super.onResume();
         if (checkMapServices()) {
             if (mLocationPermissionGranted) {
-                if(getIntent()!=null) {
-                    if (getIntent().getBooleanExtra(OPEN_ACTIVE_TRIP, false)&&hasActiveTrip.get()) {
+                    if (getIntent().getBooleanExtra(OPEN_ACTIVE_TRIP, false) && hasActiveTrip.get()) {
                         showMap();
-                    }
-                }else {
+                } else {
                     showCallGuide();
                 }
             } else {
@@ -482,30 +486,30 @@ public class ContainerActivity extends BaseActivity
         Snackbar.make(binding.drawerLayout, message, Snackbar.LENGTH_LONG).show();
     }
 
-    public void playStore(Context context){
+    public void playStore(Context context) {
         try {
-            context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" +context.getPackageName())));
+            context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + context.getPackageName())));
         } catch (android.content.ActivityNotFoundException anfe) {
-            context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" +context.getPackageName())));
+            context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + context.getPackageName())));
         }
     }
 
     @Override
     public void onClick(View v) {
         String appLang = null;
-        switch (v.getId()){
-            case R.id.tv_arabic:{
-                appLang="ar";
+        switch (v.getId()) {
+            case R.id.tv_arabic: {
+                appLang = "ar";
                 sharedPreferenceHelpersLazy.getValue().saveAppLanguage("ar");
                 break;
             }
-            case R.id.tv_english:{
-                appLang="en";
+            case R.id.tv_english: {
+                appLang = "en";
                 sharedPreferenceHelpersLazy.getValue().saveAppLanguage("en");
                 break;
             }
-            case R.id.tv_french:{
-                appLang="fr";
+            case R.id.tv_french: {
+                appLang = "fr";
 
                 break;
             }
@@ -517,7 +521,7 @@ public class ContainerActivity extends BaseActivity
             @Override
             public void onChanged(Response<StringMessageResponse> stringMessageResponseResponse) {
                 ProgressDialogUtils.getInstance().cancelDialog();
-                if(stringMessageResponseResponse.isSuccessful()) {
+                if (stringMessageResponseResponse.isSuccessful()) {
                     sharedPreferenceHelpersLazy.getValue().saveAppLanguage(finalAppLang);
                     changeLanguage();
                 }
@@ -526,8 +530,8 @@ public class ContainerActivity extends BaseActivity
         });
     }
 
-    public void changeLanguage(){
-        Intent intent=new Intent(this,SplashActivity.class);
+    public void changeLanguage() {
+        Intent intent = new Intent(this, SplashActivity.class);
         startActivity(intent);
         finishAffinity();
     }

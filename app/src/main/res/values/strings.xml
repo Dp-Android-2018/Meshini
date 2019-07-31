@@ -112,5 +112,24 @@
     <string name="guide_name">Guide Name:</string>
     <string name="offers">Offers</string>
     <string name="server_error">server error</string>
+    <string name="chat">chat</string>
+    <string name="next_destination">Next destination:</string>
+    <string name="select_vehicle_error_message">please select vehicle type</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="program">Program</string>
+    <string name="details">Details</string>
+    <string name="photos">Photos</string>
+    <string name="reviews">Reviews</string>
+    <string name="about">About Company</string>
+    <string name="egp_per_person"> per person</string>
+    <string name="go_to_payment">Go to payment</string>
+    <string name="payment">Payment</string>
+    <string name="book">Book</string>
+    <string name="available_trips">Available Trips</string>
+    <string name="guide">Guide</string>
+    <string name="shared_trip">Shared trip</string>
+    <string name="no_of_seats">No. of seats</string>
+    <string name="no_shared_trips">No Shared Trips</string>
 
 </resources>

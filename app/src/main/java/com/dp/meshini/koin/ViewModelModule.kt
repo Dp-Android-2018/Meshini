@@ -23,4 +23,7 @@ val ViewModelModule = module {
     viewModel { UpcomingTripDetailViewModel(androidApplication()) }
     viewModel { TripsViewModel(androidApplication()) }
     viewModel { ContainerViewModel(androidApplication()) }
+    viewModel { ChatViewModel(androidApplication()) }
+    viewModel { AllPackagesViewModel(androidApplication()) }
+    viewModel { PackageDetailViewModel(androidApplication()) }
 }

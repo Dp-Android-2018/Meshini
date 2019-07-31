@@ -21,6 +21,12 @@ import net.yslibrary.android.keyboardvisibilityevent.util.UIUtil;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.Observer;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+
 import kotlin.Lazy;
 import retrofit2.Response;
 
@@ -77,6 +83,34 @@ public class MailActivationActivity extends AppCompatActivity {
                 intent.putExtra(ConstantsFile.IntentConstants.CLIENT_PHONE,clientData.getPhone());
                 intent.putExtra(ConstantsFile.IntentConstants.SOURCE_ACTIVITY, ConstantsFile.Constants.MAIL_ACTIVATION_ACTIVITY);
                 startActivity(intent);
+            }
+        });
+    }
+
+    public void resendActivationCode(View view){
+        mailActivationViewModelLazy.getValue().sendPhoneCode(clientData.getPhone()).observe(this, stringMessageResponseResponse -> {
+            switch (stringMessageResponseResponse.code()) {
+                case ConstantsFile.Constants.SUCCESS_CODE: {
+                    showSnackbar(getString(R.string.activated_code_sent_successfully_message));
+                    break;
+                }
+                case ConstantsFile.Constants.TRY_LATER:{
+                    JSONObject jObjError = null;
+                    try {
+                        jObjError = new JSONObject(stringMessageResponseResponse.errorBody().string());
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    String error= null;
+                    try {
+                        error = String.valueOf(jObjError.getString("error"));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    showSnackbar(error);
+                }
             }
         });
     }

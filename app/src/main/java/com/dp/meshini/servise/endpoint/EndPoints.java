@@ -6,6 +6,8 @@ import com.dp.meshini.servise.model.request.ChangeLanguageRequest;
 import com.dp.meshini.servise.model.request.ChangePasswordRequest;
 import com.dp.meshini.servise.model.request.CreateCommentRequest;
 import com.dp.meshini.servise.model.request.CreateTripRequest;
+import com.dp.meshini.servise.model.request.GetPackagesRequest;
+import com.dp.meshini.servise.model.request.NotificationRequest;
 import com.dp.meshini.servise.model.request.RegisterRequest;
 import com.dp.meshini.servise.model.request.ForgetPasswordRequest;
 import com.dp.meshini.servise.model.request.LoginRequest;
@@ -19,6 +21,8 @@ import com.dp.meshini.servise.model.response.CreateTripResponse;
 import com.dp.meshini.servise.model.response.ForgetPasswordResponse;
 import com.dp.meshini.servise.model.response.LoginRegisterResponse;
 import com.dp.meshini.servise.model.response.OffersResponse;
+import com.dp.meshini.servise.model.response.PackageDetailResponse;
+import com.dp.meshini.servise.model.response.PackagesResponse;
 import com.dp.meshini.servise.model.response.PastUpcomingRequestsResponse;
 import com.dp.meshini.servise.model.response.PendingRequestsResponse;
 import com.dp.meshini.servise.model.response.PlacesResponse;
@@ -38,6 +42,8 @@ import retrofit2.http.Query;
 
 import static com.dp.meshini.utils.ConstantsFile.Urls.CHANGE_LANGUAGE_URL;
 import static com.dp.meshini.utils.ConstantsFile.Urls.CREATE_COMMENT_URL;
+import static com.dp.meshini.utils.ConstantsFile.Urls.GET_ALL_PACKAGES_URL;
+import static com.dp.meshini.utils.ConstantsFile.Urls.PACKAGE_DETAIL_URL;
 
 public interface EndPoints {
 
@@ -121,4 +127,14 @@ public interface EndPoints {
 
     @POST(CHANGE_LANGUAGE_URL)
     Observable<Response<StringMessageResponse>>changeLanguage(@Body ChangeLanguageRequest request);
+
+    //Notify the serviceprovider (new message)
+    @POST("/api/client/request/chat/notify")
+    Observable<Response<Void>> sendNotification(@Body NotificationRequest notificationRequest);
+
+    @GET(GET_ALL_PACKAGES_URL)
+    Observable<Response<PackagesResponse>>getPackages(@Query("country_id")int id,@Query("start_date")String startDate,@Query("city_id")String cityId,@Query("seats_number")int noSeats,@Query("page")int page);
+
+    @GET(PACKAGE_DETAIL_URL)
+    Observable<Response<PackageDetailResponse>>packageDetail(@Path("package")int packageID);
 }

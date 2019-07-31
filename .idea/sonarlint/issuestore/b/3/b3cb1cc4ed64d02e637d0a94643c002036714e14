@@ -1,11 +1,11 @@
 
-isquid:CommentedOutCodeLine("<This block of commented-out lines of code should be removed.(öœüì8©Å³—”-
-V
-squid:S1066"9Replace this use of System.out or System.err by a logger.(é¶ŒÉ8©Å³—”-
-Fsquid:S14812"(Remove this unused "day" local variable.(¤Úã‚8©Å³—”-
-nsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(î¢Õ½üÿÿÿÿ8»®¾·˜-
-nsquid:CommentedOutCodeLine-"<This block of commented-out lines of code should be removed.(ôöÙŸúÿÿÿÿ8ò¾·˜-
-nsquid:CommentedOutCodeLine%"<This block of commented-out lines of code should be removed.(ËÃÒáþÿÿÿÿ8õø¸·˜-
+Usquid:S18542"7Remove this useless assignment to local variable "day".(¤Úã‚8©Å³—”-
 isquid:CommentedOutCodeLine7"<This block of commented-out lines of code should be removed.(ìÛšð8©Å³—”-
 isquid:CommentedOutCodeLine:"<This block of commented-out lines of code should be removed.(‰ó™¶8©Å³—”-
-Usquid:S18542"7Remove this useless assignment to local variable "day".(¤Úã‚8©Å³—”-
+isquid:CommentedOutCodeLine("<This block of commented-out lines of code should be removed.(öœüì8©Å³—”-
+nsquid:CommentedOutCodeLine%"<This block of commented-out lines of code should be removed.(ËÃÒáþÿÿÿÿ8õø¸·˜-
+V
+squid:S1066"9Replace this use of System.out or System.err by a logger.(é¶ŒÉ8©Å³—”-
+nsquid:CommentedOutCodeLine-"<This block of commented-out lines of code should be removed.(ôöÙŸúÿÿÿÿ8ò¾·˜-
+nsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(î¢Õ½üÿÿÿÿ8»®¾·˜-
+Fsquid:S14812"(Remove this unused "day" local variable.(¤Úã‚8©Å³—”-
