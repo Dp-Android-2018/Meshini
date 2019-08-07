@@ -128,4 +128,8 @@
     <string name="shared_trip">Shared trip</string>
     <string name="no_of_seats">No. of seats</string>
     <string name="no_shared_trips">No Shared Trips</string>
+    <string name="my_shared_trips">My Shared Trips</string>
+    <string name="search_for_trips">Search for trips</string>
+    <string name="review">Review</string>
+    <string name="please_upload_your_receipt">Please Upload your receipt</string>
 </resources>

@@ -122,6 +122,7 @@ public class CallGuideFragment extends Fragment implements OnDateTimeSelected, V
         View v = View.inflate(mContext, R.layout.request_guide_dialog, null);
         builder.setView(v);
         Spinner spinnerLanguage;
+        Button button;
         settCountrySpinnerAdapter(v.findViewById(R.id.sp_country));
         etFrom = v.findViewById(R.id.et_from_date);
         etTo = v.findViewById(R.id.et_to_date);
@@ -140,6 +141,7 @@ public class CallGuideFragment extends Fragment implements OnDateTimeSelected, V
         et_no_seats = v.findViewById(R.id.et_no_seats);
         spinnerLanguage = v.findViewById(R.id.sp_language);
         spinnerCities = v.findViewById(R.id.sp_cities);
+        button=v.findViewById(R.id.bt_schedule_trip);
         setLanguageSpinnerAdapter(spinnerLanguage);
         ivCar.setOnClickListener(this);
         ivVan.setOnClickListener(this);
@@ -173,6 +175,7 @@ public class CallGuideFragment extends Fragment implements OnDateTimeSelected, V
                 btGuide.setTextColor(Color.BLACK);
                 btSharedTrip.setBackgroundResource(R.drawable.shared_trip_button_shape_clicked);
                 btSharedTrip.setTextColor(Color.WHITE);
+                button.setText(R.string.search_for_trips);
             }
         });
 
@@ -194,6 +197,8 @@ public class CallGuideFragment extends Fragment implements OnDateTimeSelected, V
                 spinnerCities.setVisibility(View.GONE);
                 radioGroup.setVisibility(View.VISIBLE);
                 et_no_seats.setVisibility(View.GONE);
+                button.setText(R.string.put_your_trip_schedule);
+
 
                 btGuide.setBackgroundResource(R.drawable.guide_button_shape_clicked);
                 btGuide.setTextColor(Color.WHITE);

@@ -14,13 +14,18 @@ import com.dp.meshini.R;
 import com.dp.meshini.databinding.ActivityAvailableTripsBinding;
 import com.dp.meshini.servise.model.pojo.PackageData;
 import com.dp.meshini.servise.model.request.GetPackagesRequest;
+import com.dp.meshini.servise.model.response.ErrorResponse;
 import com.dp.meshini.servise.model.response.PackagesResponse;
 import com.dp.meshini.servise.model.response.PendingRequestsResponse;
 import com.dp.meshini.utils.ProgressDialogUtils;
 import com.dp.meshini.utils.SharedPreferenceHelpers;
 import com.dp.meshini.view.adapter.PackagesAdapter;
 import com.dp.meshini.viewmodel.AllPackagesViewModel;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -66,8 +71,7 @@ public class AvailableTripsActivity extends AppCompatActivity {
         binding.rvPackages.setAdapter(packagesAdapter);
         ProgressDialogUtils.getInstance().showProgressDialog(this);
         viewModelLazy.getValue().getPackagesResponse(request, page).observe(this, packagesResponseResponse -> {
-            System.out.println("package status : "+packagesResponseResponse.code());
-            System.out.println("packages size is : "+packagesResponseResponse.body().getPackages().size());
+            ProgressDialogUtils.getInstance().cancelDialog();
             if (packagesResponseResponse.isSuccessful()) {
                 if (packagesResponseResponse.body().getPackages().size() <= 0) {
                     binding.rvPackages.setVisibility(View.GONE);
@@ -80,8 +84,19 @@ public class AvailableTripsActivity extends AppCompatActivity {
                     packagesAdapter.notifyDataSetChanged();
                     next = packagesResponseResponse.body().getLinks().getNext();
                 }
+            }else {
+                //ErrorResponse errorResponse=(ErrorResponse) stringMessageResponseResponse.errorBody();
+                Gson gson = new GsonBuilder().create();
+                ErrorResponse errorResponse=new ErrorResponse();
+                try {
+                    errorResponse=gson.fromJson(packagesResponseResponse.errorBody().string(),ErrorResponse.class);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                for (String string:errorResponse.getErrors()){
+                    showSnackbar(string);
+                }
             }
-            ProgressDialogUtils.getInstance().cancelDialog();
         });
     }
 
@@ -113,6 +128,10 @@ public class AvailableTripsActivity extends AppCompatActivity {
                 }
             }
         };
+    }
+
+    public void showSnackbar(String message){
+        Snackbar.make(binding.clRoot,message,Snackbar.LENGTH_LONG).show();
     }
 }
 

@@ -34,6 +34,8 @@ val DependencyModule = module {
     single { ChatRepository() }
     single { PackagesRepository() }
     single { PackageDetailRepository() }
+    single { PastUpcomingSharedRepository() }
+    single { PaymentRepository() }
 
 
     factory { LoginRequest() }

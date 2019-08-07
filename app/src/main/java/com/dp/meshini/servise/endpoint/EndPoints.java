@@ -8,6 +8,8 @@ import com.dp.meshini.servise.model.request.CreateCommentRequest;
 import com.dp.meshini.servise.model.request.CreateTripRequest;
 import com.dp.meshini.servise.model.request.GetPackagesRequest;
 import com.dp.meshini.servise.model.request.NotificationRequest;
+import com.dp.meshini.servise.model.request.PackageRateRequest;
+import com.dp.meshini.servise.model.request.PaymentRequest;
 import com.dp.meshini.servise.model.request.RegisterRequest;
 import com.dp.meshini.servise.model.request.ForgetPasswordRequest;
 import com.dp.meshini.servise.model.request.LoginRequest;
@@ -24,6 +26,7 @@ import com.dp.meshini.servise.model.response.OffersResponse;
 import com.dp.meshini.servise.model.response.PackageDetailResponse;
 import com.dp.meshini.servise.model.response.PackagesResponse;
 import com.dp.meshini.servise.model.response.PastUpcomingRequestsResponse;
+import com.dp.meshini.servise.model.response.PastUpcomingSharedResponse;
 import com.dp.meshini.servise.model.response.PendingRequestsResponse;
 import com.dp.meshini.servise.model.response.PlacesResponse;
 import com.dp.meshini.servise.model.response.StringMessageResponse;
@@ -40,10 +43,14 @@ import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
+import static com.dp.meshini.utils.ConstantsFile.Urls.BOOK_RESERVATION_URL;
 import static com.dp.meshini.utils.ConstantsFile.Urls.CHANGE_LANGUAGE_URL;
 import static com.dp.meshini.utils.ConstantsFile.Urls.CREATE_COMMENT_URL;
 import static com.dp.meshini.utils.ConstantsFile.Urls.GET_ALL_PACKAGES_URL;
 import static com.dp.meshini.utils.ConstantsFile.Urls.PACKAGE_DETAIL_URL;
+import static com.dp.meshini.utils.ConstantsFile.Urls.PACKAGE_RATE_URL;
+import static com.dp.meshini.utils.ConstantsFile.Urls.PAST_SHARED_TRIPS_URL;
+import static com.dp.meshini.utils.ConstantsFile.Urls.UPCOMING_SHARED_TRIPS_URL;
 
 public interface EndPoints {
 
@@ -137,4 +144,17 @@ public interface EndPoints {
 
     @GET(PACKAGE_DETAIL_URL)
     Observable<Response<PackageDetailResponse>>packageDetail(@Path("package")int packageID);
+
+    @GET(UPCOMING_SHARED_TRIPS_URL)
+    Observable<Response<PastUpcomingSharedResponse>>getUpcomingSharedTrips(@Query("page")int page);
+
+    @GET(PAST_SHARED_TRIPS_URL)
+    Observable<Response<PastUpcomingSharedResponse>>getPastSharedTrips(@Query("page")int page);
+
+    @POST(PACKAGE_RATE_URL)
+    Observable<Response<StringMessageResponse>>packageRate(@Body PackageRateRequest request);
+
+    @POST(BOOK_RESERVATION_URL)
+    Observable<Response<StringMessageResponse>>bookReservation(@Body PaymentRequest request);
+
 }

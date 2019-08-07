@@ -13,6 +13,9 @@
             android:id="@+id/my_requests"
             android:title="@string/my_requests" />
         <item
+            android:id="@+id/my_shared_trips"
+            android:title="@string/my_shared_trips" />
+        <item
             android:id="@+id/active_trip"
             android:title="@string/active_trip" />
 

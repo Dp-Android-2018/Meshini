@@ -33,6 +33,10 @@ public class ConstantsFile {
         public static final String CHANGE_LANGUAGE_URL="client/change-language";
         public static final String GET_ALL_PACKAGES_URL="client/packages";
         public static final String PACKAGE_DETAIL_URL="client/packages/{package}";
+        public static final String UPCOMING_SHARED_TRIPS_URL="client/upcomingReservations";
+        public static final String PAST_SHARED_TRIPS_URL="client/previousReservations";
+        public static final String PACKAGE_RATE_URL="client/rateTrip";
+        public static final String BOOK_RESERVATION_URL="client/bookReservation";
     }
 
     public static class Constants {
@@ -112,6 +116,11 @@ public class ConstantsFile {
         public static final String SELECTED_LANG="lang";
         public static final String TRIP_DETAIL="trip_detail";
         public static final String ACTIVE_TRIP_FIREBASE="active_trip_firebase";
+        public static final String SINGLE_PRICE="sp";
+        public static final String DOUBLE_PRICE="dp";
+        public static final String TRIPLE_PRICE="tp";
+        public static final String ROOMS_TYPE="rt";
+        public static final String PAY_METHODS="pmlist";
 
 
     }

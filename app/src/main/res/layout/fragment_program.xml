@@ -112,14 +112,19 @@
             app:layout_constraintTop_toTopOf="@id/iv_transport" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:id="@+id/rv_destinations"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="@dimen/dp27h"
+            android:nestedScrollingEnabled="true"
+            android:layout_marginEnd="8dp"
             android:layout_marginBottom="@dimen/dp18h"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/iv_transport" />
+            app:layout_constraintStart_toStartOf="@+id/iv_transport"
+            app:layout_constraintTop_toBottomOf="@+id/iv_transport"
+            tools:listitem="@layout/destination_list_item" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
@@ -130,7 +135,7 @@
             android:layout_marginBottom="8dp"
             android:textColor="@color/text_color_black"
             android:textSize="@dimen/sp15_5"
-            app:layout_constraintBottom_toTopOf="@+id/button2"
+            app:layout_constraintBottom_toTopOf="@+id/bt_pay"
             app:layout_constraintEnd_toStartOf="@+id/textView17"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintHorizontal_chainStyle="packed"
@@ -144,20 +149,19 @@
             android:text="@string/egp_per_person"
             android:textColor="@color/text_color_black"
             android:textSize="@dimen/sp15_5"
-            app:layout_constraintBottom_toTopOf="@+id/button2"
+            app:layout_constraintBottom_toTopOf="@+id/bt_pay"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/tv_cost" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/bt_pay"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp38w"
             android:background="@color/text_color_black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:text="@string/go_to_payment"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
             android:textSize="@dimen/sp18"/>

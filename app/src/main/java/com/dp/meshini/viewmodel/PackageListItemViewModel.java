@@ -8,6 +8,8 @@ import com.dp.meshini.servise.model.pojo.PackageData;
 import com.dp.meshini.utils.ConstantsFile;
 import com.dp.meshini.view.activity.DetailedSharedTripActivity;
 
+import static com.dp.meshini.utils.ConstantsFile.IntentConstants.TRIP_TYPE;
+
 public class PackageListItemViewModel {
 
     Context context;
@@ -51,6 +53,7 @@ public class PackageListItemViewModel {
     public void onItemClick(View view){
         Intent intent=new Intent(context, DetailedSharedTripActivity.class);
         intent.putExtra(ConstantsFile.IntentConstants.SHARED_TRIP_ID,packageData.getId());
+        intent.putExtra(TRIP_TYPE,"");
         context.startActivity(intent);
     }
 }

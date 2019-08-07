@@ -30,7 +30,7 @@ public class PackageDetail {
     @SerializedName("photos")
     private List<String>photos;
 
-    @SerializedName("")
+    @SerializedName("reviews")
     private List<PackageClientReview> reviews;
 
     @SerializedName("about_company")
@@ -38,6 +38,50 @@ public class PackageDetail {
 
     @SerializedName("minimum_price")
     private double minimumPrice;
+
+    @SerializedName("single_price")
+    private double singlePrice;
+
+    @SerializedName("double_price")
+    private double doublePrice;
+
+    @SerializedName("triple_price")
+    private double triple_price;
+
+    @SerializedName("payment")
+    private List<Payment> payment;
+
+    public double getSinglePrice() {
+        return singlePrice;
+    }
+
+    public void setSinglePrice(double singlePrice) {
+        this.singlePrice = singlePrice;
+    }
+
+    public double getDoublePrice() {
+        return doublePrice;
+    }
+
+    public void setDoublePrice(double doublePrice) {
+        this.doublePrice = doublePrice;
+    }
+
+    public double getTriple_price() {
+        return triple_price;
+    }
+
+    public void setTriple_price(double triple_price) {
+        this.triple_price = triple_price;
+    }
+
+    public List<Payment> getPayment() {
+        return payment;
+    }
+
+    public void setPayment(List<Payment> payment) {
+        this.payment = payment;
+    }
 
     public double getMinimumPrice() {
         return minimumPrice;

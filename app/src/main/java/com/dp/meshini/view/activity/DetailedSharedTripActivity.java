@@ -31,6 +31,7 @@ import static org.koin.java.standalone.KoinJavaComponent.inject;
 public class DetailedSharedTripActivity extends BaseActivity {
 
     ActivityDetailedSharedTripBinding binding;
+    String tripType;
     Lazy<PackageDetailViewModel>viewModelLazy=inject(PackageDetailViewModel.class);
     PackageDetail packageDetail;
     int packageId;
@@ -40,6 +41,8 @@ public class DetailedSharedTripActivity extends BaseActivity {
         binding= DataBindingUtil.setContentView(this,R.layout.activity_detailed_shared_trip);
         binding.tabs.setupWithViewPager(binding.viewpager);
         packageId=getIntent().getIntExtra(ConstantsFile.IntentConstants.SHARED_TRIP_ID,0);
+        tripType=getIntent().getStringExtra(ConstantsFile.IntentConstants.TRIP_TYPE);
+        System.out.println("trip type in detail : "+tripType);
         ProgressDialogUtils.getInstance().showProgressDialog(this);
         viewModelLazy.getValue().getPackageDeatil(packageId).observe(this, new Observer<Response<PackageDetailResponse>>() {
             @Override
@@ -56,10 +59,10 @@ public class DetailedSharedTripActivity extends BaseActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager(),BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
-        adapter.addFragment(new ProgramFragment(packageDetail.getProgram(),packageDetail.getMinimumPrice()), getString(R.string.program));
+        adapter.addFragment(new ProgramFragment(packageDetail.getProgram(),packageDetail.getMinimumPrice(),packageDetail.getSinglePrice(),packageDetail.getDoublePrice(),packageDetail.getTriple_price(),packageDetail.getPayment(),packageDetail.getPackageId(),tripType), getString(R.string.program));
         adapter.addFragment(new DeatilesFragment(packageDetail.getDetails()), getString(R.string.details));
-        adapter.addFragment(new PhotosFragment(), getString(R.string.photos));
-        adapter.addFragment(new ReviewsFragment(),getString(R.string.reviews));
+        adapter.addFragment(new PhotosFragment(packageDetail.getPhotos()), getString(R.string.photos));
+        adapter.addFragment(new ReviewsFragment(packageDetail.getReviews()),getString(R.string.reviews));
         adapter.addFragment(new AboutFragment(packageDetail.getAboutCompany()),getString(R.string.about));
 
         viewPager.setAdapter(adapter);

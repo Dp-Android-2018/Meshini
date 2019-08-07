@@ -191,12 +191,17 @@ public class ContainerActivity extends BaseActivity
                 startActivity(intent);
                 break;
             }
+            case R.id.my_shared_trips :{
+                intent=new Intent(this, MySharedTripsActivity.class);
+                startActivity(intent);
+                break;
+            }
             case R.id.active_trip: {
                 showMap();
                 break;
             }
 //            case R.id.payment: {
-//                intent = new Intent(ContainerActivity.this, PaymentActivity.class);
+//                intent = new Intent(ContainerActivity.this, paymentActivity.class);
 //                startActivity(intent);
 //                break;
 //            }

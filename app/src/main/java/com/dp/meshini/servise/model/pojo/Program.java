@@ -2,9 +2,10 @@ package com.dp.meshini.servise.model.pojo;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Program {
+public class Program implements Serializable {
 
     @SerializedName("hotel_name")
     private String hotelName;

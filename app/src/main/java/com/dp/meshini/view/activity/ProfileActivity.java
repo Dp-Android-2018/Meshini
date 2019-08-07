@@ -155,7 +155,6 @@ public class ProfileActivity extends BaseActivity {
                 request.setProfilePictureUrl(uri.toString());
                 clientData.setProfilePicture(uri.toString());
                 Picasso.get().load(uri).placeholder(R.mipmap.logo).into(binding.ivPersonalImage);
-
             });
         });
         photoRef.addOnFailureListener(e -> {
