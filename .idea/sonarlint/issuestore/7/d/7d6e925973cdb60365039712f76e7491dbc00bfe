@@ -1,12 +1,12 @@
 
-Ÿsquid:S1186@"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÆÁ¡ì8ª¸Á¨¤-
-¥squid:S1186‚"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¹Æº×şÿÿÿÿ8’èœ©¤-
-|squid:UselessImportCheck"QRemove this unused import 'com.dp.meshini.servise.model.response.PlacesResponse'.(ü‹ú8ïãúô¤-
-nsquid:CommentedOutCodeLineb"<This block of commented-out lines of code should be removed.(Û³†ùÿÿÿÿ8ñõà¨¤-
 nsquid:CommentedOutCodeLineR"<This block of commented-out lines of code should be removed.(´€ªÀøÿÿÿÿ8œ«ù¨¤-
-asquid:S1155S">Use isEmpty() to check whether the collection is empty or not.(áÌÊšøÿÿÿÿ8„ş‹©¤-
 @squid:S1643š"Use a StringBuilder instead.(Íòàğüÿÿÿÿ8ç‰ıô¤-
 Zsquid:UselessImportCheck""/Remove this unused import 'retrofit2.Response'.(¾éçï8ïãúô¤-
-hsquid:UselessImportCheck"8Remove this unused import 'androidx.lifecycle.Observer'.(ÒÁˆÉşÿÿÿÿ8ïãúô¤-
+|squid:UselessImportCheck"QRemove this unused import 'com.dp.meshini.servise.model.response.PlacesResponse'.(ü‹ú8ïãúô¤-
+Ÿsquid:S1186@"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÆÁ¡ì8ª¸Á¨¤-
+¥squid:S1186‚"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¹Æº×şÿÿÿÿ8’èœ©¤-
 @squid:S1643›"Use a StringBuilder instead.(äìüÆùÿÿÿÿ8ç‰ıô¤-
+hsquid:UselessImportCheck"8Remove this unused import 'androidx.lifecycle.Observer'.(ÒÁˆÉşÿÿÿÿ8ïãúô¤-
 Gsquid:S1148–"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ç‰ıô¤-
+nsquid:CommentedOutCodeLineb"<This block of commented-out lines of code should be removed.(Û³†ùÿÿÿÿ8ñõà¨¤-
+asquid:S1155S">Use isEmpty() to check whether the collection is empty or not.(áÌÊšøÿÿÿÿ8„ş‹©¤-

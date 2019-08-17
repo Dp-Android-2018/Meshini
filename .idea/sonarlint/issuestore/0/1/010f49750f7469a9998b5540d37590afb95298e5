@@ -1,19 +1,19 @@
 
-Nsquid:S1066–"/Merge this if statement with the enclosing one.(üš¸À8Ýó¯‘Ÿ-
-hsquid:UselessImportCheck"8Remove this unused import 'androidx.lifecycle.Observer'.(ÒÁˆÉþÿÿÿÿ8ÛÈú”ž-
-@squid:S1643„"Use a StringBuilder instead.(Íòàðüÿÿÿÿ8üÂ²ô¤-
-\squid:S1155m">Use isEmpty() to check whether the collection is empty or not.(÷ƒ‰Ú8šïøŸ¤-
-@squid:S1643…"Use a StringBuilder instead.(äìüÆùÿÿÿÿ8üÂ²ô¤-
-vsquid:S3776Ž"RRefactor this method to reduce its Cognitive Complexity from 30 to the 15 allowed.(©ßä²þÿÿÿÿ8Ö¸õ”ž-
-Zsquid:UselessImportCheck"/Remove this unused import 'retrofit2.Response'.(¾éçï8ÛÈú”ž-
-W
-squid:S106˜"9Replace this use of System.out or System.err by a logger.(ƒ”àò8Ö¸õ”ž-
-lsquid:MaximumInheritanceDepth#"<This class has 7 parents which is greater than 5 authorized.(°‹è”8¹ÖØŸ-
 Hsquid:S1125–")Remove the literal "false" boolean value.(üš¸À8Ö¸õ”ž-
-\squid:S1155Q">Use isEmpty() to check whether the collection is empty or not.(÷ƒ‰Ú8¹ÞçŸ¤-
-Gsquid:S1148€"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8üÂ²ô¤-
+Zsquid:UselessImportCheck"/Remove this unused import 'retrofit2.Response'.(¾éçï8ÛÈú”ž-
 \
 squid:S106µ"9Replace this use of System.out or System.err by a logger.(½·Ãùÿÿÿÿ8Ó¤¹Ÿ-
 squid:UselessImportCheck"_Remove this unused import 'com.dp.meshini.servise.model.response.PastUpcomingRequestsResponse'.(ÄÄ÷Žÿÿÿÿÿ8ÛÈú”ž-
-psquid:UselessImportCheck"ERemove this unused import 'androidx.appcompat.app.AppCompatActivity'.(€¶£î8ÍÆŽ”ž-
 csquid:UselessImportCheck"3Remove this unused import 'android.text.TextUtils'.(û˜½Õøÿÿÿÿ8Ö¸õ”ž-
+Nsquid:S1066–"/Merge this if statement with the enclosing one.(üš¸À8Ýó¯‘Ÿ-
+\squid:S1155Q">Use isEmpty() to check whether the collection is empty or not.(÷ƒ‰Ú8¹ÞçŸ¤-
+hsquid:UselessImportCheck"8Remove this unused import 'androidx.lifecycle.Observer'.(ÒÁˆÉþÿÿÿÿ8ÛÈú”ž-
+\squid:S1155m">Use isEmpty() to check whether the collection is empty or not.(÷ƒ‰Ú8šïøŸ¤-
+W
+squid:S106˜"9Replace this use of System.out or System.err by a logger.(ƒ”àò8Ö¸õ”ž-
+lsquid:MaximumInheritanceDepth#"<This class has 7 parents which is greater than 5 authorized.(°‹è”8¹ÖØŸ-
+@squid:S1643…"Use a StringBuilder instead.(äìüÆùÿÿÿÿ8üÂ²ô¤-
+vsquid:S3776Ž"RRefactor this method to reduce its Cognitive Complexity from 30 to the 15 allowed.(©ßä²þÿÿÿÿ8Ö¸õ”ž-
+psquid:UselessImportCheck"ERemove this unused import 'androidx.appcompat.app.AppCompatActivity'.(€¶£î8ÍÆŽ”ž-
+Gsquid:S1148€"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8üÂ²ô¤-
+@squid:S1643„"Use a StringBuilder instead.(Íòàðüÿÿÿÿ8üÂ²ô¤-

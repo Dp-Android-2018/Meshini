@@ -51,7 +51,7 @@ public class PaymentActivity extends AppCompatActivity {
     double singlePrice;
     double doublePrice;
     double triplePrice;
-    String selectedRoom="";
+    String selectedRoom;
     List<Payment>payments;
     List<String>rooms;
     Bundle bundle;
@@ -84,10 +84,13 @@ public class PaymentActivity extends AppCompatActivity {
         packageId=bundle.getInt(SHARED_TRIP_ID);
         System.out.println("** payment size : "+payments.size());
         System.out.println("** rooms  size : "+rooms.size());
+        System.out.println("** package id : "+packageId);
 
+
+        request.setPackageId(packageId);
         setPaySpinner();
         setRoomsSpinner();
-        setNoPersonSpinner();
+        //setNoPersonSpinner();
 
     }
 
@@ -98,6 +101,7 @@ public class PaymentActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 request.setPaymentType(payments.get(position).getName());
+                binding.tvAccNo.setText(payments.get(position).getAccountNumber());
             }
 
             @Override
@@ -115,6 +119,7 @@ public class PaymentActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 request.setRoomType(rooms.get(position));
                 selectedRoom=rooms.get(position);
+                setNoPersonSpinner();
             }
 
             @Override
@@ -130,19 +135,26 @@ public class PaymentActivity extends AppCompatActivity {
         binding.spNoPerson.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                int persons=Integer.parseInt(noPersons.get(position));
+                request.setNoOfPersons(persons);
+                System.out.println("**selected room is : "+selectedRoom);
                 switch (selectedRoom){
                     case "single room":{
-                        request.setTotalAmounts(singlePrice*Integer.parseInt(noPersons.get(position)));
+                        System.out.println("** single price : "+singlePrice);
+                        request.setTotalAmounts(singlePrice*persons);
                         break;
                     }case "double room":{
-                        request.setTotalAmounts(doublePrice*Integer.parseInt(noPersons.get(position)));
+                        System.out.println("** double price : "+doublePrice);
+                        request.setTotalAmounts(doublePrice*persons);
                         break;
                     }case "triple room":{
-                        request.setTotalAmounts(triplePrice*Integer.parseInt(noPersons.get(position)));
+                        System.out.println("** triple price : "+triplePrice);
+                        request.setTotalAmounts(triplePrice*persons);
                         break;
                     }
 
                 }
+                binding.tvTotal.setText(getString(R.string.total)+request.getTotalAmounts()+getString(R.string.egp));
             }
 
             @Override

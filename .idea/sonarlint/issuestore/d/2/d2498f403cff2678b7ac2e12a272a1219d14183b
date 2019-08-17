@@ -1,7 +1,7 @@
 
-nsquid:CommentedOutCodeLineF"<This block of commented-out lines of code should be removed.(£íÄúÿÿÿÿ8òÏØ¢-
-Ksquid:S1604@"(Make this anonymous inner class a lambda(½ý²êýÿÿÿÿ8ìç¹—-
-lsquid:MaximumInheritanceDepth"<This class has 6 parents which is greater than 5 authorized.(²¨ ò8Žìº¸—-
-csquid:UselessImportCheck"3Remove this unused import 'org.json.JSONException'.(¹Ó·úÿÿÿÿ8òÏØ¢-
 `squid:UselessImportCheck"0Remove this unused import 'org.json.JSONObject'.(œÖ´üþÿÿÿÿ8òÏØ¢-
 Fsquid:S1148L"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8˜Ôí¹—-
+lsquid:MaximumInheritanceDepth"<This class has 6 parents which is greater than 5 authorized.(²¨ ò8Žìº¸—-
+nsquid:CommentedOutCodeLineF"<This block of commented-out lines of code should be removed.(£íÄúÿÿÿÿ8òÏØ¢-
+Ksquid:S1604@"(Make this anonymous inner class a lambda(½ý²êýÿÿÿÿ8ìç¹—-
+csquid:UselessImportCheck"3Remove this unused import 'org.json.JSONException'.(¹Ó·úÿÿÿÿ8òÏØ¢-

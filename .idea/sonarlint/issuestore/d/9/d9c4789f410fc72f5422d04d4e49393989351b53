@@ -1,2 +1,28 @@
 
-qsquid:MaximumInheritanceDepth	"<This class has 6 parents which is greater than 5 authorized.(ê­ÊÅþÿÿÿÿ8Ãµ¯¡›-
+\
+squid:S106±"9Replace this use of System.out or System.err by a logger.(¬óÂÂùÿÿÿÿ8íŸŠßÆ-
+¤squid:S1186h"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¹Æº×þÿÿÿÿ8â¤åÞÆ-
+V
+squid:S106V"9Replace this use of System.out or System.err by a logger.(·íÙñ8â¤åÞÆ-
+\
+squid:S106Á"9Replace this use of System.out or System.err by a logger.(Ã¥åúÿÿÿÿÿ8íŸŠßÆ-
+\
+squid:S106¿"9Replace this use of System.out or System.err by a logger.(§í¡ þÿÿÿÿ8íŸŠßÆ-
+Lsquid:S1199‰"-Extract this nested code block into a method.(È›îî8•”ƒßÆ-
+V
+squid:S106U"9Replace this use of System.out or System.err by a logger.(’Ü‹è8”ðÛÙÆ-
+Qsquid:S1199Œ"-Extract this nested code block into a method.(Œ—ÌÉøÿÿÿÿ8íŸŠßÆ-
+¤squid:S1186y"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¹Æº×þÿÿÿÿ8â¤åÞÆ-
+Zsquid:UselessImportCheck'"/Remove this unused import 'retrofit2.Response'.(¾éçï8çîåßÆ-
+W
+squid:S106½"9Replace this use of System.out or System.err by a logger.(•Å¤£8íŸŠßÆ-
+hsquid:UselessImportCheck"8Remove this unused import 'androidx.lifecycle.Observer'.(ÒÁˆÉþÿÿÿÿ8çîåßÆ-
+X"squid:SwitchLastCaseIsDefaultCheck…""Add a default case to this switch.(ŒÉ‡È8•”ƒßÆ-
+Lsquid:S1199†"-Extract this nested code block into a method.(¨¶·Ç8•”ƒßÆ-
+ˆsquid:UselessImportCheck"XRemove this unused import 'com.dp.meshini.servise.model.response.StringMessageResponse'.(‰Í«ˆýÿÿÿÿ8çîåßÆ-
+Psquid:S1602É",Remove useless curly braces around statement(Ú¦’øÿÿÿÿ8íŸŠßÆ-
+¥squid:S1186•"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¹Æº×þÿÿÿÿ8íŸŠßÆ-
+\
+squid:S106Ê"9Replace this use of System.out or System.err by a logger.(¼²®þúÿÿÿÿ8íŸŠßÆ-
+osquid:CommentedOutCodeLineÂ"<This block of commented-out lines of code should be removed.(¹€Õýÿÿÿÿ8íŸŠßÆ-
+qsquid:MaximumInheritanceDepth1"<This class has 6 parents which is greater than 5 authorized.(ê­ÊÅþÿÿÿÿ8œŒ˜¹Æ-

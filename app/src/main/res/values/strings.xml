@@ -135,5 +135,8 @@
     <string name="search_for_trips">Search for trips</string>
     <string name="review">Review</string>
     <string name="please_upload_your_receipt">Please Upload your receipt</string>
+    <string name="total">Total:</string>
+    <string name="send_fees_to_the_following_number">Send fees to the following number</string>
+    <string name="then_send_us_the_payment_receipt">Then send us the payment receipt</string>
 
 </resources>
