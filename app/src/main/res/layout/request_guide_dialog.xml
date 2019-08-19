@@ -141,6 +141,7 @@
         android:drawablePadding="11dp"
         android:gravity="center_vertical"
         android:hint="@string/no_of_seats"
+        android:inputType="number"
         android:maxLines="1"
         android:paddingStart="11dp"
         android:paddingEnd="@dimen/dp18w"

@@ -16,6 +16,7 @@ import com.dp.meshini.R;
 import com.dp.meshini.databinding.FragmentProgramBinding;
 import com.dp.meshini.servise.model.pojo.Payment;
 import com.dp.meshini.servise.model.pojo.Program;
+import com.dp.meshini.servise.model.pojo.Room;
 import com.dp.meshini.utils.ConstantsFile;
 import com.dp.meshini.view.activity.PaymentActivity;
 import com.dp.meshini.view.adapter.DestinationSharedAdapter;
@@ -59,11 +60,8 @@ public class ProgramFragment extends Fragment {
         this.payments=payments;
         this.packageId=packageID;
         bundle=new Bundle();
-        bundle.putDouble(SINGLE_PRICE,singlePrice);
-        bundle.putDouble(DOUBLE_PRICE,doublePrice);
-        bundle.putDouble(TRIPLE_PRICE,triplePrice);
         bundle.putInt(SHARED_TRIP_ID,packageID);
-        bundle.putStringArrayList(ROOMS_TYPE, (ArrayList<String>) program.getAvailableRooms());
+        bundle.putSerializable(ROOMS_TYPE, (ArrayList<Room>) program.getAvailableRooms());
         bundle.putSerializable(PAY_METHODS, (Serializable) payments);
 
         adapter=new DestinationSharedAdapter(program.getCityName());
@@ -94,8 +92,8 @@ public class ProgramFragment extends Fragment {
 
     public String rooms(){
         String s="";
-        for(String x:program.getAvailableRooms()){
-            s+=x+"-";
+        for(Room x:program.getAvailableRooms()){
+            s+=x.getRoomType()+"-";
         }
         return s;
     }

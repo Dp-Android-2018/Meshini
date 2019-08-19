@@ -11,7 +11,7 @@ public class Program implements Serializable {
     private String hotelName;
 
     @SerializedName("available_rooms")
-    private List<String> availableRooms;
+    private List<Room> availableRooms;
 
     @SerializedName("meals")
     private String meals;
@@ -31,11 +31,11 @@ public class Program implements Serializable {
         this.hotelName = hotelName;
     }
 
-    public List<String> getAvailableRooms() {
+    public List<Room> getAvailableRooms() {
         return availableRooms;
     }
 
-    public void setAvailableRooms(List<String> availableRooms) {
+    public void setAvailableRooms(List<Room> availableRooms) {
         this.availableRooms = availableRooms;
     }
 

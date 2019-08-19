@@ -31,9 +31,15 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="m">
-        <activity android:name=".view.activity.MySharedTripsActivity"></activity>
-        <activity android:name=".view.activity.AvailableTripsActivity" />
-        <activity android:name=".view.activity.PaymentActivity" />
+
+        <activity android:name=".view.activity.MySharedTripsActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".view.activity.AvailableTripsActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".view.activity.PaymentActivity"
+            android:screenOrientation="portrait"/>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -41,15 +47,21 @@
 
         <activity
             android:name=".view.activity.MapsActivity"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_maps" />
 
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity android:name=".view.activity.PendingRequestsActivity" />
-        <activity android:name=".view.activity.ChangePasswordActivity" />
-        <activity android:name=".view.activity.SplashActivity">
+        <activity android:name=".view.activity.PendingRequestsActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".view.activity.ChangePasswordActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".view.activity.SplashActivity"
+            android:screenOrientation="portrait">
 
             <!-- this is the origin start activity -->
             <intent-filter>
@@ -58,24 +70,60 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.activity.ForgetPasswordActivity" />
-        <activity android:name=".view.activity.UpcomingTripDetailActivity" />
-        <activity android:name=".view.activity.ChatActivity" />
-        <activity android:name=".view.activity.DestinationActivity" />
-        <activity android:name=".view.activity.ContainerActivity" />
-        <activity android:name=".view.activity.AddCreditCardActivity" />
-        <activity android:name=".view.activity.RequestSubmittedActivity" />
-        <activity android:name=".view.activity.OffersActivity" />
-        <activity android:name=".view.activity.TripsActivity" />
-        <activity android:name=".view.activity.ResetPasswordActivity" />
-        <activity android:name=".view.activity.ActivatedSuccessfullyActivity" />
-        <activity android:name=".view.activity.PhoneActivationActivity" />
-        <activity android:name=".view.activity.MailActivationActivity" />
-        <activity android:name=".view.activity.RegisterActivity" />
-        <activity android:name=".view.activity.LoginActivity" />
-        <activity android:name=".view.activity.HomeActivity" />
-        <activity android:name=".view.activity.ProfileActivity" />
-        <activity android:name=".view.activity.NoInternetConnectionActivity" />
+
+        <activity android:name=".view.activity.ForgetPasswordActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".view.activity.UpcomingTripDetailActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".view.activity.ChatActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".view.activity.DestinationActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".view.activity.ContainerActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".view.activity.AddCreditCardActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".view.activity.RequestSubmittedActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".view.activity.OffersActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".view.activity.TripsActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".view.activity.ResetPasswordActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".view.activity.ActivatedSuccessfullyActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".view.activity.PhoneActivationActivity"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".view.activity.MailActivationActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".view.activity.RegisterActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".view.activity.LoginActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".view.activity.HomeActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".view.activity.ProfileActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".view.activity.NoInternetConnectionActivity"
+            android:screenOrientation="portrait"/>
 
         <receiver
             android:name=".utils.ConnectionReceiver"
@@ -97,7 +145,8 @@
         <!-- <uses-library -->
         <!-- android:name="org.apache.http.legacy" -->
         <!-- android:required="false" /> -->
-        <activity android:name=".view.activity.DetailedSharedTripActivity"></activity>
+        <activity android:name=".view.activity.DetailedSharedTripActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

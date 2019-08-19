@@ -133,5 +133,9 @@ public class AvailableTripsActivity extends AppCompatActivity {
     public void showSnackbar(String message){
         Snackbar.make(binding.clRoot,message,Snackbar.LENGTH_LONG).show();
     }
+
+    public void back(View view){
+        finish();
+    }
 }
 

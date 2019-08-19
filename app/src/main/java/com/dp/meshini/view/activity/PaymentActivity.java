@@ -16,10 +16,12 @@ import com.dp.meshini.R;
 import com.dp.meshini.databinding.ActivityPaymentBinding;
 import com.dp.meshini.repositories.PaymentRepository;
 import com.dp.meshini.servise.model.pojo.Payment;
+import com.dp.meshini.servise.model.pojo.Room;
 import com.dp.meshini.servise.model.request.PaymentRequest;
 import com.dp.meshini.servise.model.response.StringMessageResponse;
 import com.dp.meshini.utils.ProgressDialogUtils;
 import com.dp.meshini.view.adapter.PaymentSpinnerAdapter;
+import com.dp.meshini.view.adapter.RoomSpinnerAdapter;
 import com.dp.meshini.view.adapter.StringSpinnerAdapter;
 import com.esafirm.imagepicker.features.ImagePicker;
 import com.esafirm.imagepicker.features.ReturnMode;
@@ -51,9 +53,9 @@ public class PaymentActivity extends AppCompatActivity {
     double singlePrice;
     double doublePrice;
     double triplePrice;
-    String selectedRoom;
+    double  selectedRoomPrice;
     List<Payment>payments;
-    List<String>rooms;
+    List<Room>rooms;
     Bundle bundle;
     int packageId;
     private StorageReference mStorageRef;
@@ -77,10 +79,7 @@ public class PaymentActivity extends AppCompatActivity {
         request.setPackageId(packageId);
         mStorageRef = FirebaseStorage.getInstance().getReferenceFromUrl("gs://meshini-project-1550483518935.appspot.com/meshiniUser");
         payments.addAll(bundle.getParcelableArrayList(PAY_METHODS));
-        rooms.addAll(bundle.getStringArrayList(ROOMS_TYPE));
-        singlePrice=bundle.getDouble(SINGLE_PRICE);
-        doublePrice=bundle.getDouble(DOUBLE_PRICE);
-        triplePrice=bundle.getDouble(TRIPLE_PRICE);
+        rooms.addAll(bundle.getParcelableArrayList(ROOMS_TYPE));
         packageId=bundle.getInt(SHARED_TRIP_ID);
         System.out.println("** payment size : "+payments.size());
         System.out.println("** rooms  size : "+rooms.size());
@@ -112,13 +111,13 @@ public class PaymentActivity extends AppCompatActivity {
     }
 
     public void setRoomsSpinner(){
-        StringSpinnerAdapter adapter=new StringSpinnerAdapter(this,rooms);
+        RoomSpinnerAdapter adapter=new RoomSpinnerAdapter(this,rooms);
         binding.spRoomType.setAdapter(adapter);
         binding.spRoomType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                request.setRoomType(rooms.get(position));
-                selectedRoom=rooms.get(position);
+                request.setRoomType(rooms.get(position).getRoomType());
+                selectedRoomPrice=rooms.get(position).getPrice();
                 setNoPersonSpinner();
             }
 
@@ -137,23 +136,7 @@ public class PaymentActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 int persons=Integer.parseInt(noPersons.get(position));
                 request.setNoOfPersons(persons);
-                System.out.println("**selected room is : "+selectedRoom);
-                switch (selectedRoom){
-                    case "single room":{
-                        System.out.println("** single price : "+singlePrice);
-                        request.setTotalAmounts(singlePrice*persons);
-                        break;
-                    }case "double room":{
-                        System.out.println("** double price : "+doublePrice);
-                        request.setTotalAmounts(doublePrice*persons);
-                        break;
-                    }case "triple room":{
-                        System.out.println("** triple price : "+triplePrice);
-                        request.setTotalAmounts(triplePrice*persons);
-                        break;
-                    }
-
-                }
+                request.setTotalAmounts(selectedRoomPrice*persons);
                 binding.tvTotal.setText(getString(R.string.total)+request.getTotalAmounts()+getString(R.string.egp));
             }
 
@@ -216,12 +199,23 @@ public class PaymentActivity extends AppCompatActivity {
     }
 
     public void book(View view){
-        ProgressDialogUtils.getInstance().showProgressDialog(this);
-        repositoryLazy.getValue().book(request).observe(this, stringMessageResponseResponse -> {
-            ProgressDialogUtils.getInstance().cancelDialog();
-            if(stringMessageResponseResponse.isSuccessful()){
-                Snackbar.make(binding.clRoot,stringMessageResponseResponse.body().getMessage(),Snackbar.LENGTH_LONG).show();
-            }
-        });
+        if(request.getPictureUrl()==null){
+            Snackbar.make(binding.clRoot,getString(R.string.select_pictur_error_message),Snackbar.LENGTH_LONG).show();
+        }else {
+            ProgressDialogUtils.getInstance().showProgressDialog(this);
+            repositoryLazy.getValue().book(request).observe(this, stringMessageResponseResponse -> {
+                ProgressDialogUtils.getInstance().cancelDialog();
+                if (stringMessageResponseResponse.isSuccessful()) {
+                    Snackbar.make(binding.clRoot, stringMessageResponseResponse.body().getMessage(), Snackbar.LENGTH_LONG).show();
+                    Intent intent=new Intent(this,MySharedTripsActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+            });
+        }
+    }
+
+    public void back(View view){
+        finish();
     }
 }

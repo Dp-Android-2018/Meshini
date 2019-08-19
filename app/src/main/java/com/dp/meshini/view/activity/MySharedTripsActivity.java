@@ -1,5 +1,6 @@
 package com.dp.meshini.view.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -202,6 +203,16 @@ public class MySharedTripsActivity extends AppCompatActivity {
     }
 
     public void back(View view) {
+        Intent intent=new Intent(this,ContainerActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent=new Intent(this,ContainerActivity.class);
+        startActivity(intent);
         finish();
     }
 
