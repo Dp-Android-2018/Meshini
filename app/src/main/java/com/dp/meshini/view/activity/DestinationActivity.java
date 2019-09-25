@@ -143,32 +143,38 @@ public class DestinationActivity extends BaseActivity implements OnDateTimeSelec
     public void createRequest(View view) {
         System.out.println("size places on request: " + destantionAdapter.getSelectedPlaces().size());
         request.setPlaceIds(destantionAdapter.getSelectedPlaces());
-        ProgressDialogUtils.getInstance().showProgressDialog(this);
-        viewModelLazy.getValue().createTrip(request).observe(this, createTripResponseResponse -> {
-            if (createTripResponseResponse.isSuccessful()) {
-                showSnackbar(createTripResponseResponse.body().getMessage());
-                Intent intent = new Intent(DestinationActivity.this, RequestSubmittedActivity.class);
-                intent.putExtra(ConstantsFile.IntentConstants.TRIP_ID, createTripResponseResponse.body().getId());
-                startActivity(intent);
-                finish();
-            } else {
-                Gson gson = new GsonBuilder().create();
-                ErrorResponse errorResponse = new ErrorResponse();
+        if(request.getPickupTime()==null){
+            showSnackbar(getString(R.string.pickup_time_error_message));
+        }else if(request.getPlaceIds().get(0)==0) {
+            showSnackbar(getString(R.string.select_place_error_message));
+        }else {
+            ProgressDialogUtils.getInstance().showProgressDialog(this);
+            viewModelLazy.getValue().createTrip(request).observe(this, createTripResponseResponse -> {
+                if (createTripResponseResponse.isSuccessful()) {
+                    showSnackbar(createTripResponseResponse.body().getMessage());
+                    Intent intent = new Intent(DestinationActivity.this, RequestSubmittedActivity.class);
+                    intent.putExtra(ConstantsFile.IntentConstants.TRIP_ID, createTripResponseResponse.body().getId());
+                    startActivity(intent);
+                    finish();
+                } else {
+                    Gson gson = new GsonBuilder().create();
+                    ErrorResponse errorResponse = new ErrorResponse();
 
-                try {
-                    errorResponse = gson.fromJson(createTripResponseResponse.errorBody().string(), ErrorResponse.class);
-                } catch (IOException e) {
-                    e.printStackTrace();
+                    try {
+                        errorResponse = gson.fromJson(createTripResponseResponse.errorBody().string(), ErrorResponse.class);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    String error = "";
+                    for (String string : errorResponse.getErrors()) {
+                        error += string;
+                        error += "\n";
+                    }
+                    showSnackbar(error);
                 }
-                String error = "";
-                for (String string : errorResponse.getErrors()) {
-                    error += string;
-                    error += "\n";
-                }
-                showSnackbar(error);
-            }
-            ProgressDialogUtils.getInstance().cancelDialog();
-        });
+                ProgressDialogUtils.getInstance().cancelDialog();
+            });
+        }
     }
 
     public void showSnackbar(String message) {

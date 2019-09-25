@@ -4,7 +4,7 @@ public class ConstantsFile {
 
     public static class Urls {
 
-        public static final String BASE_URL = "http://151.106.52.109:2018/api/";
+        public static final String BASE_URL = "http://meshini.net/api/";
         public static final String REGISTER_CLIENT_URL = "client/register";
         public static final String LOGIN_URL="client/login";
         public static final String SEND_MAIL_ACTIVATION_URL="client/activate/email/send";
@@ -16,7 +16,8 @@ public class ConstantsFile {
         public static final String COUNTRY_URL="utilities/world-countries";
         public static final String TCOUNTRY_URL="utilities/countries";
         public static final String LANGUAGES_URL="utilities/languages";
-        public static final String CITY_URL="utilities/world-cities";
+        public static final String CITY_URL="utilities/cities";
+        //public static final String CITY_URL="utilities/cities";
         public static final String EDIT_PROFILE_URL="client/profile";
         public static final String CREATE_TRIP_URL="client/request";
         public static final String PLACES_URL="utilities/places";

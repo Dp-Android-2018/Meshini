@@ -139,5 +139,7 @@
     <string name="send_fees_to_the_following_number">Send fees to the following number</string>
     <string name="then_send_us_the_payment_receipt">Then send us the payment receipt</string>
     <string name="select_pictur_error_message">please select picture</string>
+    <string name="pickup_time_error_message">please select pick up time</string>
+    <string name="select_place_error_message">please select places</string>
 
 </resources>

@@ -92,6 +92,9 @@ public interface EndPoints {
     @GET(ConstantsFile.Urls.CITY_URL)
     Observable<Response<CountryCityResponse>>getCities(@Query("world_country_id")int id);
 
+//    @GET(ConstantsFile.Urls.TCITY_URL)
+//    Observable<Response<CountryCityResponse>>getTCities(@Query("world_country_id")int id);
+
 
     @PUT(ConstantsFile.Urls.EDIT_PROFILE_URL)
     Observable<Response<StringMessageResponse>>editProfile(@Body UpdateProfileRequest request);
