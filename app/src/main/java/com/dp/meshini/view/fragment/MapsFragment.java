@@ -171,7 +171,7 @@ public class MapsFragment extends Fragment implements
         }
 
                 currentMarker=mGoogleMap.addMarker(marker);
-            GoogleDirection.withServerKey(getResources().getString(R.string.google_maps_key))
+            GoogleDirection.withServerKey("AIzaSyAZ0yLGIxJ6oP59MMa-4BW-KX2BUnM2oQo")
                     .from(new LatLng(lat,lang))
                     .to(new LatLng(nextDestinationLat,nextDestinationLang))
                     .avoid(AvoidType.FERRIES)
@@ -281,7 +281,7 @@ public class MapsFragment extends Fragment implements
 
         if (mGeoApiContext == null) {
             mGeoApiContext = new GeoApiContext.Builder()
-                    .apiKey(getString(R.string.google_maps_api_key))
+                    .apiKey("AIzaSyAZ0yLGIxJ6oP59MMa-4BW-KX2BUnM2oQo")
                     .build();
         }
     }

@@ -3,7 +3,7 @@
 
     <item
         android:drawable="@drawable/ic_calendar"
-        android:width="@dimen/dp18w"
-        android:height="@dimen/dp18h" />
+        android:width="@dimen/dp15w"
+        android:height="@dimen/dp15h" />
 
 </layer-list >

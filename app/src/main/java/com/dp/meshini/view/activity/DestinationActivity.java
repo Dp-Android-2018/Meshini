@@ -9,6 +9,12 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
 import com.dp.meshini.R;
 import com.dp.meshini.databinding.ActivityDestantionBinding;
 import com.dp.meshini.servise.model.request.CreateTripRequest;
@@ -28,11 +34,6 @@ import com.google.gson.GsonBuilder;
 
 import java.io.IOException;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
-import androidx.databinding.DataBindingUtil;
-import androidx.recyclerview.widget.ItemTouchHelper;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import kotlin.Lazy;
 
 import static com.dp.meshini.utils.ConstantsFile.Constants.START_PLACE_PICKER;
@@ -65,7 +66,7 @@ public class DestinationActivity extends BaseActivity implements OnDateTimeSelec
     }
 
     public void initRecyclerViewAdapter() {
-        destantionAdapter = new DestinationAdapter(this,request.getCountryId());
+        destantionAdapter = new DestinationAdapter(this, request.getCountryId());
         binding.rvDestination.setNestedScrollingEnabled(false);
         binding.rvDestination.setLayoutManager(new LinearLayoutManager(this));
         binding.rvDestination.setAdapter(destantionAdapter);
@@ -82,7 +83,7 @@ public class DestinationActivity extends BaseActivity implements OnDateTimeSelec
 
     @SuppressLint("ResourceType")
     public void showNoteDialog(View view) {
-        final AlertDialog.Builder builder = new AlertDialog.Builder(this,R.style.CustomDialog);
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.CustomDialog);
         View v = View.inflate(this, R.layout.write_note_dialog, null);
         builder.setView(v);
         builder.setCancelable(true);
@@ -143,11 +144,15 @@ public class DestinationActivity extends BaseActivity implements OnDateTimeSelec
     public void createRequest(View view) {
         System.out.println("size places on request: " + destantionAdapter.getSelectedPlaces().size());
         request.setPlaceIds(destantionAdapter.getSelectedPlaces());
-        if(request.getPickupTime()==null){
+        if (request.getPickupTime() == null) {
             showSnackbar(getString(R.string.pickup_time_error_message));
-        }else if(request.getPlaceIds().get(0)==0) {
+        } else if (request.getPlaceIds().get(0) == 0) {
             showSnackbar(getString(R.string.select_place_error_message));
-        }else {
+        }else if(request.getPickupLat()==0||request.getPickupLong()==0) {
+            showSnackbar(getString(R.string.pick_up_location_error_message));
+
+        }
+        else {
             ProgressDialogUtils.getInstance().showProgressDialog(this);
             viewModelLazy.getValue().createTrip(request).observe(this, createTripResponseResponse -> {
                 if (createTripResponseResponse.isSuccessful()) {

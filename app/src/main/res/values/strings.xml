@@ -92,7 +92,6 @@
     <string name="destinations_list">Destinations list</string>
     <string name="active_trip">Active Trip</string>
     <string name="arrive_by">Arrive by</string>
-    <string name="google_maps_api_key" translatable="false">AIzaSyAZ0yLGIxJ6oP59MMa-4BW-KX2BUnM2oQo</string>
     <string name="select_this_location">Select this location</string>
     <string name="make_rate_message">please make rate</string>
     <string name="your_trip_has_been_started">Your Trip has been started</string>
@@ -141,5 +140,6 @@
     <string name="select_pictur_error_message">please select picture</string>
     <string name="pickup_time_error_message">please select pick up time</string>
     <string name="select_place_error_message">please select places</string>
+    <string name="pick_up_location_error_message">please select pick up location</string>
 
 </resources>
